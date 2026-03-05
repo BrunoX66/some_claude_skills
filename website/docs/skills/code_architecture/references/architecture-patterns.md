@@ -1,7 +1,7 @@
 ---
 title: Architecture Patterns Deep Dive
-sidebar_label: Architecture Patterns Deep Div...
-sidebar_position: 2
+sidebar_label: Architecture Patterns Deep ...
+sidebar_position: 1
 ---
 # Architecture Patterns Deep Dive
 

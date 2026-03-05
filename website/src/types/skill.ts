@@ -20,6 +20,7 @@ export interface Skill {
   badge?: SkillBadge;
   pairsWith?: SkillPairing[];
   heroImage?: string; // Path to hero image (e.g., /img/skills/skill-id-hero.webp)
+  gated?: boolean; // Hidden from public gallery, visible with unlock param
 }
 
 /**

@@ -1,7 +1,7 @@
 ---
 title: Minimal MCP Server Template
 sidebar_label: Minimal MCP Server Template
-sidebar_position: 2
+sidebar_position: 5
 ---
 # Minimal MCP Server Template
 

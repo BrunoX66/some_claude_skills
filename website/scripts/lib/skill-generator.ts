@@ -66,6 +66,7 @@ export interface Skill {
   badge?: 'NEW' | 'HOT' | 'ADVANCED' | 'EXPERIMENTAL';
   pairsWith?: SkillPairing[];
   heroImage?: string;
+  gated?: boolean;
 }
 
 export interface CategoryConfig {
@@ -219,7 +220,9 @@ function buildSkillEntry(skill: ParsedSkill): string {
     }
   }
 
-  return `  { id: '${skill.id}', title: '${escapeString(skill.title)}', category: '${skill.category}', path: '${skill.urlPath}', description: getDesc('${skill.id}', '${escapedDesc}'), tags: [${tags}]${badge}${pairsWithStr}${heroImageStr} },`;
+  const gatedStr = skill.gated ? ', gated: true' : '';
+
+  return `  { id: '${skill.id}', title: '${escapeString(skill.title)}', category: '${skill.category}', path: '${skill.urlPath}', description: getDesc('${skill.id}', '${escapedDesc}'), tags: [${tags}]${badge}${pairsWithStr}${heroImageStr}${gatedStr} },`;
 }
 
 function buildCategoryConfig(): string {

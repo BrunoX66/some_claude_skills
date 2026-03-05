@@ -1,7 +1,7 @@
 ---
 title: Voice Engine Setup
 sidebar_label: Voice Engine Setup
-sidebar_position: 2
+sidebar_position: 4
 ---
 # Voice Engine Setup
 

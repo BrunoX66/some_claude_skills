@@ -1,7 +1,7 @@
 ---
 title: Turborepo Patterns Reference
 sidebar_label: Turborepo Patterns Reference
-sidebar_position: 2
+sidebar_position: 1
 ---
 # Turborepo Patterns Reference
 

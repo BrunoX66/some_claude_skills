@@ -13,6 +13,7 @@ export interface SkillMetadata {
   'pairs-with'?: SkillPairing[];
   private?: boolean;
   deprecated?: boolean;
+  gated?: boolean;
 }
 
 export interface SkillFrontmatter {
@@ -69,6 +70,7 @@ export interface ParsedSkill {
   // Metadata
   source: SkillSource;
   lastUpdated?: string;
+  gated?: boolean;
 
   // References (subfolders)
   references: SkillReference[];

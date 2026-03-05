@@ -1,7 +1,7 @@
 ---
 title: Remix Patterns
 sidebar_label: Remix Patterns
-sidebar_position: 2
+sidebar_position: 3
 ---
 # Remix Patterns
 

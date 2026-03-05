@@ -1,7 +1,7 @@
 ---
 title: Stack Decisions
 sidebar_label: Stack Decisions
-sidebar_position: 2
+sidebar_position: 5
 ---
 # Stack Decisions
 

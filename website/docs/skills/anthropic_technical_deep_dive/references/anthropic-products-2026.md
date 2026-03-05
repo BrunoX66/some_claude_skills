@@ -1,7 +1,7 @@
 ---
 title: Anthropic Product Landscape (Early 2026)
-sidebar_label: Anthropic Product Landscape (E...
-sidebar_position: 2
+sidebar_label: Anthropic Product Landscape...
+sidebar_position: 1
 ---
 # Anthropic Product Landscape (Early 2026)
 

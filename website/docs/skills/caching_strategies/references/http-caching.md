@@ -1,7 +1,7 @@
 ---
 title: HTTP Caching Reference
 sidebar_label: HTTP Caching Reference
-sidebar_position: 2
+sidebar_position: 1
 ---
 # HTTP Caching Reference
 

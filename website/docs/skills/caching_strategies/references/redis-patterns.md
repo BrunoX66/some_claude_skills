@@ -1,6 +1,6 @@
 ---
 title: Redis Caching Patterns Reference
-sidebar_label: Redis Caching Patterns Referen...
+sidebar_label: Redis Caching Patterns Refe...
 sidebar_position: 2
 ---
 # Redis Caching Patterns Reference

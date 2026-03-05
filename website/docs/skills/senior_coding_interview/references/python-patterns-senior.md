@@ -1,7 +1,7 @@
 ---
 title: Senior Python Patterns for Coding Interviews
-sidebar_label: Senior Python Patterns for Cod...
-sidebar_position: 2
+sidebar_label: Senior Python Patterns for ...
+sidebar_position: 3
 ---
 # Senior Python Patterns for Coding Interviews
 

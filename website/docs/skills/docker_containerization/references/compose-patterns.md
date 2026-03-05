@@ -1,7 +1,7 @@
 ---
 title: Docker Compose Advanced Patterns
-sidebar_label: Docker Compose Advanced Patter...
-sidebar_position: 2
+sidebar_label: Docker Compose Advanced Pat...
+sidebar_position: 1
 ---
 # Docker Compose Advanced Patterns
 

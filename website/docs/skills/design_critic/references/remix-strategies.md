@@ -1,7 +1,7 @@
 ---
 title: Remix Strategies
 sidebar_label: Remix Strategies
-sidebar_position: 2
+sidebar_position: 4
 ---
 # Remix Strategies
 

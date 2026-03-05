@@ -1,7 +1,7 @@
 ---
 title: Story Bank Template
 sidebar_label: Story Bank Template
-sidebar_position: 2
+sidebar_position: 3
 ---
 # Story Bank Template
 

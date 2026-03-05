@@ -1,6 +1,6 @@
 ---
 title: "Process Design: Why Recursive Synthesis Works"
-sidebar_label: "Process Design: Why Recursive ..."
+sidebar_label: "Process Design: Why Recursi..."
 sidebar_position: 2
 ---
 # Process Design: Why Recursive Synthesis Works

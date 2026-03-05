@@ -5,6 +5,7 @@ description: Prepare for Anthropic-specific technical interviews covering Consti
   challenges, or behavioral interview practice.
 allowed-tools: Read,Write,Edit,WebSearch,WebFetch
 metadata:
+  gated: true
   category: Career & Interview
   pairs-with:
   - skill: interview-loop-strategist

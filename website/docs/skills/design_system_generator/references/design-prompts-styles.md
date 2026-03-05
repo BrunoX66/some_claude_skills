@@ -1,7 +1,7 @@
 ---
 title: DesignPrompts AI-Ready Styles Reference
-sidebar_label: DesignPrompts AI-Ready Styles ...
-sidebar_position: 2
+sidebar_label: DesignPrompts AI-Ready Styl...
+sidebar_position: 3
 ---
 # DesignPrompts AI-Ready Styles Reference
 

@@ -4,6 +4,7 @@ description: Prepares for "reverse system design" rounds where you present YOUR 
   Q&A handling. Activate on "tech presentation", "present your work", "reverse system design", "project deep dive". NOT for designing hypothetical systems, resume writing, or career narrative extraction.
 allowed-tools: Read,Write,Edit
 metadata:
+  gated: true
   category: Career & Interview
   pairs-with:
   - skill: interview-loop-strategist

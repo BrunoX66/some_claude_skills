@@ -1,7 +1,7 @@
 ---
 title: Preparation Timeline Templates
 sidebar_label: Preparation Timeline Templates
-sidebar_position: 2
+sidebar_position: 3
 ---
 # Preparation Timeline Templates
 

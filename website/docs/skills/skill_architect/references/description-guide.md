@@ -1,7 +1,7 @@
 ---
 title: Skill Description Writing Guide
-sidebar_label: Skill Description Writing Guid...
-sidebar_position: 2
+sidebar_label: Skill Description Writing G...
+sidebar_position: 3
 ---
 # Skill Description Writing Guide
 

@@ -1,7 +1,7 @@
 ---
 title: Company-Specific Interview Loops
-sidebar_label: Company-Specific Interview Loo...
-sidebar_position: 2
+sidebar_label: Company-Specific Interview ...
+sidebar_position: 1
 ---
 # Company-Specific Interview Loops
 

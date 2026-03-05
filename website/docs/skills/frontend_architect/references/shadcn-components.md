@@ -1,7 +1,7 @@
 ---
 title: shadcn/ui Component Patterns
 sidebar_label: shadcn/ui Component Patterns
-sidebar_position: 2
+sidebar_position: 4
 ---
 # shadcn/ui Component Patterns
 

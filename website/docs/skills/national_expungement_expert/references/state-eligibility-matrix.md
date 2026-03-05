@@ -1,7 +1,7 @@
 ---
 title: State Eligibility Matrix
 sidebar_label: State Eligibility Matrix
-sidebar_position: 2
+sidebar_position: 1
 ---
 # State Eligibility Matrix
 

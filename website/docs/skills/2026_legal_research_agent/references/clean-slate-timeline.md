@@ -1,7 +1,7 @@
 ---
 title: Clean Slate Implementation Timeline
-sidebar_label: Clean Slate Implementation Tim...
-sidebar_position: 2
+sidebar_label: Clean Slate Implementation ...
+sidebar_position: 1
 ---
 # Clean Slate Implementation Timeline
 

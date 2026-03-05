@@ -1,6 +1,6 @@
 ---
 title: Service Decomposition Strategies
-sidebar_label: Service Decomposition Strategi...
+sidebar_label: Service Decomposition Strat...
 sidebar_position: 2
 ---
 # Service Decomposition Strategies

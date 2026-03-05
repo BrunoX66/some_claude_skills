@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -8,6 +8,7 @@ import ChangelogPreview from '../components/ChangelogPreview';
 import type { Skill } from '../types/skill';
 import { ALL_SKILLS } from '../data/skills';
 import { useStarredSkills } from '../hooks/useStarredSkills';
+import { useGatedAccess } from '../hooks/useGatedAccess';
 import { useKonamiCode } from '../hooks/useKonamiCode';
 import { usePlausibleTracking, useTimeTracking, useScrollTracking, useSkillNavigationTracking } from '../hooks/usePlausibleTracking';
 import '../css/win31.css';
@@ -20,7 +21,11 @@ export default function Home(): JSX.Element {
   const [copied, setCopied] = useState<string | null>(null);
   const [skillClicked, setSkillClicked] = useState(false);
   const { toggleStar, isStarred, getStarredCount } = useStarredSkills();
+  const { isUnlocked, filterSkills } = useGatedAccess();
   const { triggered, easterEgg } = useKonamiCode();
+
+  // Filter out gated skills for public visitors
+  const visibleSkills = useMemo(() => filterSkills(ALL_SKILLS), [filterSkills]);
 
   // Analytics tracking
   const { track } = usePlausibleTracking();
@@ -96,7 +101,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: "Erich's Best Claude Skills",
-    description: `${ALL_SKILLS.length}+ production-ready AI skills for Claude Code. Expert agents that encode real domain expertise for ML, computer vision, audio, psychology, and developer tools.`,
+    description: `${visibleSkills.length}+ production-ready AI skills for Claude Code. Expert agents that encode real domain expertise for ML, computer vision, audio, psychology, and developer tools.`,
     applicationCategory: 'DeveloperApplication',
     operatingSystem: 'Cross-platform',
     url: 'https://someclaudeskills.com',
@@ -145,7 +150,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
   return (
     <Layout
       title={siteConfig.title}
-      description={`${ALL_SKILLS.length}+ production-ready AI skills for Claude Code. Expert agents for ML, computer vision, audio, psychology, and developer tools.`}
+      description={`${visibleSkills.length}+ production-ready AI skills for Claude Code. Expert agents for ML, computer vision, audio, psychology, and developer tools.`}
     >
       <Head>
         <script type="application/ld+json">
@@ -182,7 +187,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
                   marginBottom: '16px',
                   fontStyle: 'italic'
                 }}>
-                  {ALL_SKILLS.length} free, open-source skills for Claude Code
+                  {visibleSkills.length} free, open-source skills for Claude Code
                 </p>
 
                 {/* Two-column layout: explainer left, install right */}
@@ -203,7 +208,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
                     </p>
 
                     <div className="install-hero__badges">
-                      <span className="install-hero__badge install-hero__badge--yellow">{ALL_SKILLS.length} Skills</span>
+                      <span className="install-hero__badge install-hero__badge--yellow">{visibleSkills.length} Skills</span>
                       <span className="install-hero__badge install-hero__badge--lime">Open Source</span>
                       <span className="install-hero__badge install-hero__badge--teal">MIT License</span>
                     </div>
@@ -361,7 +366,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
                         gap: '6px',
                       }}>
                         <span style={{ fontSize: '9px' }}>▶</span>
-                        Alternative: Clone all {ALL_SKILLS.length} skills (git)
+                        Alternative: Clone all {visibleSkills.length} skills (git)
                       </summary>
                       <div style={{ padding: '10px 12px', paddingTop: 0 }}>
                         <div className="install-hero__code-block" style={{ position: 'relative', marginTop: '6px' }}>
@@ -397,7 +402,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
             </div>
             <div className="skills-marquee-horizontal">
               <div className="skills-marquee-horizontal__track">
-                {[...ALL_SKILLS, ...ALL_SKILLS].map((skill, idx) => (
+                {[...visibleSkills, ...visibleSkills].map((skill, idx) => (
                   <div
                     key={`${skill.id}-${idx}`}
                     className="skills-marquee-horizontal__item"
@@ -461,7 +466,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
               <div className="nav-window__content">
                 <div className="nav-window__icon">📁</div>
                 <h3 className="nav-window__title">Browse All Skills</h3>
-                <p className="nav-window__desc">Explore all {ALL_SKILLS.length} skills with search and filtering</p>
+                <p className="nav-window__desc">Explore all {visibleSkills.length} skills with search and filtering</p>
                 <div className="win31-btn-3d nav-window__btn">Open Gallery</div>
               </div>
             </a>
@@ -561,7 +566,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
               FOOTER: Status Bar
               ═══════════════════════════════════════════════════════════════════ */}
           <div className="win31-statusbar footer-bar" style={{ position: 'relative' }}>
-            <div className="win31-statusbar-panel">{ALL_SKILLS.length} Skills Loaded</div>
+            <div className="win31-statusbar-panel">{visibleSkills.length} Skills Loaded</div>
             <div className="win31-statusbar-panel">6 Categories</div>
             <button
               className="win31-statusbar-panel share-to-desktop"

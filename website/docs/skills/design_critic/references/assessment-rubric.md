@@ -1,7 +1,7 @@
 ---
 title: Assessment Rubric
 sidebar_label: Assessment Rubric
-sidebar_position: 2
+sidebar_position: 1
 ---
 # Assessment Rubric
 

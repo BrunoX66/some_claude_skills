@@ -1,6 +1,6 @@
 ---
 title: Dependency Inversion — IoC Containers and Injection Patterns
-sidebar_label: Dependency Inversion — IoC Con...
+sidebar_label: Dependency Inversion — IoC ...
 sidebar_position: 2
 ---
 # Dependency Inversion — IoC Containers and Injection Patterns

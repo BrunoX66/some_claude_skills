@@ -135,6 +135,7 @@ export function parseSkillFile(
     urlPath,
     source,
     lastUpdated: frontmatter.lastUpdated,
+    gated: frontmatter.metadata?.gated || undefined,
     references,
     scripts,
   };

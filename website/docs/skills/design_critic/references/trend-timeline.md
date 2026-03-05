@@ -1,7 +1,7 @@
 ---
 title: Design Trend Timeline
 sidebar_label: Design Trend Timeline
-sidebar_position: 2
+sidebar_position: 6
 ---
 # Design Trend Timeline
 

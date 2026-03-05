@@ -1,7 +1,7 @@
 ---
 title: Design System References
 sidebar_label: Design System References
-sidebar_position: 2
+sidebar_position: 1
 ---
 # Design System References
 

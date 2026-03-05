@@ -4,6 +4,7 @@ description: Criminal record expungement laws across all 50 US states and DC —
   criminal defense, immigration consequences, or federal record sealing.
 allowed-tools: Read,Glob,Grep,WebSearch,Task
 metadata:
+  gated: true
   category: Legal & Compliance
   tags:
   - expungement

@@ -1,7 +1,7 @@
 ---
 title: Designing Skills for Subagent Consumption
-sidebar_label: Designing Skills for Subagent ...
-sidebar_position: 2
+sidebar_label: Designing Skills for Subage...
+sidebar_position: 8
 ---
 # Designing Skills for Subagent Consumption
 

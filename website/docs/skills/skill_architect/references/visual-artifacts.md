@@ -1,7 +1,7 @@
 ---
 title: "Visual Artifacts in Skills: Mermaid Diagrams & Code"
-sidebar_label: "Visual Artifacts in Skills: Me..."
-sidebar_position: 2
+sidebar_label: "Visual Artifacts in Skills:..."
+sidebar_position: 10
 ---
 # Visual Artifacts in Skills: Mermaid Diagrams & Code
 

@@ -1,7 +1,7 @@
 ---
 title: Anthropic Values Research
 sidebar_label: Anthropic Values Research
-sidebar_position: 2
+sidebar_position: 1
 ---
 # Anthropic Values Research
 

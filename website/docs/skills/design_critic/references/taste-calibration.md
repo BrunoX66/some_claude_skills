@@ -1,7 +1,7 @@
 ---
 title: Taste Calibration
 sidebar_label: Taste Calibration
-sidebar_position: 2
+sidebar_position: 5
 ---
 # Taste Calibration
 

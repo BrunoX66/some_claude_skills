@@ -5,6 +5,7 @@ description: Prepares for hiring manager rounds at Staff+ (L6+) level — scope 
   writing.
 allowed-tools: Read,Write,Edit
 metadata:
+  gated: true
   category: Career & Interview
   pairs-with:
   - skill: interview-loop-strategist

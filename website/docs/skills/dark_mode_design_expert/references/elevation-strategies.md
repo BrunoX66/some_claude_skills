@@ -1,6 +1,6 @@
 ---
 title: Elevation Strategies in Dark Mode
-sidebar_label: Elevation Strategies in Dark M...
+sidebar_label: Elevation Strategies in Dar...
 sidebar_position: 2
 ---
 # Elevation Strategies in Dark Mode

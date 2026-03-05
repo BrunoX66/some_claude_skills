@@ -1,7 +1,7 @@
 ---
-title: "Safety & Moderation"
-sidebar_label: "Safety & Moderation"
-sidebar_position: 2
+title: Safety & Moderation
+sidebar_label: Safety & Moderation
+sidebar_position: 5
 ---
 # Safety & Moderation
 

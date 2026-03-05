@@ -5,6 +5,7 @@ description: Prepare for L6+ coding interviews — in-memory databases, concurre
   system design whiteboard.
 allowed-tools: Read,Write,Edit
 metadata:
+  gated: true
   category: Career & Interview
   pairs-with:
   - skill: interview-loop-strategist

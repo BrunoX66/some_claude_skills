@@ -1,7 +1,7 @@
 ---
 title: Component Catalog Reference
 sidebar_label: Component Catalog Reference
-sidebar_position: 2
+sidebar_position: 1
 ---
 # Component Catalog Reference
 

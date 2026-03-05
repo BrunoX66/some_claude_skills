@@ -5,6 +5,7 @@ description: Coaches behavioral and values-fit interview preparation with negati
   or technical deep dives.
 allowed-tools: Read,Write,Edit
 metadata:
+  gated: true
   category: Career & Interview
   pairs-with:
   - skill: interview-loop-strategist

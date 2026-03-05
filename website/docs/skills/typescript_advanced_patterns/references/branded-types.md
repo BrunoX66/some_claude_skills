@@ -1,7 +1,7 @@
 ---
 title: Branded Types Reference
 sidebar_label: Branded Types Reference
-sidebar_position: 2
+sidebar_position: 1
 ---
 # Branded Types Reference
 

@@ -1,7 +1,7 @@
 ---
 title: Browser Profiling Reference
 sidebar_label: Browser Profiling Reference
-sidebar_position: 2
+sidebar_position: 1
 ---
 # Browser Profiling Reference
 

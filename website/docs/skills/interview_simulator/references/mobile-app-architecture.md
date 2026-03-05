@@ -1,7 +1,7 @@
 ---
 title: Mobile App Architecture
 sidebar_label: Mobile App Architecture
-sidebar_position: 2
+sidebar_position: 1
 ---
 # Mobile App Architecture
 

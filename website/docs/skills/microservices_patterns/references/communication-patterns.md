@@ -1,7 +1,7 @@
 ---
 title: Inter-Service Communication Patterns
-sidebar_label: Inter-Service Communication Pa...
-sidebar_position: 2
+sidebar_label: Inter-Service Communication...
+sidebar_position: 1
 ---
 # Inter-Service Communication Patterns
 

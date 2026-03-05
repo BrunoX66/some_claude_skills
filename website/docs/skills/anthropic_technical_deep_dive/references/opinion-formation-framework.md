@@ -1,7 +1,7 @@
 ---
 title: Opinion Formation Framework
 sidebar_label: Opinion Formation Framework
-sidebar_position: 2
+sidebar_position: 3
 ---
 # Opinion Formation Framework
 

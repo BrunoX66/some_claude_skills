@@ -1,7 +1,7 @@
 ---
 title: Output Formats Reference
 sidebar_label: Output Formats Reference
-sidebar_position: 2
+sidebar_position: 4
 ---
 # Output Formats Reference
 

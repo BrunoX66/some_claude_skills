@@ -1,7 +1,7 @@
 ---
 title: Internal Tools Architecture
 sidebar_label: Internal Tools Architecture
-sidebar_position: 2
+sidebar_position: 3
 ---
 # Internal Tools Architecture
 

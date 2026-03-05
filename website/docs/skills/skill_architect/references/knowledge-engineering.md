@@ -1,7 +1,7 @@
 ---
 title: Knowledge Engineering for Skill Creation
-sidebar_label: Knowledge Engineering for Skil...
-sidebar_position: 2
+sidebar_label: Knowledge Engineering for S...
+sidebar_position: 4
 ---
 # Knowledge Engineering for Skill Creation
 

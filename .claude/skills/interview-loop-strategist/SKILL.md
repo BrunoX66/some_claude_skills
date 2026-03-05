@@ -4,6 +4,7 @@ description: Orchestrates end-to-end interview preparation for senior ML/AI engi
   and debrief analysis. Activate on "interview prep", "interview loop", "Anthropic interview", "prep timeline". NOT for resume writing, career narratives, or individual round-type practice.
 allowed-tools: Read,Write,Edit
 metadata:
+  gated: true
   category: Career & Interview
   pairs-with:
   - skill: senior-coding-interview

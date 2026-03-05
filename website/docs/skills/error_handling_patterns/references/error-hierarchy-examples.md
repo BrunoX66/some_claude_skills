@@ -1,7 +1,7 @@
 ---
 title: Error Hierarchy Examples
 sidebar_label: Error Hierarchy Examples
-sidebar_position: 2
+sidebar_position: 1
 ---
 # Error Hierarchy Examples
 

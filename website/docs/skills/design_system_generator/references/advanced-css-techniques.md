@@ -1,6 +1,6 @@
 ---
 title: Advanced CSS Techniques Reference
-sidebar_label: Advanced CSS Techniques Refere...
+sidebar_label: Advanced CSS Techniques Ref...
 sidebar_position: 2
 ---
 # Advanced CSS Techniques Reference

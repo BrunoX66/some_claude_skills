@@ -6,6 +6,7 @@ description: 'Expert legal research agent for finding and scraping expungement d
 
   '
 metadata:
+  gated: true
   category: Research & Analysis
   tags:
   - imported

@@ -1,7 +1,7 @@
 ---
 title: Cloudflare Patterns
 sidebar_label: Cloudflare Patterns
-sidebar_position: 2
+sidebar_position: 1
 ---
 # Cloudflare Patterns
 

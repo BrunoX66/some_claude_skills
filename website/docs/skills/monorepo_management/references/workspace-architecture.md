@@ -1,6 +1,6 @@
 ---
 title: Workspace Architecture Reference
-sidebar_label: Workspace Architecture Referen...
+sidebar_label: Workspace Architecture Refe...
 sidebar_position: 2
 ---
 # Workspace Architecture Reference

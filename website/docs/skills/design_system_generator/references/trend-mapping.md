@@ -1,7 +1,7 @@
 ---
 title: Design Trend Mapping Reference
 sidebar_label: Design Trend Mapping Reference
-sidebar_position: 2
+sidebar_position: 5
 ---
 # Design Trend Mapping Reference
 

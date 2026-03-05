@@ -1,7 +1,7 @@
 ---
 title: Advanced Rebase Patterns
 sidebar_label: Advanced Rebase Patterns
-sidebar_position: 2
+sidebar_position: 1
 ---
 # Advanced Rebase Patterns
 

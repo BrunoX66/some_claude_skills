@@ -1,7 +1,7 @@
 ---
 title: CSS Dark Mode Implementation Patterns
-sidebar_label: CSS Dark Mode Implementation P...
-sidebar_position: 2
+sidebar_label: CSS Dark Mode Implementatio...
+sidebar_position: 1
 ---
 # CSS Dark Mode Implementation Patterns
 

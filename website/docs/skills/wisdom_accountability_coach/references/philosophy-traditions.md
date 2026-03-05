@@ -1,6 +1,6 @@
 ---
-title: "Philosophy & Wisdom Traditions"
-sidebar_label: "Philosophy & Wisdom Traditions"
+title: Philosophy & Wisdom Traditions
+sidebar_label: Philosophy & Wisdom Traditions
 sidebar_position: 2
 ---
 # Philosophy & Wisdom Traditions

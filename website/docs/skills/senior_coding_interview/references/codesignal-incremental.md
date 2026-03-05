@@ -1,7 +1,7 @@
 ---
 title: CodeSignal Incremental Format Strategy
-sidebar_label: CodeSignal Incremental Format ...
-sidebar_position: 2
+sidebar_label: CodeSignal Incremental Form...
+sidebar_position: 1
 ---
 # CodeSignal Incremental Format Strategy
 

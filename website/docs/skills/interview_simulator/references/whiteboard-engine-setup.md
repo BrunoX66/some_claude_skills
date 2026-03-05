@@ -1,7 +1,7 @@
 ---
 title: Whiteboard Engine Setup
 sidebar_label: Whiteboard Engine Setup
-sidebar_position: 2
+sidebar_position: 5
 ---
 # Whiteboard Engine Setup
 

@@ -1,7 +1,7 @@
 ---
 title: Accessibility in Generated Design Systems
-sidebar_label: Accessibility in Generated Des...
-sidebar_position: 2
+sidebar_label: Accessibility in Generated ...
+sidebar_position: 1
 ---
 # Accessibility in Generated Design Systems
 

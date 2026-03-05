@@ -1,6 +1,6 @@
 ---
 title: "Staff-Level Signals: What Hiring Managers Actually Evaluate"
-sidebar_label: "Staff-Level Signals: What Hiri..."
+sidebar_label: "Staff-Level Signals: What H..."
 sidebar_position: 2
 ---
 # Staff-Level Signals: What Hiring Managers Actually Evaluate

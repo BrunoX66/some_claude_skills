@@ -1,7 +1,7 @@
 ---
 title: Complete Mermaid Diagram Type Reference
-sidebar_label: Complete Mermaid Diagram Type ...
-sidebar_position: 2
+sidebar_label: Complete Mermaid Diagram Ty...
+sidebar_position: 1
 ---
 # Complete Mermaid Diagram Type Reference
 

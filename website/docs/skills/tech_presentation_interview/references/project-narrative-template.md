@@ -1,7 +1,7 @@
 ---
 title: Project Narrative Template
 sidebar_label: Project Narrative Template
-sidebar_position: 2
+sidebar_position: 1
 ---
 # Project Narrative Template
 

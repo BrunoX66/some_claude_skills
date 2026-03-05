@@ -1,7 +1,7 @@
 ---
 title: Evaluation Metrics Guide
 sidebar_label: Evaluation Metrics Guide
-sidebar_position: 2
+sidebar_position: 1
 ---
 # Evaluation Metrics Guide
 

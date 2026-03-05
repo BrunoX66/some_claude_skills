@@ -1,7 +1,7 @@
 ---
 title: Project Impact Calculator
 sidebar_label: Project Impact Calculator
-sidebar_position: 2
+sidebar_position: 1
 ---
 # Project Impact Calculator
 

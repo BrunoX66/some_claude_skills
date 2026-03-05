@@ -1,7 +1,7 @@
 ---
 title: Security Auditing for Dependencies
-sidebar_label: Security Auditing for Dependen...
-sidebar_position: 2
+sidebar_label: Security Auditing for Depen...
+sidebar_position: 1
 ---
 # Security Auditing for Dependencies
 

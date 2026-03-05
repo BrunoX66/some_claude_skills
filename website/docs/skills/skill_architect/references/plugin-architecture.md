@@ -1,7 +1,7 @@
 ---
 title: "Plugin Architecture: Creating, Packaging, and Distributing"
-sidebar_label: "Plugin Architecture: Creating,..."
-sidebar_position: 2
+sidebar_label: "Plugin Architecture: Creati..."
+sidebar_position: 6
 ---
 # Plugin Architecture: Creating, Packaging, and Distributing
 

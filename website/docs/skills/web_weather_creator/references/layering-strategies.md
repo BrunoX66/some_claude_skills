@@ -1,7 +1,7 @@
 ---
 title: "Layering Strategies: Making Clouds Float Through Content"
-sidebar_label: "Layering Strategies: Making Cl..."
-sidebar_position: 2
+sidebar_label: "Layering Strategies: Making..."
+sidebar_position: 1
 ---
 # Layering Strategies: Making Clouds Float Through Content
 

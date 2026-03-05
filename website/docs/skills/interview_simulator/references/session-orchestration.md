@@ -1,7 +1,7 @@
 ---
 title: Session Orchestration
 sidebar_label: Session Orchestration
-sidebar_position: 2
+sidebar_position: 3
 ---
 # Session Orchestration
 

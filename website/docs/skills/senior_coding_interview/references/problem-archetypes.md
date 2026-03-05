@@ -1,6 +1,6 @@
 ---
 title: Problem Archetypes for Senior Coding Interviews
-sidebar_label: Problem Archetypes for Senior ...
+sidebar_label: Problem Archetypes for Seni...
 sidebar_position: 2
 ---
 # Problem Archetypes for Senior Coding Interviews

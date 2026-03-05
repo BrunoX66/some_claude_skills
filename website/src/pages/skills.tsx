@@ -10,6 +10,7 @@ import { ALL_SKILLS, searchSkills } from '../data/skills';
 import { SKILL_CATEGORIES } from '../types/skill';
 import { ALL_TAGS, getTagsByType, TAG_TYPE_LABELS, TAG_TYPE_COLORS, type TagType } from '../types/tags';
 import { useStarredSkills } from '../hooks/useStarredSkills';
+import { useGatedAccess } from '../hooks/useGatedAccess';
 import '../css/win31.css';
 import '../css/skills-gallery.css';
 import '../css/backsplash.css';
@@ -27,6 +28,7 @@ export default function SkillsGallery(): JSX.Element {
   const [showTagFilter, setShowTagFilter] = useState(false);
   const [viewMode, setViewMode] = useState<ViewMode>('cards');
   const { toggleStar, isStarred, getStarredCount } = useStarredSkills();
+  const { isUnlocked, filterSkills } = useGatedAccess();
 
   // Read tags from URL on mount
   useEffect(() => {
@@ -69,8 +71,11 @@ export default function SkillsGallery(): JSX.Element {
     updateUrlWithTags([]);
   };
 
+  // Apply gating first — hidden skills never appear unless unlocked
+  const visibleSkills = useMemo(() => filterSkills(ALL_SKILLS), [filterSkills]);
+
   const filteredSkills = useMemo(() => {
-    let skills = ALL_SKILLS;
+    let skills = visibleSkills;
 
     // Filter by starred
     if (showStarredOnly) {
@@ -100,7 +105,7 @@ export default function SkillsGallery(): JSX.Element {
     }
 
     return skills;
-  }, [selectedCategory, searchQuery, showStarredOnly, isStarred, selectedTags]);
+  }, [visibleSkills, selectedCategory, searchQuery, showStarredOnly, isStarred, selectedTags]);
 
   const handleResetFilters = () => {
     setSelectedCategory('all');
@@ -112,16 +117,16 @@ export default function SkillsGallery(): JSX.Element {
 
   const tagsByType = getTagsByType();
 
-  // Calculate tag counts from actual skills
+  // Calculate tag counts from visible skills
   const tagCounts = useMemo(() => {
     const counts: Record<string, number> = {};
-    ALL_SKILLS.forEach(skill => {
+    visibleSkills.forEach(skill => {
       skill.tags?.forEach(tag => {
         counts[tag] = (counts[tag] || 0) + 1;
       });
     });
     return counts;
-  }, []);
+  }, [visibleSkills]);
 
   // Get popular tags (used by 3+ skills, sorted by usage)
   const popularTags = useMemo(() => {
@@ -133,21 +138,21 @@ export default function SkillsGallery(): JSX.Element {
 
   // Calculate category counts
   const categoryCounts = useMemo(() => {
-    const counts: Record<string, number> = { all: ALL_SKILLS.length };
+    const counts: Record<string, number> = { all: visibleSkills.length };
     SKILL_CATEGORIES.slice(1).forEach(category => {
-      counts[category] = ALL_SKILLS.filter(skill => skill.category === category).length;
+      counts[category] = visibleSkills.filter(skill => skill.category === category).length;
     });
     return counts;
-  }, []);
+  }, [visibleSkills]);
 
   // JSON-LD structured data for SEO
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Claude Skills Gallery',
-    description: `Browse all ${ALL_SKILLS.length} Claude Code skills. Expert AI agents for machine learning, computer vision, audio design, web development, and more.`,
+    description: `Browse all ${visibleSkills.length} Claude Code skills. Expert AI agents for machine learning, computer vision, audio design, web development, and more.`,
     url: 'https://someclaudeskills.com/skills',
-    numberOfItems: ALL_SKILLS.length,
+    numberOfItems: visibleSkills.length,
     about: {
       '@type': 'SoftwareApplication',
       name: 'Claude Code Skills',
@@ -158,7 +163,7 @@ export default function SkillsGallery(): JSX.Element {
   return (
     <Layout
       title="Skills Gallery"
-      description={`Browse all ${ALL_SKILLS.length} Claude Skills with beautiful hero images. Expert agents for ML, computer vision, audio, design, and more.`}
+      description={`Browse all ${visibleSkills.length} Claude Skills with beautiful hero images. Expert agents for ML, computer vision, audio, design, and more.`}
     >
       <Head>
         <script type="application/ld+json">
@@ -332,7 +337,7 @@ export default function SkillsGallery(): JSX.Element {
               }}
               title="Clear all filters and show all skills"
             >
-              All Skills ({ALL_SKILLS.length})
+              All Skills ({visibleSkills.length})
             </button>
           </div>
 
@@ -499,7 +504,7 @@ export default function SkillsGallery(): JSX.Element {
           <div className="win31-panel-box win31-panel-box--small-shadow" style={{ marginBottom: 0 }}>
             <div className="win31-statusbar" style={{ justifyContent: 'center', gap: '20px', padding: '20px' }}>
               <div className="win31-statusbar-panel">
-                {filteredSkills.length} of {ALL_SKILLS.length} skills shown
+                {filteredSkills.length} of {visibleSkills.length} skills shown
               </div>
               <div className="win31-statusbar-panel">
                 {selectedCategory === 'all' ? 'All Categories' : selectedCategory}

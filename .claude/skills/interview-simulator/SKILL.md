@@ -5,6 +5,7 @@ description: Designs and orchestrates a realistic interview simulation platform 
   or prep timeline coordination.
 allowed-tools: Read,Write,Edit,Bash,WebSearch,WebFetch
 metadata:
+  gated: true
   category: Career & Interview
   pairs-with:
   - skill: interview-loop-strategist

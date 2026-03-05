@@ -1,7 +1,7 @@
 ---
 title: "Phase Templates: Copy-Paste Prompt Templates"
-sidebar_label: "Phase Templates: Copy-Paste Pr..."
-sidebar_position: 2
+sidebar_label: "Phase Templates: Copy-Paste..."
+sidebar_position: 1
 ---
 # Phase Templates: Copy-Paste Prompt Templates
 

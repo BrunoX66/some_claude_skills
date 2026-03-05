@@ -1,6 +1,6 @@
 ---
 title: Whiteboard Diagrams for Technical Presentations
-sidebar_label: Whiteboard Diagrams for Techni...
+sidebar_label: Whiteboard Diagrams for Tec...
 sidebar_position: 2
 ---
 # Whiteboard Diagrams for Technical Presentations

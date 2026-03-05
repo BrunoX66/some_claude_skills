@@ -1,7 +1,7 @@
 ---
 title: Alerting Patterns Reference
 sidebar_label: Alerting Patterns Reference
-sidebar_position: 2
+sidebar_position: 1
 ---
 # Alerting Patterns Reference
 

@@ -1,6 +1,6 @@
 ---
 title: "Anthropic Reading List: Annotated Papers and Blog Posts"
-sidebar_label: "Anthropic Reading List: Annota..."
+sidebar_label: "Anthropic Reading List: Ann..."
 sidebar_position: 2
 ---
 # Anthropic Reading List: Annotated Papers and Blog Posts

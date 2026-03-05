@@ -5,6 +5,7 @@ description: Professional CV and resume builder transforming career narratives i
   optimization, or interview preparation.
 allowed-tools: Read,Write,Edit,WebFetch,WebSearch
 metadata:
+  gated: true
   category: Business & Monetization
   pairs-with:
   - skill: career-biographer

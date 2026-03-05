@@ -1,6 +1,6 @@
 ---
 title: "Claude Extension Taxonomy: Skills, Plugins, MCPs, Hooks, Agent SDK"
-sidebar_label: "Claude Extension Taxonomy: Ski..."
+sidebar_label: "Claude Extension Taxonomy: ..."
 sidebar_position: 2
 ---
 # Claude Extension Taxonomy: Skills, Plugins, MCPs, Hooks, Agent SDK
