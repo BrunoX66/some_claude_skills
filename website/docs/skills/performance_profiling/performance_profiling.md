@@ -359,39 +359,39 @@ When the user provides profiling data, classify and rank bottlenecks using these
 
 | Signal | Classification |
 |--------|---------------|
-| Any query >500ms | **Critical** — `type: database`. Next step: Run `EXPLAIN ANALYZE` on the query. Look for sequential scans on large tables (missing index) and N+1 patterns (same query repeated with different IDs). |
-| Multiple queries >100ms per request | **High** — `type: database`. Next step: Aggregate query count per endpoint. If >5 queries per request, look for N+1 or missing JOINs. Consider a query count budget per endpoint. |
-| Query count >20 per page load | **High** — `type: database`. Even if individual queries are fast, connection overhead and round-trip latency compound. Next step: Batch with `WHERE id IN (...)` or use a DataLoader pattern. |
+| Any query &gt;500ms | **Critical** — `type: database`. Next step: Run `EXPLAIN ANALYZE` on the query. Look for sequential scans on large tables (missing index) and N+1 patterns (same query repeated with different IDs). |
+| Multiple queries &gt;100ms per request | **High** — `type: database`. Next step: Aggregate query count per endpoint. If &gt;5 queries per request, look for N+1 or missing JOINs. Consider a query count budget per endpoint. |
+| Query count &gt;20 per page load | **High** — `type: database`. Even if individual queries are fast, connection overhead and round-trip latency compound. Next step: Batch with `WHERE id IN (...)` or use a DataLoader pattern. |
 
 ### Priority 2: Event Loop (Node.js-specific — the most underdiagnosed bottleneck)
 
 | Signal | Classification |
 |--------|---------------|
-| ELU >0.8 | **Critical** — `type: cpu`. The event loop is saturated. Next step: Run `clinic flame` or `--prof` to find synchronous hot paths. Common culprits: JSON.parse on large payloads, synchronous crypto, regex backtracking. |
-| ELU >0.5 with slow p99 latency | **High** — `type: cpu`. Event loop contention is causing tail latency. Next step: Look for blocking operations that run infrequently but hold the loop when they do (large sorts, template rendering, PDF generation). |
-| ELU <0.2 with slow responses | **This is NOT a CPU problem.** `type: io`. Next step: The app is waiting on something external (DB, API calls, file system). Trace outbound requests with `clinic bubbleprof` or add timing logs to external calls. |
+| ELU &gt;0.8 | **Critical** — `type: cpu`. The event loop is saturated. Next step: Run `clinic flame` or `--prof` to find synchronous hot paths. Common culprits: JSON.parse on large payloads, synchronous crypto, regex backtracking. |
+| ELU &gt;0.5 with slow p99 latency | **High** — `type: cpu`. Event loop contention is causing tail latency. Next step: Look for blocking operations that run infrequently but hold the loop when they do (large sorts, template rendering, PDF generation). |
+| ELU &lt;0.2 with slow responses | **This is NOT a CPU problem.** `type: io`. Next step: The app is waiting on something external (DB, API calls, file system). Trace outbound requests with `clinic bubbleprof` or add timing logs to external calls. |
 
 ### Priority 3: Memory
 
 | Signal | Classification |
 |--------|---------------|
-| Heap growth rate >10MB/min sustained | **Critical** — `type: memory`. Memory leak will OOM the process. Next step: Take two heap snapshots 5 minutes apart, compare in Chrome DevTools, look for growing object counts (retained size). Common suspects: event listener accumulation, closures capturing request objects, unbounded caches. |
+| Heap growth rate &gt;10MB/min sustained | **Critical** — `type: memory`. Memory leak will OOM the process. Next step: Take two heap snapshots 5 minutes apart, compare in Chrome DevTools, look for growing object counts (retained size). Common suspects: event listener accumulation, closures capturing request objects, unbounded caches. |
 | Heap growth proportional to request rate (resets on GC) | **Medium** — `type: memory`. Not a leak, just high allocation pressure. Next step: Check for unnecessary object creation in hot paths (cloning large objects, building strings with concatenation). Reduce allocation, don't chase GC. |
-| `suspects` array from heap analysis | List each suspect with its retained size. **High** if any single object retains >50MB. Next step: Trace the retainer tree to find why it's not being collected. |
+| `suspects` array from heap analysis | List each suspect with its retained size. **High** if any single object retains &gt;50MB. Next step: Trace the retainer tree to find why it's not being collected. |
 
 ### Priority 4: React Rendering (frontend)
 
 | Signal | Classification |
 |--------|---------------|
-| Component render time >16ms | **High** — `type: rendering`. Dropping frames. Next step: Check if the component re-renders on every parent render (missing `React.memo` or unstable props). Profile with React DevTools "Why did this render?" |
-| >5 re-renders per user interaction | **Medium** — `type: rendering`. Next step: Check for state updates that trigger cascading re-renders. Move state closer to where it's used, or split context providers. |
-| Large component tree (>500 components mounted) | **Medium** — `type: rendering`. Next step: Virtualize lists (`react-window`), lazy-load off-screen components, check for unnecessary mount/unmount cycles. |
+| Component render time &gt;16ms | **High** — `type: rendering`. Dropping frames. Next step: Check if the component re-renders on every parent render (missing `React.memo` or unstable props). Profile with React DevTools "Why did this render?" |
+| &gt;5 re-renders per user interaction | **Medium** — `type: rendering`. Next step: Check for state updates that trigger cascading re-renders. Move state closer to where it's used, or split context providers. |
+| Large component tree (&gt;500 components mounted) | **Medium** — `type: rendering`. Next step: Virtualize lists (`react-window`), lazy-load off-screen components, check for unnecessary mount/unmount cycles. |
 
 ### Priority 5: CPU (non-event-loop)
 
 | Signal | Classification |
 |--------|---------------|
-| Single function >30% of `selfTime` in CPU profile | **High** — `type: cpu`. Hot function dominates. Next step: Read the function. If it's in your code, optimize it. If it's in a library, check if you're calling it unnecessarily or with pathologically large input. |
+| Single function &gt;30% of `selfTime` in CPU profile | **High** — `type: cpu`. Hot function dominates. Next step: Read the function. If it's in your code, optimize it. If it's in a library, check if you're calling it unnecessarily or with pathologically large input. |
 | Flame graph shows wide, flat profile (no single hot function) | **Medium** — `type: cpu`. Death by a thousand cuts. Next step: Look for patterns — are many functions doing similar work? This often means redundant computation (computing the same derived value multiple times per request). |
 
 ### Output Ranking

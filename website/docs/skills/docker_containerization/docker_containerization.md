@@ -360,7 +360,7 @@ The `/health` endpoint should:
 - Return 200 if the process can serve HTTP requests
 - NOT check database connectivity (that's readiness)
 - NOT run expensive queries or computations
-- Respond in <100ms — it runs every 30 seconds
+- Respond in &lt;100ms — it runs every 30 seconds
 
 ```js
 // Minimal /health endpoint

@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # 📦 Mdx Sanitizer
 
-Sanitize MDX content for Docusaurus builds. Fixes unescaped angle brackets (<, >, &lt;=, &gt;=), Liquid/Nunjucks template syntax ({{ }}), TypeScript generics (Promise&lt;T&gt;), and inline code backtick edge cases. Use when pre-commit hooks fail on bracket or Liquid validation, or when MDX/JSX build errors reference unexpected tokens. NOT for general markdown linting or prose editing.
+Sanitize MDX content for Docusaurus builds. Fixes unescaped angle brackets (&lt;, &gt;, &lt;=, &gt;=), Liquid/Nunjucks template syntax (&#123;&#123; &#125;&#125;), TypeScript generics (Promise&lt;T&gt;), and inline code backtick edge cases. Use when pre-commit hooks fail on bracket or Liquid validation, or when MDX/JSX build errors reference unexpected tokens. NOT for general markdown linting or prose editing.
 
 ---
 

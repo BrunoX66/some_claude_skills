@@ -317,21 +317,21 @@ When the user asks which branching strategy to use, apply these rules in order:
 
 3. **Low CI maturity** (`ciMaturity: 'low'`) → **github-flow**
    - Reasoning: Trunk-based without comprehensive CI means broken code on main. GitHub Flow (feature branches + PR review + merge) provides a human safety net. Recommend investing in CI, then graduating to trunk-based.
-   - Migration to trunk-based later: Shorten branch lifetimes to <1 day, add branch protection requiring green CI, then drop the requirement for PR approval on small changes.
+   - Migration to trunk-based later: Shorten branch lifetimes to &lt;1 day, add branch protection requiring green CI, then drop the requirement for PR approval on small changes.
 
 ### Default (most teams)
 
 4. **Everything else** → **trunk-based**
-   - Reasoning: Smallest feedback loops, least merge pain, forces good CI habits. Feature flags handle incomplete work. Short-lived branches (<1 day) are acceptable as a concession.
-   - If team is >15 people: Consider trunk-based with short-lived feature branches (still trunk-based — the branch lives <24h and auto-deletes after merge).
+   - Reasoning: Smallest feedback loops, least merge pain, forces good CI habits. Feature flags handle incomplete work. Short-lived branches (&lt;1 day) are acceptable as a concession.
+   - If team is &gt;15 people: Consider trunk-based with short-lived feature branches (still trunk-based — the branch lives &lt;24h and auto-deletes after merge).
 
 ### Migration paths
 
 | From | To | Steps |
 |------|----|-------|
-| git-flow → trunk-based | 1. Merge `develop` into `main`. 2. Delete `develop`. 3. Set branch protection on `main` (require CI green). 4. Adopt feature flags for incomplete work. 5. Shorten branch lifetime target to <1 day. |
+| git-flow → trunk-based | 1. Merge `develop` into `main`. 2. Delete `develop`. 3. Set branch protection on `main` (require CI green). 4. Adopt feature flags for incomplete work. 5. Shorten branch lifetime target to &lt;1 day. |
 | git-flow → github-flow | 1. Merge `develop` into `main`. 2. Delete `develop` and all `release/*` branches. 3. PR directly to `main`. 4. Tag releases from `main`. |
-| github-flow → trunk-based | 1. Reduce PR size to <200 lines. 2. Add comprehensive CI. 3. Allow direct push to `main` for trivial changes. 4. Keep PRs for larger changes but merge same-day. |
+| github-flow → trunk-based | 1. Reduce PR size to &lt;200 lines. 2. Add comprehensive CI. 3. Allow direct push to `main` for trivial changes. 4. Keep PRs for larger changes but merge same-day. |
 
 ---
 

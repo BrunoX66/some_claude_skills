@@ -424,7 +424,7 @@ Load balancer (nginx, AWS ALB, Kubernetes Service) handles discovery. Clients ca
 
 ### When to build your own vs use a framework
 
-**Use Temporal.io or AWS Step Functions for production sagas.** They solve durable execution, crash recovery, and visibility for you. Building your own saga engine is justified only when: (a) you need <10ms step latency that Temporal's persistence overhead doesn't allow, or (b) your org can't adopt another infrastructure dependency.
+**Use Temporal.io or AWS Step Functions for production sagas.** They solve durable execution, crash recovery, and visibility for you. Building your own saga engine is justified only when: (a) you need &lt;10ms step latency that Temporal's persistence overhead doesn't allow, or (b) your org can't adopt another infrastructure dependency.
 
 If the user is building their own, guide them with this design:
 
