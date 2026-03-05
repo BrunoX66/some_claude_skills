@@ -1,4 +1,9 @@
 {
+  ".archive": {
+    "hasContent": true,
+    "fileCount": 2,
+    "folderCount": 2
+  },
   "2000s-visualization-expert": {
     "hasContent": true,
     "fileCount": 5,
@@ -39,6 +44,11 @@
     "fileCount": 8,
     "folderCount": 4
   },
+  "anthropic-technical-deep-dive": {
+    "hasContent": true,
+    "fileCount": 4,
+    "folderCount": 1
+  },
   "api-architect": {
     "hasContent": true,
     "fileCount": 8,
@@ -59,6 +69,11 @@
     "fileCount": 6,
     "folderCount": 1
   },
+  "caching-strategies": {
+    "hasContent": true,
+    "fileCount": 3,
+    "folderCount": 1
+  },
   "career-biographer": {
     "hasContent": true,
     "fileCount": 2,
@@ -69,10 +84,20 @@
     "fileCount": 1,
     "folderCount": 0
   },
+  "checklist-discipline": {
+    "hasContent": false,
+    "fileCount": 1,
+    "folderCount": 0
+  },
   "claude-ecosystem-promoter": {
     "hasContent": true,
     "fileCount": 5,
     "folderCount": 1
+  },
+  "clinical-diagnostic-reasoning": {
+    "hasContent": false,
+    "fileCount": 1,
+    "folderCount": 0
   },
   "clip-aware-embeddings": {
     "hasContent": true,
@@ -80,9 +105,14 @@
     "folderCount": 1
   },
   "cloudflare-worker-dev": {
-    "hasContent": false,
+    "hasContent": true,
     "fileCount": 1,
-    "folderCount": 0
+    "folderCount": 2
+  },
+  "code-architecture": {
+    "hasContent": true,
+    "fileCount": 3,
+    "folderCount": 1
   },
   "code-necromancer": {
     "hasContent": true,
@@ -114,15 +144,25 @@
     "fileCount": 6,
     "folderCount": 2
   },
+  "component-template-generator": {
+    "hasContent": true,
+    "fileCount": 3,
+    "folderCount": 1
+  },
   "computer-vision-pipeline": {
     "hasContent": true,
     "fileCount": 6,
-    "folderCount": 2
+    "folderCount": 3
   },
   "cost-accrual-tracker": {
     "hasContent": true,
     "fileCount": 2,
     "folderCount": 1
+  },
+  "cost-optimizer": {
+    "hasContent": false,
+    "fileCount": 1,
+    "folderCount": 0
   },
   "cost-verification-auditor": {
     "hasContent": true,
@@ -132,7 +172,7 @@
   "crisis-detection-intervention-ai": {
     "hasContent": true,
     "fileCount": 6,
-    "folderCount": 2
+    "folderCount": 3
   },
   "crisis-response-protocol": {
     "hasContent": false,
@@ -143,131 +183,6 @@
     "hasContent": true,
     "fileCount": 5,
     "folderCount": 1
-  },
-  "dag-capability-ranker": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-confidence-scorer": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-context-bridger": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-convergence-monitor": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-dependency-resolver": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-dynamic-replanner": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-execution-tracer": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-executor": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-failure-analyzer": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-feedback-synthesizer": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-graph-builder": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-hallucination-detector": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-isolation-manager": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-iteration-detector": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-output-validator": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-parallel-executor": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-pattern-learner": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-performance-profiler": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-permission-validator": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-result-aggregator": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-scope-enforcer": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-semantic-matcher": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-skill-registry": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-task-scheduler": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
-  },
-  "dag-visual-editor-design": {
-    "hasContent": false,
-    "fileCount": 1,
-    "folderCount": 0
   },
   "dark-mode-design-expert": {
     "hasContent": true,
@@ -284,6 +199,21 @@
     "fileCount": 10,
     "folderCount": 3
   },
+  "database-design-patterns": {
+    "hasContent": true,
+    "fileCount": 3,
+    "folderCount": 1
+  },
+  "dependency-management": {
+    "hasContent": true,
+    "fileCount": 3,
+    "folderCount": 1
+  },
+  "design-accessibility-auditor": {
+    "hasContent": false,
+    "fileCount": 1,
+    "folderCount": 0
+  },
   "design-archivist": {
     "hasContent": true,
     "fileCount": 5,
@@ -291,8 +221,8 @@
   },
   "design-critic": {
     "hasContent": true,
-    "fileCount": 5,
-    "folderCount": 1
+    "fileCount": 8,
+    "folderCount": 2
   },
   "design-justice": {
     "hasContent": true,
@@ -304,10 +234,20 @@
     "fileCount": 5,
     "folderCount": 1
   },
+  "design-system-documenter": {
+    "hasContent": true,
+    "fileCount": 3,
+    "folderCount": 1
+  },
   "design-system-generator": {
     "hasContent": true,
-    "fileCount": 2,
-    "folderCount": 1
+    "fileCount": 10,
+    "folderCount": 2
+  },
+  "design-trend-analyzer": {
+    "hasContent": false,
+    "fileCount": 1,
+    "folderCount": 0
   },
   "devops-automator": {
     "hasContent": true,
@@ -324,10 +264,15 @@
     "fileCount": 2,
     "folderCount": 1
   },
+  "docker-containerization": {
+    "hasContent": true,
+    "fileCount": 3,
+    "folderCount": 1
+  },
   "document-generation-pdf": {
     "hasContent": true,
     "fileCount": 6,
-    "folderCount": 2
+    "folderCount": 3
   },
   "drizzle-migrations": {
     "hasContent": false,
@@ -349,14 +294,14 @@
     "fileCount": 1,
     "folderCount": 0
   },
+  "error-handling-patterns": {
+    "hasContent": true,
+    "fileCount": 3,
+    "folderCount": 1
+  },
   "event-detection-temporal-intelligence-expert": {
     "hasContent": true,
     "fileCount": 6,
-    "folderCount": 1
-  },
-  "execution-lifecycle-manager": {
-    "hasContent": true,
-    "fileCount": 2,
     "folderCount": 1
   },
   "fancy-yard-landscaper": {
@@ -376,8 +321,8 @@
   },
   "frontend-architect": {
     "hasContent": true,
-    "fileCount": 4,
-    "folderCount": 1
+    "fileCount": 7,
+    "folderCount": 2
   },
   "fullstack-debugger": {
     "hasContent": true,
@@ -387,7 +332,12 @@
   "geospatial-data-pipeline": {
     "hasContent": true,
     "fileCount": 6,
-    "folderCount": 2
+    "folderCount": 3
+  },
+  "git-workflow-expert": {
+    "hasContent": true,
+    "fileCount": 3,
+    "folderCount": 1
   },
   "github-actions-pipeline-builder": {
     "hasContent": true,
@@ -409,6 +359,11 @@
     "fileCount": 1,
     "folderCount": 0
   },
+  "hiring-manager-deep-dive": {
+    "hasContent": true,
+    "fileCount": 3,
+    "folderCount": 1
+  },
   "hr-network-analyst": {
     "hasContent": true,
     "fileCount": 7,
@@ -419,12 +374,32 @@
     "fileCount": 5,
     "folderCount": 1
   },
+  "human-centered-design-fundamentals": {
+    "hasContent": false,
+    "fileCount": 1,
+    "folderCount": 0
+  },
+  "human-gate-designer": {
+    "hasContent": false,
+    "fileCount": 1,
+    "folderCount": 0
+  },
   "indie-monetization-strategist": {
     "hasContent": true,
     "fileCount": 5,
     "folderCount": 1
   },
   "interior-design-expert": {
+    "hasContent": true,
+    "fileCount": 6,
+    "folderCount": 1
+  },
+  "interview-loop-strategist": {
+    "hasContent": true,
+    "fileCount": 4,
+    "folderCount": 1
+  },
+  "interview-simulator": {
     "hasContent": true,
     "fileCount": 6,
     "folderCount": 1
@@ -445,9 +420,9 @@
     "folderCount": 1
   },
   "large-scale-map-visualization": {
-    "hasContent": false,
+    "hasContent": true,
     "fileCount": 1,
-    "folderCount": 0
+    "folderCount": 1
   },
   "launch-readiness-auditor": {
     "hasContent": false,
@@ -459,10 +434,20 @@
     "fileCount": 1,
     "folderCount": 0
   },
+  "llm-router": {
+    "hasContent": true,
+    "fileCount": 2,
+    "folderCount": 0
+  },
   "llm-streaming-response-handler": {
     "hasContent": true,
     "fileCount": 6,
-    "folderCount": 2
+    "folderCount": 3
+  },
+  "logging-observability": {
+    "hasContent": true,
+    "fileCount": 3,
+    "folderCount": 1
   },
   "maximalist-wall-decorator": {
     "hasContent": true,
@@ -479,9 +464,29 @@
     "fileCount": 1,
     "folderCount": 0
   },
+  "mermaid-graph-renderer": {
+    "hasContent": true,
+    "fileCount": 2,
+    "folderCount": 0
+  },
+  "mermaid-graph-writer": {
+    "hasContent": true,
+    "fileCount": 4,
+    "folderCount": 2
+  },
   "metal-shader-expert": {
     "hasContent": true,
     "fileCount": 6,
+    "folderCount": 1
+  },
+  "microservices-patterns": {
+    "hasContent": true,
+    "fileCount": 3,
+    "folderCount": 1
+  },
+  "ml-system-design-interview": {
+    "hasContent": true,
+    "fileCount": 4,
     "folderCount": 1
   },
   "mobile-ux-optimizer": {
@@ -499,6 +504,16 @@
     "fileCount": 3,
     "folderCount": 1
   },
+  "monorepo-management": {
+    "hasContent": true,
+    "fileCount": 3,
+    "folderCount": 1
+  },
+  "munger-worldly-wisdom": {
+    "hasContent": false,
+    "fileCount": 1,
+    "folderCount": 0
+  },
   "national-expungement-expert": {
     "hasContent": true,
     "fileCount": 2,
@@ -515,21 +530,26 @@
     "folderCount": 1
   },
   "nextjs-app-router-expert": {
-    "hasContent": false,
+    "hasContent": true,
     "fileCount": 1,
-    "folderCount": 0
+    "folderCount": 1
   },
   "oauth-oidc-implementer": {
-    "hasContent": false,
+    "hasContent": true,
     "fileCount": 1,
-    "folderCount": 0
+    "folderCount": 1
   },
   "openapi-spec-writer": {
+    "hasContent": true,
+    "fileCount": 1,
+    "folderCount": 1
+  },
+  "orchestrator": {
     "hasContent": false,
     "fileCount": 1,
     "folderCount": 0
   },
-  "orchestrator": {
+  "output-contract-enforcer": {
     "hasContent": false,
     "fileCount": 1,
     "folderCount": 0
@@ -542,6 +562,11 @@
   "partner-text-coach": {
     "hasContent": true,
     "fileCount": 2,
+    "folderCount": 1
+  },
+  "performance-profiling": {
+    "hasContent": true,
+    "fileCount": 3,
     "folderCount": 1
   },
   "personal-finance-coach": {
@@ -570,24 +595,29 @@
     "folderCount": 1
   },
   "pixel-art-infographic-creator": {
-    "hasContent": false,
+    "hasContent": true,
     "fileCount": 1,
-    "folderCount": 0
+    "folderCount": 1
+  },
+  "pixel-art-scaler": {
+    "hasContent": true,
+    "fileCount": 4,
+    "folderCount": 3
   },
   "playwright-e2e-tester": {
-    "hasContent": false,
+    "hasContent": true,
     "fileCount": 1,
-    "folderCount": 0
+    "folderCount": 1
   },
   "playwright-screenshot-inspector": {
-    "hasContent": false,
+    "hasContent": true,
     "fileCount": 1,
-    "folderCount": 0
+    "folderCount": 1
   },
   "postgresql-optimization": {
-    "hasContent": false,
+    "hasContent": true,
     "fileCount": 1,
-    "folderCount": 0
+    "folderCount": 1
   },
   "product-appeal-analyzer": {
     "hasContent": true,
@@ -612,7 +642,12 @@
   "react-performance-optimizer": {
     "hasContent": true,
     "fileCount": 6,
-    "folderCount": 2
+    "folderCount": 3
+  },
+  "reactflow-expert": {
+    "hasContent": false,
+    "fileCount": 1,
+    "folderCount": 0
   },
   "reactive-dashboard-performance": {
     "hasContent": false,
@@ -622,7 +657,7 @@
   "real-time-collaboration-engine": {
     "hasContent": true,
     "fileCount": 6,
-    "folderCount": 2
+    "folderCount": 3
   },
   "recovery-app-legal-terms": {
     "hasContent": true,
@@ -654,12 +689,22 @@
     "fileCount": 7,
     "folderCount": 1
   },
+  "recursive-synthesis": {
+    "hasContent": true,
+    "fileCount": 3,
+    "folderCount": 1
+  },
   "refactoring-surgeon": {
     "hasContent": true,
     "fileCount": 7,
     "folderCount": 2
   },
   "research-analyst": {
+    "hasContent": false,
+    "fileCount": 1,
+    "folderCount": 0
+  },
+  "research-craft": {
     "hasContent": false,
     "fileCount": 1,
     "folderCount": 0
@@ -674,6 +719,11 @@
     "fileCount": 5,
     "folderCount": 2
   },
+  "senior-coding-interview": {
+    "hasContent": true,
+    "fileCount": 4,
+    "folderCount": 1
+  },
   "seo-visibility-expert": {
     "hasContent": true,
     "fileCount": 5,
@@ -686,13 +736,13 @@
   },
   "skill-architect": {
     "hasContent": true,
-    "fileCount": 7,
-    "folderCount": 1
+    "fileCount": 14,
+    "folderCount": 2
   },
   "skill-coach": {
     "hasContent": true,
     "fileCount": 18,
-    "folderCount": 6
+    "folderCount": 19
   },
   "skill-creator": {
     "hasContent": true,
@@ -704,10 +754,20 @@
     "fileCount": 10,
     "folderCount": 3
   },
+  "skill-grader": {
+    "hasContent": true,
+    "fileCount": 2,
+    "folderCount": 0
+  },
   "skill-logger": {
     "hasContent": true,
     "fileCount": 2,
     "folderCount": 1
+  },
+  "skillful-subagent-creator": {
+    "hasContent": true,
+    "fileCount": 2,
+    "folderCount": 0
   },
   "sober-addict-protector": {
     "hasContent": true,
@@ -717,7 +777,7 @@
   "sobriety-tools-guardian": {
     "hasContent": true,
     "fileCount": 7,
-    "folderCount": 2
+    "folderCount": 3
   },
   "sound-engineer": {
     "hasContent": true,
@@ -732,9 +792,19 @@
   "supabase-admin": {
     "hasContent": true,
     "fileCount": 3,
-    "folderCount": 1
+    "folderCount": 2
   },
   "swift-executor": {
+    "hasContent": false,
+    "fileCount": 1,
+    "folderCount": 0
+  },
+  "systems-thinking": {
+    "hasContent": false,
+    "fileCount": 1,
+    "folderCount": 0
+  },
+  "task-decomposer": {
     "hasContent": false,
     "fileCount": 1,
     "folderCount": 0
@@ -749,19 +819,29 @@
     "fileCount": 6,
     "folderCount": 1
   },
+  "tech-presentation-interview": {
+    "hasContent": true,
+    "fileCount": 3,
+    "folderCount": 1
+  },
   "technical-writer": {
     "hasContent": true,
     "fileCount": 7,
     "folderCount": 2
   },
   "terraform-iac-expert": {
-    "hasContent": false,
+    "hasContent": true,
     "fileCount": 1,
-    "folderCount": 0
+    "folderCount": 1
   },
   "test-automation-expert": {
     "hasContent": true,
     "fileCount": 6,
+    "folderCount": 1
+  },
+  "typescript-advanced-patterns": {
+    "hasContent": true,
+    "fileCount": 3,
     "folderCount": 1
   },
   "typography-expert": {
@@ -774,6 +854,11 @@
     "fileCount": 1,
     "folderCount": 0
   },
+  "values-behavioral-interview": {
+    "hasContent": true,
+    "fileCount": 4,
+    "folderCount": 1
+  },
   "vaporwave-glassomorphic-ui-designer": {
     "hasContent": true,
     "fileCount": 6,
@@ -782,6 +867,11 @@
   "vercel-deployment": {
     "hasContent": false,
     "fileCount": 1,
+    "folderCount": 0
+  },
+  "very-long-text-summarization": {
+    "hasContent": true,
+    "fileCount": 2,
     "folderCount": 0
   },
   "vibe-matcher": {
@@ -830,6 +920,11 @@
     "folderCount": 1
   },
   "webapp-testing": {
+    "hasContent": false,
+    "fileCount": 1,
+    "folderCount": 0
+  },
+  "websocket-streaming": {
     "hasContent": false,
     "fileCount": 1,
     "folderCount": 0

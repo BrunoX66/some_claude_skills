@@ -84,7 +84,7 @@ export default function SkillGalleryCard({
     >
       <div className={imageContainerClass}>
         <img
-          src={`${basePath}/img/skills/${skill.id}-hero.png`}
+          src={skill.heroImage || `${basePath}/img/skills/${skill.id}-hero.webp`}
           alt={skill.title}
           className="skill-card__image"
         />

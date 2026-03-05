@@ -76,7 +76,7 @@ The brain's pattern-detection system that decides what's important.
 ### In Recovery:
 - Salience network recalibrates over 2-4 weeks
 - Paranoia fades as dopamine normalizes
-- If persists >30 days → may need antipsychotic support
+- If persists &gt;30 days → may need antipsychotic support
 
 ---
 

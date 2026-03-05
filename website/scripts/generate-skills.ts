@@ -16,7 +16,7 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { parseAllSkills, validateSkill } from './lib/skill-parser';
+import { parseAllSkills, validateSkill, getExcludedSkillIds } from './lib/skill-parser';
 import { generateSkillsTs, generateSkillDescriptionsJson } from './lib/skill-generator';
 import { generateSkillDocs, cleanupOldDocs } from './lib/doc-generator';
 import {
@@ -156,10 +156,14 @@ async function generateSkills(
     );
     console.log(`   Generated ${generatedDocs.length} doc files\n`);
 
-    // Cleanup old docs
-    const removed = cleanupOldDocs(options.docsOutputDir, skills);
+    // Cleanup old docs (protect private/deprecated skills from deletion)
+    const excludedIds = getExcludedSkillIds(options.skillsSourceDir);
+    const removed = cleanupOldDocs(options.docsOutputDir, skills, excludedIds);
     if (removed.length > 0) {
       console.log(`   Removed ${removed.length} obsolete doc folders: ${removed.join(', ')}\n`);
+    }
+    if (excludedIds.length > 0 && options.verbose) {
+      console.log(`   Protected ${excludedIds.length} private/deprecated skill docs from cleanup\n`);
     }
   } catch (error) {
     errors.push({

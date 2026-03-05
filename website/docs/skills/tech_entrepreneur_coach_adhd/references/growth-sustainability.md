@@ -1,6 +1,6 @@
 ---
-title: Growth & Sustainability
-sidebar_label: Growth & Sustainability
+title: "Growth & Sustainability"
+sidebar_label: "Growth & Sustainability"
 sidebar_position: 2
 ---
 # Growth & Sustainability

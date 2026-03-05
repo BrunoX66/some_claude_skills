@@ -349,12 +349,12 @@ Brief profiles for states with moderate eligibility:
 
 States with enhanced marijuana expungement:
 - **California**: Automatic review (AB 1793)
-- **Illinois**: Automatic < 30g possession
+- **Illinois**: Automatic &lt; 30g possession
 - **Colorado**: Cannabis conviction sealing
 - **New Jersey**: Included in Clean Slate
 - **Oregon**: 1-year wait (vs 3 for other misdemeanors)
 - **New York**: Automatic for marijuana convictions
-- **Vermont**: Automatic for possession < 1 oz
+- **Vermont**: Automatic for possession &lt; 1 oz
 
 ### Juvenile Records
 

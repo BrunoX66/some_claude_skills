@@ -12,6 +12,14 @@ import * as path from 'path';
 import { ParsedSkill, SKILL_CATEGORIES } from './types';
 import { sanitizeForMdx } from './mdx-sanitizer';
 
+/** Quote a string for YAML frontmatter if it contains special chars (: & etc.) */
+function yamlSafe(str: string): string {
+  if (/[:&#*?|>{}\[\]!%@`]/.test(str)) {
+    return `"${str.replace(/"/g, '\\"')}"`;
+  }
+  return str;
+}
+
 // =============================================================================
 // DOC GENERATION
 // =============================================================================
@@ -128,7 +136,7 @@ ${skill.references.map((r) => `- [${r.title}](./references/${r.name})`).join('\n
       : '';
 
   return `---
-sidebar_label: ${skill.title}
+sidebar_label: ${yamlSafe(skill.title)}
 sidebar_position: 1
 ---
 
@@ -173,9 +181,10 @@ function copyReferences(
       // Add frontmatter if missing
       if (!content.startsWith('---')) {
         const title = extractTitleOrDefault(content, file);
+        const sidebarLabel = title.substring(0, 30) + (title.length > 30 ? '...' : '');
         content = `---
-title: ${title}
-sidebar_label: ${title.substring(0, 30)}${title.length > 30 ? '...' : ''}
+title: ${yamlSafe(title)}
+sidebar_label: ${yamlSafe(sidebarLabel)}
 sidebar_position: 2
 ---
 ${content}`;
@@ -243,7 +252,8 @@ function generateCategoryIndex(
 
 export function cleanupOldDocs(
   outputDir: string,
-  currentSkills: ParsedSkill[]
+  currentSkills: ParsedSkill[],
+  protectedIds: string[] = []
 ): string[] {
   const removed: string[] = [];
 
@@ -252,13 +262,17 @@ export function cleanupOldDocs(
   }
 
   const currentIds = new Set(currentSkills.map((s) => s.id.replace(/-/g, '_')));
+  // Private/deprecated skills are excluded from currentSkills but their docs
+  // must NOT be deleted — they may contain important content (e.g. WinDAGs V3).
+  const protectedSet = new Set(protectedIds.map((id) => id.replace(/-/g, '_')));
+
   const entries = fs.readdirSync(outputDir, { withFileTypes: true });
 
   for (const entry of entries) {
     if (!entry.isDirectory()) continue;
     if (entry.name.startsWith('_')) continue; // Skip special directories
 
-    if (!currentIds.has(entry.name)) {
+    if (!currentIds.has(entry.name) && !protectedSet.has(entry.name)) {
       const dirPath = path.join(outputDir, entry.name);
       fs.rmSync(dirPath, { recursive: true });
       removed.push(entry.name);

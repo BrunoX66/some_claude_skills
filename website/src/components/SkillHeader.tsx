@@ -45,7 +45,7 @@ export default function SkillHeader({ skillName, fileName, description, tags }: 
         }}
       >
         <img
-          src={`/img/skills/${skillId}-hero.png`}
+          src={`/img/skills/${skillId}-hero.webp`}
           alt={`${skillName} Hero`}
           style={{
             width: '100%',

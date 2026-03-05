@@ -63,7 +63,7 @@ export function DAGVisualizer({
               resolve();
             };
             img.onerror = () => resolve(); // Continue even if image fails to load
-            img.src = `/img/skills/${node.skillId}-hero.png`;
+            img.src = `/img/skills/${node.skillId}-hero.webp`;
           });
           promises.push(promise);
         }

@@ -17,7 +17,7 @@ Key principles:
 
 ## Layout Architecture
 
-### Mobile Viewport (< 640px)
+### Mobile Viewport (&lt; 640px)
 
 ```
 ┌────────────────────────────┐
@@ -358,7 +358,7 @@ document.addEventListener('touchend', (e) => {
 
 | Breakpoint | Metaphor | Layout Changes |
 |------------|----------|----------------|
-| < 480px | Pocket PC | Single column, large icons, simplified menu |
+| &lt; 480px | Pocket PC | Single column, large icons, simplified menu |
 | 480-640px | Small tablet | 2-column icons, condensed taskbar |
 | 640-1024px | Tablet landscape | Side-by-side windows possible |
 | > 1024px | Desktop | Full Win95 experience |

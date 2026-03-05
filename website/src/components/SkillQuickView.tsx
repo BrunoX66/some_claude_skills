@@ -96,7 +96,7 @@ export default function SkillQuickView({ skill, onClose, isStarred = false, onTo
         {/* Hero Image */}
         <div style={{ position: 'relative', paddingBottom: '45%', background: '#000' }}>
           <img
-            src={useBaseUrl(`/img/skills/${skill.id}-hero.png`)}
+            src={skill.heroImage ? useBaseUrl(skill.heroImage) : useBaseUrl(`/img/skills/${skill.id}-hero.webp`)}
             alt={skill.title}
             style={{
               position: 'absolute',

@@ -92,7 +92,7 @@ The frustration you feel—lying awake, knowing you need sleep—is real and val
 - **Ambien/Lunesta:** Addiction potential, weird side effects (sleep-eating, sleep-driving).
 
 **If insomnia is severe:**
-- **Talk to a doctor.** If you're getting <3 hours/night for more than a week, that's not sustainable. Short-term medication can bridge you through the worst of it.
+- **Talk to a doctor.** If you're getting &lt;3 hours/night for more than a week, that's not sustainable. Short-term medication can bridge you through the worst of it.
 - **Cognitive Behavioral Therapy for Insomnia (CBT-I):** Evidence-based therapy that's as effective as medication, without side effects.
 
 **Most important:**
@@ -107,7 +107,7 @@ Insomnia in early recovery is normal, but some symptoms warrant immediate medica
 
 - **Hallucinations or confusion** (sign of severe withdrawal—medical emergency)
 - **Suicidal thoughts** due to sleep deprivation
-- **<3 hours of sleep per night for more than 2 weeks** (increases relapse risk, medical intervention needed)
+- **&lt;3 hours of sleep per night for more than 2 weeks** (increases relapse risk, medical intervention needed)
 
 Resources:
 - **Crisis line:** 988 (Suicide & Crisis Lifeline)

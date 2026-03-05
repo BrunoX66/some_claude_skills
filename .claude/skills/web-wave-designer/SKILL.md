@@ -1,17 +1,13 @@
 ---
 name: web-wave-designer
-description: Creates realistic ocean and water wave effects for web using SVG filters (feTurbulence, feDisplacementMap), CSS animations, and layering techniques. Use for ocean backgrounds, underwater distortion, beach scenes, ripple effects, liquid glass, and water-themed UI. Activate on "ocean wave", "water effect", "SVG water", "ripple animation", "underwater distortion", "liquid glass", "wave animation", "feTurbulence water", "beach waves", "sea foam". NOT for 3D ocean simulation (use WebGL/Three.js), video water effects (use video editing), physics-based fluid simulation (use canvas/WebGL), or simple gradient backgrounds without wave motion.
+description: Creates realistic ocean and water wave effects for web using SVG filters (feTurbulence, feDisplacementMap), CSS animations, and layering techniques. Use for ocean backgrounds, underwater distortion,
+  beach scenes, ripple effects, liquid glass, and water-themed UI. Activate on "ocean wave", "water effect", "SVG water", "ripple animation", "underwater distortion", "liquid glass", "wave animation", "feTurbulence
+  water", "beach waves", "sea foam". NOT for 3D ocean simulation (use WebGL/Three.js), video water effects (use video editing), physics-based fluid simulation (use canvas/WebGL), or simple gradient backgrounds
+  without wave motion.
 allowed-tools: Read,Write,Edit,WebFetch,Bash
-category: Design & Creative
-tags:
-  - svg
-  - css
-  - animation
-  - water
-  - ocean
-  - visual-effects
-  - web
-pairs-with:
+metadata:
+  category: Design & Creative
+  pairs-with:
   - skill: web-cloud-designer
     reason: Complete atmospheric scenes with sky and water
   - skill: physics-rendering-expert
@@ -20,6 +16,14 @@ pairs-with:
     reason: Ocean palettes and depth gradients
   - skill: web-design-expert
     reason: Integrate water effects into overall web design
+  tags:
+  - svg
+  - css
+  - animation
+  - water
+  - ocean
+  - visual-effects
+  - web
 ---
 
 # Web Wave Designer
@@ -94,9 +98,9 @@ Source -> feTurbulence -> feDisplacementMap -> feComponentTransfer -> feComposit
 | 0.03 | 0.03 | Square ripples (pond) |
 
 The ratio matters:
-- **X << Y**: Stretched horizontal waves (ocean)
+- **X much less than Y**: Stretched horizontal waves (ocean)
 - **X == Y**: Circular ripples (pond, pool)
-- **X >> Y**: Vertical striations (waterfall)
+- **X much greater than Y**: Vertical striations (waterfall)
 
 ### 2. feDisplacementMap - Refraction Effect
 
@@ -803,7 +807,7 @@ For simple, high-performance waves without SVG filters:
 ### Critical Rules
 
 1. **Use `type="turbulence"`** - Correct type for water (not fractalNoise)
-2. **numOctaves <= 4** - Above 4 minimal visual gain, exponential CPU cost
+2. **numOctaves 4 or fewer** - Above 4 minimal visual gain, exponential CPU cost
 3. **Scale 10-30** - Above 40 becomes unrealistic and slower
 4. **Avoid animating baseFrequency** - Use CSS transforms or seed animation instead
 5. **GPU hints** - Add `will-change: transform` on animated layers

@@ -174,7 +174,7 @@ export default function SkillListView({ skills, basePath = '' }: SkillListViewPr
               {/* Hero Image Thumbnail */}
               <div className={styles.heroThumb}>
                 <img
-                  src={`${basePath}/img/skills/${skill.id}-hero.png`}
+                  src={skill.heroImage || `${basePath}/img/skills/${skill.id}-hero.webp`}
                   alt={skill.title}
                   className={styles.heroImg}
                 />

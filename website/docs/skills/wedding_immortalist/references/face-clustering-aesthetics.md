@@ -1,7 +1,7 @@
 ---
-title: Face Clustering & Aesthetic Photo Selection
-sidebar_label: Face Clustering & Aesthetic...
-sidebar_position: 1
+title: "Face Clustering & Aesthetic Photo Selection"
+sidebar_label: "Face Clustering & Aesthetic Ph..."
+sidebar_position: 2
 ---
 # Face Clustering & Aesthetic Photo Selection
 

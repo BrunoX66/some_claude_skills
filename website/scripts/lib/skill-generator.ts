@@ -210,7 +210,7 @@ function buildSkillEntry(skill: ParsedSkill): string {
   // Check for hero image
   let heroImageStr = '';
   const staticDir = path.resolve(__dirname, '../../static/img/skills');
-  const possibleExtensions = ['.png', '.webp', '.jpg', '.jpeg'];
+  const possibleExtensions = ['.webp', '.png', '.jpg', '.jpeg'];
   for (const ext of possibleExtensions) {
     const heroImagePath = path.join(staticDir, `${skill.id}-hero${ext}`);
     if (fs.existsSync(heroImagePath)) {

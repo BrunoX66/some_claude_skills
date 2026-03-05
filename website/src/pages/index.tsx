@@ -409,7 +409,7 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
                       </div>
                     )}
                     <img
-                      src={`/img/skills/${skill.id}-hero.png`}
+                      src={skill.heroImage || `/img/skills/${skill.id}-hero.webp`}
                       alt={skill.title}
                       className="skills-marquee-horizontal__img"
                       onClick={() => handleSkillClick(skill)}

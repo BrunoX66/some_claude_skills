@@ -441,8 +441,8 @@ PAWS is normal, but some symptoms warrant professional intervention:
 
 - **Suicidal ideation:** Thoughts of self-harm or suicide
 - **Severe depression:** Can't get out of bed, no improvement after 3+ months
-- **Psychosis:** Hallucinations, delusions, paranoia persisting >30 days
-- **Severe insomnia:** <3 hours/night for weeks despite sleep hygiene
+- **Psychosis:** Hallucinations, delusions, paranoia persisting &gt;30 days
+- **Severe insomnia:** &lt;3 hours/night for weeks despite sleep hygiene
 - **Functional impairment:** Can't work, care for self, maintain relationships
 
 **Resources:**

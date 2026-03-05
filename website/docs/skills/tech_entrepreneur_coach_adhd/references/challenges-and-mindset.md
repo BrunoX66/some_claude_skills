@@ -1,7 +1,7 @@
 ---
-title: Common Challenges & Mindset
-sidebar_label: Common Challenges & Mindset
-sidebar_position: 1
+title: "Common Challenges & Mindset"
+sidebar_label: "Common Challenges & Mindset"
+sidebar_position: 2
 ---
 # Common Challenges & Mindset
 

@@ -111,7 +111,10 @@ function generateOgImage(config: OgImageConfig): string {
   }
 
   // Check if hero image exists
-  const heroPath = heroImagePath || path.join(HERO_IMAGES_DIR, `${skillName}-hero.png`);
+  // Check webp first, fall back to png
+  const webpPath = path.join(HERO_IMAGES_DIR, `${skillName}-hero.webp`);
+  const pngPath = path.join(HERO_IMAGES_DIR, `${skillName}-hero.png`);
+  const heroPath = heroImagePath || (fs.existsSync(webpPath) ? webpPath : pngPath);
   const hasHeroImage = fs.existsSync(heroPath);
 
   // Build ImageMagick command

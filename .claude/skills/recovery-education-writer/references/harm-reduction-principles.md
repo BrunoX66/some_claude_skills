@@ -79,7 +79,7 @@ Harm reduction is a public health approach that meets people where they are, wit
 > - Sleep (even a few hours helps—paranoia intensifies with sleep deprivation)
 > - Avoid redosing (more meth = more paranoia)
 > - Tell someone you trust (isolation makes it worse)
-> - If paranoia persists >48 hours, seek medical help (antipsychotics can help)"
+> - If paranoia persists &gt;48 hours, seek medical help (antipsychotics can help)"
 
 ---
 
@@ -167,7 +167,7 @@ Harm reduction is a public health approach that meets people where they are, wit
 > - Sleep (even a few hours helps reset your brain)
 > - Hydrate (dehydration worsens psychosis)
 > - Avoid mixing with alcohol or other drugs
-> - If paranoia is severe or persists >48 hours, seek medical help—antipsychotics can help even if you're still using."
+> - If paranoia is severe or persists &gt;48 hours, seek medical help—antipsychotics can help even if you're still using."
 
 ---
 

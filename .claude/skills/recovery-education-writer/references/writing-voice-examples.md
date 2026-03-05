@@ -89,13 +89,13 @@ This document provides annotated examples of the recovery education writing voic
 >
 > 6. **Seek medical help if:**
 >    - Paranoia is severe (you're at risk of harming yourself or others)
->    - It's been >48 hours and it's not improving
+>    - It's been &gt;48 hours and it's not improving
 >    - You're hallucinating (seeing/hearing things that aren't there)
 >    - Emergency rooms can provide antipsychotics (Haldol, Zyprexa) that quickly reduce psychosis. You don't have to tell them you used meth—"I'm experiencing severe paranoia" is enough.
 >
 > **If you're in early recovery and paranoia is lingering:**
 >
-> 1. **Give it time.** If it's been <30 days since you stopped using, your brain is still recalibrating. Most people notice significant improvement by week 3-4.
+> 1. **Give it time.** If it's been &lt;30 days since you stopped using, your brain is still recalibrating. Most people notice significant improvement by week 3-4.
 >
 > 2. **See a psychiatrist.** If paranoia persists beyond 30 days, you may need short-term antipsychotic medication. This doesn't mean you're "crazy"—it means meth temporarily disrupted your dopamine system more than usual.
 >
