@@ -22,7 +22,7 @@ Read, Write, Glob
 ## 🤝 Pairs Great With
 
 - **[Design System Generator](/docs/skills/design_system_generator)**: Document tokens after generation
-- **[Docs Architect](/docs/skills/docs_architect)**: Integrate into broader documentation
+- **[Technical Writer](/docs/skills/technical_writer)**: Integrate into broader documentation
 
 ## References
 

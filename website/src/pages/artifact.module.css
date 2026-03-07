@@ -184,6 +184,34 @@
   letter-spacing: 1px;
 }
 
+/* Editorial Note - Callout for updates */
+.editorialNote {
+  background: #fffde7;
+  border-left: 4px solid var(--win31-navy);
+  padding: 12px 16px;
+  font-family: var(--font-system);
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.editorialNote p {
+  margin: 4px 0 0 0;
+}
+
+.editorialNote a {
+  color: var(--win31-navy);
+  text-decoration: underline;
+}
+
+.editorialLabel {
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--win31-navy);
+}
+
 /* Exposition - Blog-like narrative window */
 .exposition {
   background: var(--win31-gray);

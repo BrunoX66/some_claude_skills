@@ -115,12 +115,14 @@
     ]
   },
   "heroImage": "/img/artifacts/skill-coach-self-improvement-hero_2025-11-25T09-00-16-040Z.png",
+  "author": "Erich Owens",
   "createdAt": "2024-11-24T23:00:00Z",
   "featured": true,
   "viewCount": 0,
+  "editorialNote": "March 6th, 2026. skill-coach went on to be supplanted by [skill-architect](/docs/skills/skill_architect), but the love of meta skills kept growing. See what happened next at [windags.ai](https://windags.ai).",
   "narrative": [
     "What happens when you turn a skill designed to improve other skills... on itself? That's the deliciously meta question behind this artifact. The skill-coach—an AI agent that teaches other AI agents how to be better—spent an afternoon looking in the mirror, critiquing its own prompt engineering, and systematically upgrading its own brain. It's like watching a chef taste their own cooking and immediately knowing how to make it better.",
     "Across five focused iterations, skill-coach dissected its own structure with surgical precision. It added anti-pattern detection (\"stop making these rookie mistakes\"), built decision trees (\"when should you even create a skill?\"), and introduced progressive disclosure principles that actually made it SHORTER while becoming more comprehensive—482 lines down to 470, but vastly more useful. Each iteration had a clear mission: Foundation, Actionability, Expert Knowledge, Usability, Decision Support. No fluff, just targeted improvements.",
-    "The outcome? A skill that practices what it preaches. It demonstrates its own core principles—progressive disclosure, anti-pattern awareness, temporal knowledge capture—by applying them to itself. This isn't just documentation of an improvement process; it's proof that AI agents can participate in their own evolution through structured self-reflection. The full transcript, before/after comparisons, and validation results are all here, showing exactly how the sausage gets made."
+    "The outcome? A skill that practices what it preaches. It demonstrates its own core principles—progressive disclosure, anti-pattern awareness, temporal knowledge capture—by applying them to itself. This isn't just documentation of an improvement process; it's proof that AI agents can participate in their own evolution through structured self-reflection. The full transcript, before/after comparisons, and validation results are all included—every decision, every trade-off, laid bare."
   ]
 }

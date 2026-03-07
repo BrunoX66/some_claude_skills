@@ -23,7 +23,7 @@ Read, Write, Edit, WebFetch
 
 - **[Web Design Expert](/docs/skills/web_design_expert)**: Implement UX recommendations
 - **[Adhd Design Expert](/docs/skills/adhd_design_expert)**: Deep neurodivergent design patterns
-- **[Frontend Developer](/docs/skills/frontend_developer)**: Technical implementation of UX fixes
+- **[Frontend Architect](/docs/skills/frontend_architect)**: Technical implementation of UX fixes
 
 # UX Friction Analyzer
 

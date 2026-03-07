@@ -23,7 +23,7 @@ Read, Write, Edit, Glob, Grep, Bash, WebFetch, mcp__SequentialThinking__sequenti
 
 - **[Prompt Engineer](/docs/skills/prompt_engineer)**: Optimize prompts for LLM applications
 - **[Chatbot Analytics](/docs/skills/chatbot_analytics)**: Monitor and analyze AI chatbot performance
-- **[Backend Architect](/docs/skills/backend_architect)**: Design scalable AI service architecture
+- **[API Architect](/docs/skills/api_architect)**: Design scalable AI service architecture
 
 # AI Engineer
 

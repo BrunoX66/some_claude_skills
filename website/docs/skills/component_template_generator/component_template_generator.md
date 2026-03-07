@@ -22,7 +22,7 @@ Read, Write, Glob
 ## 🤝 Pairs Great With
 
 - **[Design System Generator](/docs/skills/design_system_generator)**: Uses generated tokens in component code
-- **[Frontend Developer](/docs/skills/frontend_developer)**: Implement and customize generated components
+- **[Frontend Architect](/docs/skills/frontend_architect)**: Implement and customize generated components
 - **[Design System Documenter](/docs/skills/design_system_documenter)**: Document generated components
 
 ## References

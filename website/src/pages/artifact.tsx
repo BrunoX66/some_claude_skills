@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from '@docusaurus/router';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
+import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import { Artifact } from '@site/src/types/artifact';
 import PhaseTimeline from '@site/src/components/PhaseTimeline';
@@ -149,14 +151,25 @@ export default function ArtifactDetail(): JSX.Element {
     );
   }
 
+  const { siteConfig } = useDocusaurusContext();
   const category = CATEGORY_CONFIG[artifact.category];
   const type = TYPE_CONFIG[artifact.type];
+  const ogImageUrl = artifact.heroImage
+    ? `${siteConfig.url}${artifact.heroImage}`
+    : undefined;
 
   return (
     <Layout
       title={artifact.title}
       description={artifact.description}
     >
+      {ogImageUrl && (
+        <Head>
+          <meta property="og:image" content={ogImageUrl} />
+          <meta name="twitter:image" content={ogImageUrl} />
+          <meta name="twitter:card" content="summary_large_image" />
+        </Head>
+      )}
       <div className={styles.artifactDetail}>
         {/* Hero Section */}
         <div className={styles.hero}>
@@ -190,16 +203,21 @@ export default function ArtifactDetail(): JSX.Element {
               <p className={styles.description}>{artifact.description}</p>
 
               <div className={styles.metadata}>
+                {artifact.author && (
+                  <span className={styles.metaItem}>
+                    By {artifact.author}
+                  </span>
+                )}
                 <span className={styles.metaItem}>
-                  📅 {new Date(artifact.createdAt).toLocaleDateString('en-US', {
+                  {new Date(artifact.createdAt).toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric'
                   })}
                 </span>
-                {artifact.viewCount && (
+                {artifact.viewCount > 0 && (
                   <span className={styles.metaItem}>
-                    👁️ {artifact.viewCount.toLocaleString()} views
+                    {artifact.viewCount.toLocaleString()} views
                   </span>
                 )}
               </div>
@@ -286,6 +304,29 @@ export default function ArtifactDetail(): JSX.Element {
             <section className={styles.section}>
               <h2 className={styles.sectionTitle}>Workflow Phases</h2>
               <PhaseTimeline phases={artifact.phases} />
+            </section>
+          )}
+
+          {/* Editorial Note */}
+          {artifact.editorialNote && (
+            <section className={styles.section}>
+              <div className={styles.editorialNote}>
+                <span className={styles.editorialLabel}>Editor's Note</span>
+                <p>
+                  {artifact.editorialNote.split(/(\[[^\]]+\]\([^)]+\))/).map((part, i) => {
+                    const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+                    if (linkMatch) {
+                      const [, text, href] = linkMatch;
+                      return href.startsWith('/') ? (
+                        <Link key={i} to={href}>{text}</Link>
+                      ) : (
+                        <a key={i} href={href} target="_blank" rel="noopener noreferrer">{text}</a>
+                      );
+                    }
+                    return <React.Fragment key={i}>{part}</React.Fragment>;
+                  })}
+                </p>
+              </div>
             </section>
           )}
 

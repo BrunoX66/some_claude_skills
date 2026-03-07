@@ -61,11 +61,13 @@ export interface Artifact {
   heroImage?: string;  // Path to hero image (e.g., '/img/artifacts/skill-coach-hero.png')
   screenshots?: Screenshot[]; // Additional screenshots with captions
   albumArt?: AlbumArt[]; // AI-generated album art for music-related artifacts
+  author?: string;  // Attribution (e.g., 'Erich Owens')
   createdAt: string;
   featured?: boolean;
   viewCount?: number;
   interactiveDemo?: string; // Component identifier for interactive demos (e.g., 'vaporwave-midi-player')
   narrative?: string[]; // Array of narrative paragraphs for "What Happened Here" section
+  editorialNote?: string; // Optional editorial note displayed at the top of the artifact
 }
 
 export interface ArtifactCardProps {

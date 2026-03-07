@@ -1,4 +1,5 @@
 ---
+slug: /skills/2026_legal_research_agent
 name: 2026-legal-research-agent
 description: >
   Expert legal research agent for finding and scraping expungement data state by state.

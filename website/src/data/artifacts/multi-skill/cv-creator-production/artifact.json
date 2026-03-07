@@ -7,26 +7,32 @@
   "skills": [
     {
       "name": "system-architect",
+      "link": "/docs/skills/skill_architect",
       "role": "Designed complete system architecture with data flow diagrams, component boundaries, and integration patterns for three-skill workflow (career-biographer → competitive-cartographer → cv-creator)"
     },
     {
       "name": "typescript-developer",
+      "link": "/docs/skills/typescript_advanced_patterns",
       "role": "Implemented ~2,000 lines of production TypeScript code with strict type safety, including type definitions, data transformers, PDF generator, portfolio generator, and main orchestrator"
     },
     {
       "name": "document-generator",
+      "link": "/docs/skills/document_generation_pdf",
       "role": "Built Puppeteer-based PDF generation system rendering HTML templates to print-optimized PDFs with proper page breaks and ATS-compatible formatting"
     },
     {
       "name": "template-designer",
+      "link": "/docs/skills/component_template_generator",
       "role": "Created ATS-optimized HTML resume template (180+ lines) with single-column layout, standard fonts, and print CSS; designed responsive portfolio template (500+ lines) with modern UI"
     },
     {
       "name": "ats-expert",
+      "link": "/docs/skills/cv_creator",
       "role": "Implemented 0-100 scoring algorithm based on industry best practices, validation checks for formatting/structure/content, and actionable recommendation system"
     },
     {
       "name": "data-transformation-specialist",
+      "link": "/docs/skills/data_pipeline_engineer",
       "role": "Built transformation pipeline converting CareerProfile JSON to ResumeData and PortfolioData, including professional summary generation, skills prioritization, and bullet formatting algorithms"
     },
     {
@@ -35,6 +41,7 @@
     },
     {
       "name": "devops-engineer",
+      "link": "/docs/skills/devops_automator",
       "role": "Set up project configuration (package.json, tsconfig.json), managed dependencies (Puppeteer, Handlebars), debugged Puppeteer/Chrome compatibility issues, and created GitHub repository"
     }
   ],
