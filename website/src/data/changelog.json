@@ -1,7 +1,266 @@
 {
-  "generated": "2025-12-27T03:27:04.557Z",
-  "totalEntries": 71,
+  "generated": "2026-03-07T00:00:00.000Z",
+  "totalEntries": 88,
   "entries": [
+    {
+      "date": "2026-03-07",
+      "items": [
+        {
+          "date": "2026-03-07",
+          "hash": "58d33d2",
+          "type": "feat",
+          "scope": "website",
+          "description": "Artifact pages now have OG images, author bylines, and editorial notes; fixed 9 broken doc links",
+          "category": "features",
+          "skillCount": null
+        },
+        {
+          "date": "2026-03-07",
+          "hash": "pending",
+          "type": "feat",
+          "scope": "website",
+          "description": "Dual-row marquee on homepage: two rows scrolling opposite directions with different skills",
+          "category": "ui",
+          "skillCount": null
+        }
+      ]
+    },
+    {
+      "date": "2026-03-06",
+      "items": [
+        {
+          "date": "2026-03-06",
+          "hash": "00cd819",
+          "type": "feat",
+          "scope": "skills",
+          "description": "Replace all 90 hero images with diverse pixel art illustrations",
+          "category": "ui",
+          "skillCount": null
+        }
+      ]
+    },
+    {
+      "date": "2026-03-05",
+      "items": [
+        {
+          "date": "2026-03-05",
+          "hash": "0518869",
+          "type": "feat",
+          "scope": "website",
+          "description": "Client-side skill gating for 10 premium skills (Career, Interview, Legal)",
+          "category": "features",
+          "skillCount": null
+        },
+        {
+          "date": "2026-03-05",
+          "hash": "8e5de7c",
+          "type": "fix",
+          "scope": "skills",
+          "description": "Fix case-sensitivity in skill.md filenames for 7 skills",
+          "category": "fixes",
+          "skillCount": null
+        }
+      ]
+    },
+    {
+      "date": "2026-03-04",
+      "items": [
+        {
+          "date": "2026-03-04",
+          "hash": "d6f30eb",
+          "type": "feat",
+          "scope": "infra",
+          "description": "Skill infrastructure overhaul, hero images, and build pipeline hardening",
+          "category": "infra",
+          "skillCount": null
+        },
+        {
+          "date": "2026-03-04",
+          "hash": "466b07b",
+          "type": "fix",
+          "scope": "build",
+          "description": "Fix unescaped angle brackets in 5 skill docs breaking MDX build",
+          "category": "fixes",
+          "skillCount": null
+        }
+      ]
+    },
+    {
+      "date": "2026-02-05",
+      "items": [
+        {
+          "date": "2026-02-05",
+          "hash": "a9da639",
+          "type": "feat",
+          "scope": "skills",
+          "description": "Update design skills with OKLCH color standard and pipeline connections",
+          "category": "skills",
+          "skillCount": null
+        }
+      ]
+    },
+    {
+      "date": "2026-02-01",
+      "items": [
+        {
+          "date": "2026-02-01",
+          "hash": "26a5fca",
+          "type": "fix",
+          "scope": "build",
+          "description": "Fix YAML frontmatter and MDX compilation errors",
+          "category": "fixes",
+          "skillCount": null
+        }
+      ]
+    },
+    {
+      "date": "2026-01-31",
+      "items": [
+        {
+          "date": "2026-01-31",
+          "hash": "83fc57a",
+          "type": "feat",
+          "scope": "skills",
+          "description": "Add 24 hero images for newly ingested skills",
+          "category": "skills",
+          "skillCount": null
+        },
+        {
+          "date": "2026-01-31",
+          "hash": "129fa6a",
+          "type": "feat",
+          "scope": "skills",
+          "description": "Ingest 13 new skills from cross-repo scan",
+          "category": "skills",
+          "skillCount": 13
+        }
+      ]
+    },
+    {
+      "date": "2026-01-23",
+      "items": [
+        {
+          "date": "2026-01-23",
+          "hash": "b8eff4c",
+          "type": "feat",
+          "scope": "skills",
+          "description": "Add 3 new skills: design-justice, web-cloud-designer, web-wave-designer",
+          "category": "skills",
+          "skillCount": 3
+        }
+      ]
+    },
+    {
+      "date": "2026-01-17",
+      "items": [
+        {
+          "date": "2026-01-17",
+          "hash": "af676fc",
+          "type": "feat",
+          "scope": "skills",
+          "description": "Add video-processing-editing skill with interactive demo",
+          "category": "skills",
+          "skillCount": null
+        },
+        {
+          "date": "2026-01-17",
+          "hash": "54582ae",
+          "type": "feat",
+          "scope": "build",
+          "description": "Add MDX sanitizer for automatic angle bracket escaping",
+          "category": "features",
+          "skillCount": null
+        }
+      ]
+    },
+    {
+      "date": "2026-01-16",
+      "items": [
+        {
+          "date": "2026-01-16",
+          "hash": "bc87998",
+          "type": "feat",
+          "scope": "website",
+          "description": "Add Phase 1 foundation: logger, TypeScript types, Vitest, Win31 components",
+          "category": "features",
+          "skillCount": null
+        }
+      ]
+    },
+    {
+      "date": "2026-01-15",
+      "items": [
+        {
+          "date": "2026-01-15",
+          "hash": "eef7d60",
+          "type": "feat",
+          "scope": "website",
+          "description": "Add DAG framework, bundle system, tutorial hook, and user personas",
+          "category": "features",
+          "skillCount": null
+        }
+      ]
+    },
+    {
+      "date": "2026-01-04",
+      "items": [
+        {
+          "date": "2026-01-04",
+          "hash": "0e4f3fb",
+          "type": "feat",
+          "scope": "skills",
+          "description": "Add color-contrast-auditor skill",
+          "category": "skills",
+          "skillCount": null
+        },
+        {
+          "date": "2026-01-04",
+          "hash": "9ec460a",
+          "type": "feat",
+          "scope": "skills",
+          "description": "Regenerate 23 hero images to match consistent retro style",
+          "category": "skills",
+          "skillCount": null
+        }
+      ]
+    },
+    {
+      "date": "2026-01-03",
+      "items": [
+        {
+          "date": "2026-01-03",
+          "hash": "5bd3701",
+          "type": "feat",
+          "scope": "skills",
+          "description": "Add categories and tags to all skills for better discoverability",
+          "category": "skills",
+          "skillCount": null
+        },
+        {
+          "date": "2026-01-03",
+          "hash": "a990219",
+          "type": "feat",
+          "scope": "website",
+          "description": "Add hero images to all 90 skills and fix navbar responsiveness",
+          "category": "ui",
+          "skillCount": null
+        }
+      ]
+    },
+    {
+      "date": "2025-12-28",
+      "items": [
+        {
+          "date": "2025-12-28",
+          "hash": "1a88add",
+          "type": "feat",
+          "scope": "skills",
+          "description": "Improve skill documentation with 'When to Use' sections and anti-patterns",
+          "category": "skills",
+          "skillCount": null
+        }
+      ]
+    },
     {
       "date": "2025-12-26",
       "items": [

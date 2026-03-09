@@ -27,6 +27,17 @@ export default function Home(): JSX.Element {
   // Filter out gated skills for public visitors
   const visibleSkills = useMemo(() => filterSkills(ALL_SKILLS), [filterSkills]);
 
+  // Split skills into two halves for dual-row marquee (offset start points)
+  const midpoint = Math.ceil(visibleSkills.length / 2);
+  const marqueeRow1 = useMemo(() => {
+    const row = visibleSkills.slice(0, midpoint);
+    return [...row, ...row];
+  }, [visibleSkills, midpoint]);
+  const marqueeRow2 = useMemo(() => {
+    const row = visibleSkills.slice(midpoint);
+    return [...row, ...row];
+  }, [visibleSkills, midpoint]);
+
   // Analytics tracking
   const { track } = usePlausibleTracking();
   const { trackSkillView } = useSkillNavigationTracking();
@@ -401,10 +412,49 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
               </div>
             </div>
             <div className="skills-marquee-horizontal">
+              {/* Row 1: scrolls left (default direction) */}
               <div className="skills-marquee-horizontal__track">
-                {[...visibleSkills, ...visibleSkills].map((skill, idx) => (
+                {marqueeRow1.map((skill, idx) => (
                   <div
-                    key={`${skill.id}-${idx}`}
+                    key={`r1-${skill.id}-${idx}`}
+                    className="skills-marquee-horizontal__item"
+                    style={{ position: 'relative' }}
+                  >
+                    {newSkills.has(skill.id) && (
+                      <div className="new-skill-badge">
+                        <span>NEW</span>
+                      </div>
+                    )}
+                    <img
+                      src={skill.heroImage || `/img/skills/${skill.id}-hero.webp`}
+                      alt={skill.title}
+                      className="skills-marquee-horizontal__img"
+                      onClick={() => handleSkillClick(skill)}
+                    />
+                    <div className="skills-marquee-horizontal__label-row">
+                      <a
+                        href={`/docs/skills/${skill.id.replace(/-/g, '_')}`}
+                        className="skills-marquee-horizontal__btn"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        Doc
+                      </a>
+                      <span className="skills-marquee-horizontal__label">{skill.title}</span>
+                      <button
+                        className="skills-marquee-horizontal__btn"
+                        onClick={(e) => { e.stopPropagation(); handleSkillClick(skill); }}
+                      >
+                        Get
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              {/* Row 2: scrolls right (reverse direction, different skills) */}
+              <div className="skills-marquee-horizontal__track skills-marquee-horizontal__track--reverse">
+                {marqueeRow2.map((skill, idx) => (
+                  <div
+                    key={`r2-${skill.id}-${idx}`}
                     className="skills-marquee-horizontal__item"
                     style={{ position: 'relative' }}
                   >
