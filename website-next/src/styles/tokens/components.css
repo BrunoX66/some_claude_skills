@@ -1,0 +1,29 @@
+/* ==========================================================================
+ * Tier 3: Component Tokens
+ * Scoped to specific Win31 UI components.
+ * These define structural dimensions that remain constant across themes.
+ * ========================================================================== */
+
+:root {
+  /* Border & chrome */
+  --win31-border-width: 2px;
+  --win31-titlebar-height: 18px;
+
+  /* Buttons */
+  --win31-button-min-width: 75px;
+  --win31-button-padding: 5px 14px;
+
+  /* Scrollbar */
+  --win31-scrollbar-width: 16px;
+
+  /* Icons */
+  --win31-icon-size: 32px;
+  --win31-icon-size-lg: 48px;
+
+  /* Desktop layout */
+  --win31-desktop-padding: 20px;
+
+  /* Window constraints */
+  --win31-window-min-width: 200px;
+  --win31-window-min-height: 150px;
+}

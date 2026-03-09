@@ -1,0 +1,58 @@
+/* ==========================================================================
+ * Tier 2: Semantic Tokens
+ * Role-based aliases that map primitives to UI purposes.
+ * These are what components should reference.
+ * Default values here define the "Classic" (Windows 3.1) theme.
+ * ========================================================================== */
+
+:root, [data-theme="classic"] {
+  /* Surfaces */
+  --color-surface: var(--color-gray-300);
+  --color-surface-inset: var(--color-white);
+  --color-surface-raised: var(--color-gray-300);
+  --color-surface-overlay: rgba(0, 0, 0, 0.4);
+
+  /* Desktop & titlebars */
+  --color-desktop: var(--color-teal-500);
+  --color-titlebar-active: var(--color-navy-500);
+  --color-titlebar-inactive: var(--color-gray-500);
+  --color-titlebar-text: var(--color-white);
+
+  /* 3D beveled borders */
+  --color-border-raised-light: var(--color-white);
+  --color-border-raised-dark: var(--color-black);
+  --color-border-inset-light: var(--color-gray-500);
+  --color-border-inset-dark: var(--color-white);
+  --color-border-outer: var(--color-black);
+
+  /* Text */
+  --color-text-primary: var(--color-black);
+  --color-text-secondary: var(--color-gray-500);
+  --color-text-muted: var(--color-gray-400);
+  --color-text-link: var(--color-navy-500);
+  --color-text-accent: var(--color-teal-500);
+  --color-text-on-titlebar: var(--color-white);
+  --color-text-code: var(--color-navy-500);
+
+  /* Code blocks */
+  --color-code-bg: var(--color-gray-900);
+  --color-code-text: #e0e0e0;
+
+  /* Status */
+  --color-success: var(--color-lime-400);
+  --color-warning: var(--color-yellow-400);
+  --color-error: var(--color-red-400);
+  --color-info: var(--color-teal-400);
+
+  /* Font aliases */
+  --font-display: var(--font-display-raw);
+  --font-window: var(--font-window-raw);
+  --font-system: var(--font-system-raw);
+  --font-body: var(--font-body-raw);
+  --font-code: var(--font-code-raw);
+
+  /* Effects (disabled in Classic) */
+  --effect-scanlines: none;
+  --effect-glow: none;
+  --effect-text-shadow: none;
+}
