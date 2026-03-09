@@ -9,6 +9,7 @@ import {
 } from "@/components/win31";
 import { WindowDemo } from "./WindowDemo";
 import { InteractiveDemo } from "./InteractiveDemo";
+import { ProseDemo } from "./ProseDemo";
 
 export default function Home() {
   return (
@@ -116,6 +117,9 @@ export default function Home() {
 
       {/* Interactive Radix-backed components demo */}
       <InteractiveDemo />
+
+      {/* Markdown Prose Demo - skill doc rendering */}
+      <ProseDemo />
 
       {/* Window Demo - interactive draggable window */}
       <WindowDemo />

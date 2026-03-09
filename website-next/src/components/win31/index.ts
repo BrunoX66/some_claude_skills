@@ -59,3 +59,8 @@ export type { Win31TooltipProps } from "./Win31Tooltip";
 
 export { Win31Select } from "./Win31Select";
 export type { Win31SelectProps, Win31SelectOption } from "./Win31Select";
+
+/* --- Content rendering --- */
+
+export { Win31Prose } from "./Win31Prose";
+export type { Win31ProseProps } from "./Win31Prose";
