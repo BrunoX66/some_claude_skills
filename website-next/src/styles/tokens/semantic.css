@@ -44,6 +44,10 @@
   --color-error: var(--color-red-400);
   --color-info: var(--color-teal-400);
 
+  /* Tooltip (Win31 yellow sticky note style) */
+  --color-tooltip-bg: var(--color-yellow-400);
+  --color-tooltip-text: var(--color-black);
+
   /* Font aliases */
   --font-display: var(--font-display-raw);
   --font-window: var(--font-window-raw);

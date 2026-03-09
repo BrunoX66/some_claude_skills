@@ -8,6 +8,7 @@ import {
   StatusBarSection,
 } from "@/components/win31";
 import { WindowDemo } from "./WindowDemo";
+import { InteractiveDemo } from "./InteractiveDemo";
 
 export default function Home() {
   return (
@@ -112,6 +113,9 @@ export default function Home() {
           <StatusBarSection width="80px">v0.2.0</StatusBarSection>
         </Win31StatusBar>
       </Win31Panel>
+
+      {/* Interactive Radix-backed components demo */}
+      <InteractiveDemo />
 
       {/* Window Demo - interactive draggable window */}
       <WindowDemo />
