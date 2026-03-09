@@ -1,3 +1,5 @@
+import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher";
+
 export default function Home() {
   return (
     <div
@@ -45,6 +47,27 @@ export default function Home() {
           >
             Token Test
           </span>
+        </div>
+
+        {/* Theme Switcher */}
+        <div
+          style={{
+            marginBottom: 'var(--space-4)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 'var(--space-3)',
+          }}
+        >
+          <span
+            style={{
+              fontFamily: 'var(--font-system)',
+              fontSize: 'var(--font-size-xs)',
+              color: 'var(--color-text-primary)',
+            }}
+          >
+            Theme:
+          </span>
+          <ThemeSwitcher />
         </div>
 
         {/* Content */}
