@@ -10,8 +10,14 @@ import {
 import { WindowDemo } from "./WindowDemo";
 import { InteractiveDemo } from "./InteractiveDemo";
 import { ProseDemo } from "./ProseDemo";
+import { getAllSkills, getSkillCategories } from "@/lib/skills";
 
 export default function Home() {
+  const skills = getAllSkills();
+  const categories = getSkillCategories();
+  const sampleSkill =
+    skills.find((s) => s.id === "computer-vision-pipeline") || skills[0];
+
   return (
     <Win31Background className="flex flex-col items-center justify-start p-[var(--win31-desktop-padding)] min-h-screen gap-6">
       {/* Component Gallery */}
@@ -42,6 +48,33 @@ export default function Home() {
             Eight components with CVA variants and design tokens.
             Switch themes above to verify token resolution.
           </p>
+
+          {/* Skill data stats */}
+          <Win31GroupBox label="Skill Data Loader">
+            <div className="flex flex-col gap-2 font-[family-name:var(--font-system)] text-xs text-[var(--color-text-primary)]">
+              <p>
+                Loaded{" "}
+                <strong className="text-[var(--color-text-accent)]">
+                  {skills.length} skills
+                </strong>{" "}
+                across{" "}
+                <strong className="text-[var(--color-text-accent)]">
+                  {categories.length} categories
+                </strong>{" "}
+                from SKILL.md files.
+              </p>
+              <div className="flex flex-wrap gap-1">
+                {categories.map((cat) => (
+                  <span
+                    key={cat}
+                    className="bg-[var(--color-surface)] border border-[var(--color-border)] px-1.5 py-0.5 text-[10px]"
+                  >
+                    {cat}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </Win31GroupBox>
 
           {/* Inset panel demo */}
           <Win31Panel variant="inset" className="p-3">
@@ -109,8 +142,12 @@ export default function Home() {
 
         {/* Status bar at bottom */}
         <Win31StatusBar>
-          <StatusBarSection>Ready</StatusBarSection>
-          <StatusBarSection width="120px">8 components</StatusBarSection>
+          <StatusBarSection>
+            {skills.length} skills loaded
+          </StatusBarSection>
+          <StatusBarSection width="120px">
+            {categories.length} categories
+          </StatusBarSection>
           <StatusBarSection width="80px">v0.2.0</StatusBarSection>
         </Win31StatusBar>
       </Win31Panel>
@@ -118,8 +155,13 @@ export default function Home() {
       {/* Interactive Radix-backed components demo */}
       <InteractiveDemo />
 
-      {/* Markdown Prose Demo - skill doc rendering */}
-      <ProseDemo />
+      {/* Markdown Prose Demo - real skill doc rendering */}
+      {sampleSkill && (
+        <ProseDemo
+          title={`SKILL.md - ${sampleSkill.title}`}
+          content={sampleSkill.content}
+        />
+      )}
 
       {/* Window Demo - interactive draggable window */}
       <WindowDemo />
