@@ -22,3 +22,12 @@ export type {
 
 export { Win31Background } from "./Win31Background";
 export type { Win31BackgroundProps, Win31PatternType } from "./Win31Background";
+
+export { Win31Window } from "./Win31Window";
+export type { Win31WindowProps } from "./Win31Window";
+
+export { Win31MDIWindow } from "./Win31MDIWindow";
+export type { Win31MDIWindowProps } from "./Win31MDIWindow";
+
+export { Win31Scrollbar } from "./Win31Scrollbar";
+export type { Win31ScrollbarProps } from "./Win31Scrollbar";

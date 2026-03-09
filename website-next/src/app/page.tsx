@@ -7,11 +7,12 @@ import {
   Win31StatusBar,
   StatusBarSection,
 } from "@/components/win31";
+import { WindowDemo } from "./WindowDemo";
 
 export default function Home() {
   return (
-    <Win31Background className="flex items-center justify-center p-[var(--win31-desktop-padding)]">
-      {/* Main window */}
+    <Win31Background className="flex flex-col items-center justify-start p-[var(--win31-desktop-padding)] min-h-screen gap-6">
+      {/* Component Gallery */}
       <Win31Panel className="p-0 max-w-[640px] w-full shadow-[4px_4px_0_var(--color-black)]">
         {/* Title bar */}
         <div className="bg-[var(--color-titlebar-active)] h-[var(--win31-titlebar-height)] flex items-center px-2">
@@ -36,7 +37,7 @@ export default function Home() {
           </h1>
 
           <p className="font-[family-name:var(--font-body)] text-[var(--color-text-primary)] text-base leading-relaxed">
-            Five primitive components with CVA variants and design tokens.
+            Eight components with CVA variants and design tokens.
             Switch themes above to verify token resolution.
           </p>
 
@@ -107,10 +108,13 @@ export default function Home() {
         {/* Status bar at bottom */}
         <Win31StatusBar>
           <StatusBarSection>Ready</StatusBarSection>
-          <StatusBarSection width="120px">5 components</StatusBarSection>
-          <StatusBarSection width="80px">v0.1.0</StatusBarSection>
+          <StatusBarSection width="120px">8 components</StatusBarSection>
+          <StatusBarSection width="80px">v0.2.0</StatusBarSection>
         </Win31StatusBar>
       </Win31Panel>
+
+      {/* Window Demo - interactive draggable window */}
+      <WindowDemo />
     </Win31Background>
   );
 }
