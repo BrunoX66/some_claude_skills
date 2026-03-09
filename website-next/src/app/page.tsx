@@ -1,139 +1,116 @@
 import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher";
+import {
+  Win31Background,
+  Win31Panel,
+  Win31Button,
+  Win31GroupBox,
+  Win31StatusBar,
+  StatusBarSection,
+} from "@/components/win31";
 
 export default function Home() {
   return (
-    <div
-      style={{
-        minHeight: '100vh',
-        background: 'var(--color-desktop)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: 'var(--win31-desktop-padding)',
-      }}
-    >
-      <div
-        style={{
-          background: 'var(--color-surface)',
-          borderTop: '2px solid var(--color-border-raised-light)',
-          borderLeft: '2px solid var(--color-border-raised-light)',
-          borderBottom: '2px solid var(--color-border-raised-dark)',
-          borderRight: '2px solid var(--color-border-raised-dark)',
-          padding: 'var(--space-8)',
-          minWidth: 'var(--win31-window-min-width)',
-          maxWidth: '600px',
-          boxShadow: '4px 4px 0 var(--color-black)',
-        }}
-      >
-        {/* Titlebar */}
-        <div
-          style={{
-            background: 'var(--color-titlebar-active)',
-            height: 'var(--win31-titlebar-height)',
-            marginBottom: 'var(--space-4)',
-            display: 'flex',
-            alignItems: 'center',
-            paddingLeft: 'var(--space-2)',
-            paddingRight: 'var(--space-2)',
-          }}
-        >
-          <span
-            style={{
-              color: 'var(--color-text-on-titlebar)',
-              fontFamily: 'var(--font-system)',
-              fontSize: 'var(--font-size-xs)',
-              fontWeight: 700,
-            }}
-          >
-            Token Test
+    <Win31Background className="flex items-center justify-center p-[var(--win31-desktop-padding)]">
+      {/* Main window */}
+      <Win31Panel className="p-0 max-w-[640px] w-full shadow-[4px_4px_0_var(--color-black)]">
+        {/* Title bar */}
+        <div className="bg-[var(--color-titlebar-active)] h-[var(--win31-titlebar-height)] flex items-center px-2">
+          <span className="text-[var(--color-text-on-titlebar)] font-[family-name:var(--font-system)] text-xs font-bold">
+            Win31 Component Gallery
           </span>
         </div>
 
-        {/* Theme Switcher */}
-        <div
-          style={{
-            marginBottom: 'var(--space-4)',
-            display: 'flex',
-            alignItems: 'center',
-            gap: 'var(--space-3)',
-          }}
-        >
-          <span
-            style={{
-              fontFamily: 'var(--font-system)',
-              fontSize: 'var(--font-size-xs)',
-              color: 'var(--color-text-primary)',
-            }}
-          >
-            Theme:
-          </span>
-          <ThemeSwitcher />
+        {/* Window body */}
+        <div className="p-4 flex flex-col gap-4">
+          {/* Theme switcher row */}
+          <div className="flex items-center gap-3">
+            <span className="font-[family-name:var(--font-system)] text-xs text-[var(--color-text-primary)]">
+              Theme:
+            </span>
+            <ThemeSwitcher />
+          </div>
+
+          {/* Title */}
+          <h1 className="font-[family-name:var(--font-display)] text-[var(--color-text-accent)] text-sm leading-relaxed">
+            Win31 Design System
+          </h1>
+
+          <p className="font-[family-name:var(--font-body)] text-[var(--color-text-primary)] text-base leading-relaxed">
+            Five primitive components with CVA variants and design tokens.
+            Switch themes above to verify token resolution.
+          </p>
+
+          {/* Inset panel demo */}
+          <Win31Panel variant="inset" className="p-3">
+            <code className="font-[family-name:var(--font-code)] text-[var(--color-text-code)] text-sm">
+              Win31Panel variant=&quot;inset&quot; -- sunken text field
+            </code>
+          </Win31Panel>
+
+          {/* Flat panel demo */}
+          <Win31Panel variant="flat" className="p-3">
+            <code className="font-[family-name:var(--font-code)] text-[var(--color-text-primary)] text-sm">
+              Win31Panel variant=&quot;flat&quot; -- flat bordered region
+            </code>
+          </Win31Panel>
+
+          {/* Button variants */}
+          <Win31GroupBox label="Button Variants">
+            <div className="flex flex-wrap gap-2">
+              <Win31Button>Default</Win31Button>
+              <Win31Button variant="primary">Primary</Win31Button>
+              <Win31Button variant="danger">Danger</Win31Button>
+              <Win31Button variant="ghost">Ghost</Win31Button>
+              <Win31Button disabled>Disabled</Win31Button>
+            </div>
+          </Win31GroupBox>
+
+          {/* Button sizes */}
+          <Win31GroupBox label="Button Sizes">
+            <div className="flex flex-wrap items-end gap-2">
+              <Win31Button size="sm">Small</Win31Button>
+              <Win31Button size="md">Medium</Win31Button>
+              <Win31Button size="lg">Large</Win31Button>
+            </div>
+          </Win31GroupBox>
+
+          {/* Nested panels demo */}
+          <Win31GroupBox label="Nested Panels">
+            <div className="flex gap-2">
+              <Win31Panel className="flex-1 p-2">
+                <span className="font-[family-name:var(--font-system)] text-xs text-[var(--color-text-primary)]">
+                  Raised
+                </span>
+              </Win31Panel>
+              <Win31Panel variant="inset" className="flex-1 p-2">
+                <span className="font-[family-name:var(--font-system)] text-xs text-[var(--color-text-primary)]">
+                  Inset
+                </span>
+              </Win31Panel>
+              <Win31Panel variant="flat" className="flex-1 p-2">
+                <span className="font-[family-name:var(--font-system)] text-xs text-[var(--color-text-primary)]">
+                  Flat
+                </span>
+              </Win31Panel>
+            </div>
+          </Win31GroupBox>
+
+          {/* Status indicators */}
+          <div className="flex gap-4 font-[family-name:var(--font-system)] text-xs">
+            <span className="text-[var(--color-success)]">OK</span>
+            <span className="text-[var(--color-warning)]">WARN</span>
+            <span className="text-[var(--color-error)]">ERR</span>
+            <span className="text-[var(--color-info)]">INFO</span>
+          </div>
         </div>
 
-        {/* Content */}
-        <h1
-          style={{
-            fontFamily: 'var(--font-display)',
-            color: 'var(--color-text-accent)',
-            fontSize: 'var(--font-size-sm)',
-            lineHeight: 2,
-            marginBottom: 'var(--space-4)',
-          }}
-        >
-          Win31 Design System - Tokens Loaded
-        </h1>
-
-        <p
-          style={{
-            fontFamily: 'var(--font-body)',
-            color: 'var(--color-text-primary)',
-            fontSize: 'var(--font-size-base)',
-            lineHeight: 1.6,
-            marginBottom: 'var(--space-6)',
-          }}
-        >
-          If you see teal desktop, gray panel, pixel font, and monospace body
-          text - the token system is working.
-        </p>
-
-        {/* Inset field to test inset borders */}
-        <div
-          style={{
-            background: 'var(--color-surface-inset)',
-            borderTop: '2px solid var(--color-border-inset-light)',
-            borderLeft: '2px solid var(--color-border-inset-light)',
-            borderBottom: '2px solid var(--color-border-inset-dark)',
-            borderRight: '2px solid var(--color-border-inset-dark)',
-            padding: 'var(--space-3)',
-            marginBottom: 'var(--space-4)',
-          }}
-        >
-          <code
-            style={{
-              fontFamily: 'var(--font-code)',
-              color: 'var(--color-text-code)',
-              fontSize: 'var(--font-size-sm)',
-            }}
-          >
-            3 tiers: primitives → semantic → components
-          </code>
-        </div>
-
-        {/* Status indicators */}
-        <div
-          style={{
-            display: 'flex',
-            gap: 'var(--space-4)',
-            fontFamily: 'var(--font-system)',
-            fontSize: 'var(--font-size-xs)',
-          }}
-        >
-          <span style={{ color: 'var(--color-success)' }}>OK</span>
-          <span style={{ color: 'var(--color-warning)' }}>WARN</span>
-          <span style={{ color: 'var(--color-error)' }}>ERR</span>
-          <span style={{ color: 'var(--color-info)' }}>INFO</span>
-        </div>
-      </div>
-    </div>
+        {/* Status bar at bottom */}
+        <Win31StatusBar>
+          <StatusBarSection>Ready</StatusBarSection>
+          <StatusBarSection width="120px">5 components</StatusBarSection>
+          <StatusBarSection width="80px">v0.1.0</StatusBarSection>
+        </Win31StatusBar>
+      </Win31Panel>
+    </Win31Background>
   );
 }
