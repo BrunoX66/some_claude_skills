@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { useShallow } from "zustand/shallow";
 
 export type WindowContentType =
   | { type: "skill"; skillId: string }
@@ -175,14 +176,15 @@ export const useWindowManager = create<WindowManagerState>((set, get) => ({
 }));
 
 // Selector hooks for common patterns
+// useShallow prevents infinite re-renders from .filter()/.find() creating new references
 export const useActiveWindow = () =>
-  useWindowManager((s) => s.windows.find((w) => w.id === s.activeWindowId));
+  useWindowManager(useShallow((s) => s.windows.find((w) => w.id === s.activeWindowId)));
 
 export const useVisibleWindows = () =>
-  useWindowManager((s) => s.windows.filter((w) => !w.isMinimized));
+  useWindowManager(useShallow((s) => s.windows.filter((w) => !w.isMinimized)));
 
 export const useMinimizedWindows = () =>
-  useWindowManager((s) => s.windows.filter((w) => w.isMinimized));
+  useWindowManager(useShallow((s) => s.windows.filter((w) => w.isMinimized)));
 
 export const useIsWindowOpen = (id: string) =>
   useWindowManager((s) => s.windows.some((w) => w.id === id));
