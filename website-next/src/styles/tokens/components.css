@@ -22,6 +22,7 @@
 
   /* Desktop layout */
   --win31-desktop-padding: 20px;
+  --win31-taskbar-height: 30px;
 
   /* Window constraints */
   --win31-window-min-width: 200px;
