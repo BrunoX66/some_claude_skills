@@ -1,0 +1,45 @@
+{
+  "skill_creator": {
+    "validate_skill": {
+      "passed": true,
+      "errors": 0,
+      "warnings": 3,
+      "key_issues": [
+        "486 lines (approaching 500 limit)",
+        "Missing NOT clause in description",
+        "No CHANGELOG.md"
+      ]
+    },
+    "check_self_contained": {
+      "passed": false,
+      "phantom_count": 1,
+      "phantoms": ["agents/analyzer.md:63 -> scripts/tools"]
+    },
+    "lines": 485,
+    "files": 19,
+    "scripts": 9,
+    "agents": 3,
+    "references": 1
+  },
+  "skill_architect": {
+    "validate_skill": {
+      "passed": false,
+      "errors": 1,
+      "warnings": 1,
+      "key_issues": [
+        "504 lines (exceeds 500 max)",
+        "HTML entities (&lt;) in markdown"
+      ]
+    },
+    "check_self_contained": {
+      "passed": false,
+      "phantom_count": 7,
+      "phantoms_note": "All in reference files (illustrative examples), not in SKILL.md"
+    },
+    "lines": 503,
+    "files": 22,
+    "scripts": 4,
+    "agents": 1,
+    "references": 13
+  }
+}
