@@ -98,22 +98,22 @@ export function openMediaWindow() {
 }
 
 export function openTutorialsWindow() {
+  const geo = clampGeometry(60, 30, 860, 600);
   useWindowManager.getState().openWindow({
     id: "tutorials",
     title: "TUTORIALS",
-    x: 90, y: 70,
-    width: 620, height: 480,
+    ...geo,
     isMinimized: false, isMaximized: false,
     content: { type: "tutorials" },
   });
 }
 
 export function openArtifactsWindow() {
+  const geo = clampGeometry(100, 60, 780, 540);
   useWindowManager.getState().openWindow({
     id: "artifacts",
     title: "ARTIFACTS — Showcase",
-    x: 100, y: 60,
-    width: 620, height: 480,
+    ...geo,
     isMinimized: false, isMaximized: false,
     content: { type: "artifacts" },
   });
@@ -288,7 +288,7 @@ export function openWelcomeWindow() {
 }
 
 export function openFeaturedWindow() {
-  const geo = clampGeometry(15, 260, 340, 280);
+  const geo = clampGeometry(15, 200, 480, 340);
   useWindowManager.getState().openWindow({
     id: "featured",
     title: "FEATURED — Skill of the Day",

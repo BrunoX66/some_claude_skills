@@ -405,7 +405,7 @@ function SkillGrid({
             )}>
               <p
                 className={cn(
-                  "font-[family-name:var(--font-system)] text-[10px] font-bold truncate",
+                  "font-[family-name:var(--font-system)] text-xs font-bold truncate",
                   isSelected
                     ? "text-[var(--color-titlebar-text)]"
                     : "text-[var(--color-text-primary)] group-hover:text-[var(--color-text-accent)]"
@@ -414,10 +414,10 @@ function SkillGrid({
                 {skill.title}
               </p>
               <p className={cn(
-                "font-[family-name:var(--font-system)] text-[8px] truncate",
+                "font-[family-name:var(--font-system)] text-[10px] truncate",
                 isSelected
                   ? "text-[var(--color-titlebar-text)] opacity-80"
-                  : "text-[var(--color-text-muted)]"
+                  : "text-[var(--color-text-secondary)]"
               )}>
                 {formatCategoryName(skill.category)} · ~{estimateReadTime(skill.content)} min read
               </p>
