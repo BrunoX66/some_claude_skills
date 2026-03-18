@@ -5,9 +5,21 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "Some Skills",
+  title: "Some Claude Skills | AI Know-How Used at Curiositech",
   tagline: 'Expert AI Agents for Specialized Tasks',
   favicon: 'img/favicon.ico',
+
+  headTags: [
+    // Open Graph
+    { tagName: 'meta', attributes: { property: 'og:title', content: 'Some Claude Skills — 190+ Expert AI Skills for Claude Code' } },
+    { tagName: 'meta', attributes: { property: 'og:description', content: 'Curated collection of production-ready Claude Code skills. Transform Claude into a domain specialist — from ML pipelines to design systems to career coaching.' } },
+    { tagName: 'meta', attributes: { property: 'og:type', content: 'website' } },
+    { tagName: 'meta', attributes: { property: 'og:site_name', content: 'Some Claude Skills' } },
+    // Twitter Card
+    { tagName: 'meta', attributes: { name: 'twitter:card', content: 'summary_large_image' } },
+    { tagName: 'meta', attributes: { name: 'twitter:title', content: 'Some Claude Skills — 190+ Expert AI Skills for Claude Code' } },
+    { tagName: 'meta', attributes: { name: 'twitter:description', content: 'Curated collection of production-ready Claude Code skills by Curiositech.' } },
+  ],
 
   // Client modules that load before the app - plausible shim prevents errors in dev
   clientModules: [
@@ -41,6 +53,20 @@ const config: Config = {
   },
 
   plugins: [
+    // Remove archive PNGs from build output (keeps them in static/ for reference)
+    function excludeArchivePlugin() {
+      return {
+        name: 'exclude-archive-images',
+        async postBuild({outDir}) {
+          const fs = require('fs');
+          const path = require('path');
+          const dir = path.join(outDir, 'img', 'old_new_skill_icons_some');
+          if (fs.existsSync(dir)) {
+            fs.rmSync(dir, {recursive: true});
+          }
+        },
+      };
+    },
     function webpackPolyfillPlugin() {
       return {
         name: 'webpack-polyfill-plugin',
@@ -83,6 +109,13 @@ const config: Config = {
   ],
 
   themeConfig: {
+    announcementBar: {
+      id: 'os2_launch_2026',
+      content: 'NEW: Try the Desktop OS experience — browse 190+ skills in a Windows 3.1 shell! <a target="_blank" rel="noopener noreferrer" href="https://os2.someclaudeskills.com">os2.someclaudeskills.com</a>',
+      backgroundColor: '#000080',
+      textColor: '#ffffff',
+      isCloseable: true,
+    },
     // Social card for link previews
     image: 'img/og-image.png',
     colorMode: {
@@ -91,9 +124,9 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: "Some Skills",
+      title: "Some Claude Skills",
       logo: {
-        alt: "Some Skills",
+        alt: "Some Claude Skills",
         src: 'img/logo.svg',
       },
       items: [
@@ -116,6 +149,13 @@ const config: Config = {
               label: '💡 Got an Idea?',
             },
           ],
+        },
+        // Submit Skill standalone CTA
+        {
+          to: '/submit-skill',
+          label: 'Submit Skill',
+          position: 'left',
+          className: 'navbar-submit-link',
         },
         // Explore dropdown
         {
@@ -154,23 +194,23 @@ const config: Config = {
             },
           ],
         },
-        // Contribute CTA
-        {
-          to: '/submit-skill',
-          label: '✨ Add Your Own',
-          position: 'left',
-          className: 'navbar-cta-button',
-        },
         // Right side items
         {
-          to: '/contact',
-          label: 'Hire Me',
+          href: 'https://os2.someclaudeskills.com',
+          label: 'Desktop OS',
           position: 'right',
+          className: 'navbar-os2-link',
         },
         {
           href: 'https://github.com/erichowens/some_claude_skills',
           label: 'GitHub',
           position: 'right',
+        },
+        {
+          to: '/contact',
+          label: 'Available for Hire →',
+          position: 'right',
+          className: 'navbar-hire-link',
         },
         {
           type: 'custom-musicPlayer',
@@ -237,7 +277,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Made by Erich Owens | Ex-Meta ML Engineer | © ${new Date().getFullYear()} | Windows 3.1 aesthetic by design.`,
+      copyright: `Made by Erich Owens at Curiositech | © ${new Date().getFullYear()} | Windows 3.1 aesthetic by design.`,
     },
     prism: {
       theme: prismThemes.github,

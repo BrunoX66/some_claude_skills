@@ -7,7 +7,7 @@ export default function HireAuthor(): JSX.Element {
   return (
     <Layout
       title="How to Hire Author"
-      description="Hire Erich Owens - Mathematical problem-solver, 12 years Meta, 12 patents, ML/CV/VR/AR expert"
+      description="Erich Owens - Curiositech Founder, 15 years industry, 15 patents, ML/CV/VR/AR expert"
     >
       <div className="skills-page-bg page-backsplash page-backsplash--contact page-backsplash--medium">
         <div className="skills-container" style={{ maxWidth: '900px', margin: '0 auto', padding: '40px 20px' }}>
@@ -42,7 +42,7 @@ export default function HireAuthor(): JSX.Element {
                 Architect & Tool Builder Who Makes Complex Systems Legible
               </p>
               <p style={{ fontSize: '15px', color: '#666', maxWidth: '700px', margin: '0 auto 24px', lineHeight: '1.6' }}>
-                Mathematical and creative problem solver open to Senior IC or Leadership roles building transformative AI products at startups or big tech. I build systems that last and tools that explain them—so others can understand the problem and see how the solution works.
+                Founder of Curiositech, a Portland-based product studio building purpose-driven apps for recovery, legal aid, AI, and developer tools. Previously led 80+ engineers at Meta across VR/AR, computer vision, and ML. I build systems that last and tools that explain them.
               </p>
               <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <a
@@ -55,13 +55,13 @@ export default function HireAuthor(): JSX.Element {
                   Contact via LinkedIn
                 </a>
                 <a
-                  href="https://www.erichowens.com"
+                  href="https://curiositech.ai"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="win31-btn-3d"
                   style={{ padding: '12px 24px', fontWeight: 'bold' }}
                 >
-                  erichowens.com
+                  Curiositech
                 </a>
                 <a
                   href="https://github.com/erichowens"
@@ -95,7 +95,7 @@ export default function HireAuthor(): JSX.Element {
                   "Enduring systems: Built comment ranking algorithms and tools still running 10+ years later at Meta scale",
                   "Oscillating roles: Moves fluidly between deep IC work (Staff Engineer, Tech Lead) and leadership (managing 40 engineers) based on what the problem needs",
                   "Speed without shortcuts: 2-month avatar system MVP that became company's best-reviewed product; peltier-cooled VR controllers from hackathon to Building 8 research",
-                  "12 patents spanning domains: Comment ranking, VR avatars, thermal haptics, content quality, viral propagation, CV-based personalization",
+                  "15 patents spanning domains: Comment ranking, VR avatars, thermal haptics, content quality, viral propagation, CV-based personalization",
                   "Technical depth + creative taste: Hired ex-Pixar talent, curated avant-garde AR effects, mixed utility with aesthetics"
                 ].map((item, i) => (
                   <li key={i} style={{
@@ -133,11 +133,23 @@ export default function HireAuthor(): JSX.Element {
               <div style={{ display: 'grid', gap: '16px' }}>
                 {[
                   {
-                    role: "CTO",
+                    role: "Founder",
+                    company: "Curiositech",
+                    period: "2025 - Present",
+                    desc: "Portland-based product studio building purpose-driven applications across recovery, legal aid, AI, and developer tools.",
+                    achievements: [
+                      "Building Some Claude Skills — the internet's largest open-source Claude Code skill library (192+ skills)",
+                      "Creating purpose-driven apps spanning 4 verticals: recovery, legal aid, AI, and developer tools",
+                      "9 products shipped across the studio's portfolio"
+                    ],
+                    tags: ["founder", "AI", "developer-tools", "recovery", "legal-aid"]
+                  },
+                  {
+                    role: "Fractional CTO",
                     company: "Dolphin AI",
-                    period: "Aug 2024 - Present",
-                    desc: "Modernizing drone vision software for customer and insurer property understanding and protection needs",
-                    achievements: ["Building AI/CV systems for geospatial intelligence, roof damage assessment, and property analytics"],
+                    period: "2025 - 2026",
+                    desc: "Modernized drone vision software for customer and insurer property understanding and protection needs.",
+                    achievements: ["Built AI/CV systems for geospatial intelligence, roof damage assessment, and property analytics"],
                     tags: ["leadership", "drones", "computer-vision", "AI", "startup"]
                   },
                   {
@@ -582,15 +594,15 @@ export default function HireAuthor(): JSX.Element {
                 textAlign: 'center'
               }}>
                 <div>
-                  <div style={{ fontSize: '32px', fontWeight: 'bold', color: '#000080' }}>12</div>
-                  <div style={{ fontSize: '13px', color: '#666' }}>Years at Meta</div>
+                  <div style={{ fontSize: '32px', fontWeight: 'bold', color: '#000080' }}>15</div>
+                  <div style={{ fontSize: '13px', color: '#666' }}>Years in Industry</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '32px', fontWeight: 'bold', color: '#000080' }}>12</div>
+                  <div style={{ fontSize: '32px', fontWeight: 'bold', color: '#000080' }}>15</div>
                   <div style={{ fontSize: '13px', color: '#666' }}>Patents</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: '32px', fontWeight: 'bold', color: '#000080' }}>39+</div>
+                  <div style={{ fontSize: '32px', fontWeight: 'bold', color: '#000080' }}>192+</div>
                   <div style={{ fontSize: '13px', color: '#666' }}>Claude Skills</div>
                 </div>
                 <div>

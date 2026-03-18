@@ -933,34 +933,8 @@ html:not([data-theme='dark']) .skill-references-back:hover {
 }
 
 @media (max-width: 996px) {
-  /* Hide music player from mobile sidebar dropdown - it's already in navbar */
-  .navbar-sidebar [class*="winampShade"],
-  .navbar-sidebar [class*="MusicPlayer"],
-  .navbar-sidebar [class*="musicPlayer"],
-  .navbar-sidebar__items--show-secondary [class*="winampShade"],
-  .navbar-sidebar__items--show-secondary [class*="MusicPlayer"],
-  .navbar-sidebar__items--show-secondary [class*="musicPlayer"] {
-    display: none !important;
-  }
-
-  /* Only show one Winamp player - the one in the main navbar */
-  .navbar__items--right [class*="winampShade"] {
-    display: block !important;
-    position: fixed !important;
-    top: auto !important;
-    bottom: 10px !important;
-    right: 10px !important;
-    z-index: 1000 !important;
-    transform: none !important;
-  }
-
-  /* Hide theme picker from sidebar too if duplicated */
-  .navbar-sidebar [class*="ThemePicker"],
-  .navbar-sidebar [class*="themePicker"],
-  .navbar-sidebar__items--show-secondary [class*="ThemePicker"],
-  .navbar-sidebar__items--show-secondary [class*="themePicker"] {
-    display: none !important;
-  }
+  /* Winamp and ThemePicker show in sidebar — users can access them from hamburger */
+  /* Only hide hot dogs (handled separately below) */
 
   /* Simplify hamburger menu - reduce persistence feeling */
   .navbar-sidebar {
@@ -1224,31 +1198,77 @@ html[class*="sidebar--show"] .theme-picker__hotdog,
    NAVBAR CTA BUTTON - "Add Your Own" prominent call-to-action
    ═══════════════════════════════════════════════════════════════════ */
 
-.navbar-cta-button {
-  background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
-  color: white !important;
-  padding: 6px 12px !important;
-  border-radius: 6px !important;
-  font-weight: 600 !important;
-  font-size: 0.85rem !important;
-  transition: all 0.2s ease !important;
-  border: 2px solid #047857 !important;
-  box-shadow: 0 2px 4px rgba(5, 150, 105, 0.3) !important;
-  margin-left: 6px !important;
+/* ── "Desktop OS" accent link — cross-site nav to os2.someclaudeskills.com ── */
+.navbar-os2-link {
+  font-family: var(--font-system) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: var(--win31-white, #fff) !important;
+  letter-spacing: 0.3px !important;
   white-space: nowrap !important;
   flex-shrink: 0 !important;
+  padding: 3px 8px !important;
+  background: var(--win31-navy, #000080) !important;
+  border: 2px outset #c0c0c0 !important;
+  transition: all 0.15s ease !important;
 }
 
-.navbar-cta-button:hover {
-  background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 8px rgba(5, 150, 105, 0.4) !important;
-  color: white !important;
+.navbar-os2-link:hover {
+  background: #1010a0 !important;
+  color: var(--win31-white, #fff) !important;
+  border-style: inset !important;
 }
 
-.navbar-cta-button:active {
-  transform: translateY(0) !important;
-  box-shadow: 0 1px 2px rgba(5, 150, 105, 0.3) !important;
+.navbar-os2-link:active {
+  background: #000060 !important;
+  border-style: inset !important;
+}
+
+/* ── "Available for Hire" accent link (curiositech-inspired) ──────────── */
+.navbar-hire-link {
+  font-family: var(--font-system) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: var(--win31-navy, #000080) !important;
+  letter-spacing: 0.3px !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  padding: 4px 10px !important;
+  border: 2px solid var(--win31-navy, #000080) !important;
+  transition: all 0.15s ease !important;
+}
+
+.navbar-hire-link:hover {
+  background: var(--win31-navy, #000080) !important;
+  color: var(--win31-white, #fff) !important;
+}
+
+.navbar-hire-link:active {
+  background: #000060 !important;
+  color: var(--win31-white, #fff) !important;
+}
+
+/* ── "Submit Skill" accent link ────────────────────────────────────── */
+.navbar-submit-link {
+  font-family: var(--font-system) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: var(--ifm-color-primary-dark, #4f46e5) !important;
+  white-space: nowrap !important;
+  padding: 4px 10px !important;
+  border: 2px solid var(--ifm-color-primary, #6366f1) !important;
+  border-radius: 2px !important;
+  transition: all 0.15s ease !important;
+}
+
+.navbar-submit-link:hover {
+  background: var(--ifm-color-primary, #6366f1) !important;
+  color: #fff !important;
+}
+
+.navbar-submit-link:active {
+  background: var(--ifm-color-primary-dark, #4f46e5) !important;
+  color: #fff !important;
 }
 
 /* Dropdown menu styling improvements */
@@ -1269,21 +1289,49 @@ html[class*="sidebar--show"] .theme-picker__hotdog,
   background-color: var(--ifm-color-primary-lightest) !important;
 }
 
-/* Mobile: Hide CTA button in sidebar (dropdowns handle it) and on narrower screens */
-@media (max-width: 1100px) {
-  .navbar-cta-button {
+/* ── Early hamburger: collapse nav links at 1200px instead of 996px ──── */
+@media (max-width: 1200px) {
+  /* Hide left-side dropdown items (Skills, Explore, Learn) */
+  .navbar__items:not(.navbar__items--right) > .dropdown {
     display: none !important;
+  }
+
+  /* Force the hamburger toggle to show */
+  .navbar__toggle {
+    display: flex !important;
+  }
+
+  /* Winamp and ThemePicker stay visible in top bar at all widths */
+  /* (They also appear in the hamburger sidebar — handled below) */
+
+  /* Collapse GitHub to just its icon */
+  .navbar__items--right > a[href*="github"] {
+    font-size: 0 !important;
+    padding: 4px 8px !important;
+  }
+  .navbar__items--right > a[href*="github"] svg {
+    font-size: 14px !important;
+    width: 14px;
+    height: 14px;
   }
 }
 
-/* Ensure navbar doesn't crumple on tablet sizes */
-@media (max-width: 1300px) {
-  .navbar__inner {
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-  }
+/* ── Keep "Available for Hire" visible at ALL widths ───────────────────── */
+/* Override Docusaurus's default hiding of right-side items on mobile */
+.navbar-hire-link.navbar__item {
+  display: flex !important;
+}
 
-  .navbar__items {
-    gap: 4px !important;
-  }
+/* On mobile sidebar, hide the duplicate hire link (it stays in top bar) */
+.navbar-sidebar .navbar-hire-link {
+  display: none !important;
+}
+
+/* Ensure navbar doesn't crumple on any size */
+.navbar__inner {
+  flex-wrap: nowrap !important;
+}
+
+.navbar__items {
+  gap: 4px !important;
 }

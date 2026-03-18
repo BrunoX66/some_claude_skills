@@ -120,10 +120,10 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/`;
       '@type': 'Person',
       name: 'Erich Owens',
       url: 'https://linkedin.com/in/erich-owens-01a38446/',
-      jobTitle: 'ML Engineer',
+      jobTitle: 'Founder',
       worksFor: {
         '@type': 'Organization',
-        name: 'Independent',
+        name: 'Curiositech',
       },
     },
     offers: {
