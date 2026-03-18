@@ -7,6 +7,7 @@ import { useSkillsData } from "@/state/skillsData";
 import { ArrowLeft } from "lucide-react";
 import { TUTORIAL_CONTENT } from "@/data/tutorialContent";
 import type { TutorialStep } from "@/data/tutorialContent";
+import type { Skill } from "@/types/skill";
 
 /* ── Tutorial data ────────────────────────────────────────────────────────── */
 
@@ -19,6 +20,7 @@ interface Tutorial {
   difficulty: 1 | 2 | 3;
   duration: string;
   heroImage?: string;      // optional hero image path
+  accentColor: string;     // per-card accent color
 }
 
 const TUTORIALS: Tutorial[] = [
@@ -33,6 +35,7 @@ const TUTORIALS: Tutorial[] = [
     difficulty: 1,
     duration: "5 min",
     heroImage: "/img/tutorials/first-email-hero.webp",
+    accentColor: "#2563eb",
   },
   {
     id: "plan-vacation",
@@ -44,6 +47,7 @@ const TUTORIALS: Tutorial[] = [
     difficulty: 1,
     duration: "10 min",
     heroImage: "/img/tutorials/plan-vacation-hero.webp",
+    accentColor: "#0891b2",
   },
   {
     id: "health-letter",
@@ -55,6 +59,7 @@ const TUTORIALS: Tutorial[] = [
     difficulty: 1,
     duration: "8 min",
     heroImage: "/img/tutorials/health-letter-hero.webp",
+    accentColor: "#059669",
   },
   {
     id: "budget-help",
@@ -66,6 +71,7 @@ const TUTORIALS: Tutorial[] = [
     difficulty: 2,
     duration: "15 min",
     heroImage: "/img/tutorials/budget-help-hero.webp",
+    accentColor: "#0d9488",
   },
   {
     id: "photo-organize",
@@ -77,6 +83,7 @@ const TUTORIALS: Tutorial[] = [
     difficulty: 2,
     duration: "20 min",
     heroImage: "/img/tutorials/photo-organize-hero.webp",
+    accentColor: "#6366f1",
   },
 
   // ── For advanced / Anthropic engineers ────────────────────────────────
@@ -90,6 +97,7 @@ const TUTORIALS: Tutorial[] = [
     difficulty: 3,
     duration: "45 min",
     heroImage: "/img/tutorials/first-agent-swarm-hero.webp",
+    accentColor: "#7c3aed",
   },
   {
     id: "adhd-os",
@@ -101,6 +109,7 @@ const TUTORIALS: Tutorial[] = [
     difficulty: 3,
     duration: "90 min",
     heroImage: "/img/tutorials/adhd-os-hero.webp",
+    accentColor: "#d97706",
   },
   {
     id: "pr-review-swarm",
@@ -112,6 +121,7 @@ const TUTORIALS: Tutorial[] = [
     difficulty: 3,
     duration: "60 min",
     heroImage: "/img/tutorials/pr-review-swarm-hero.webp",
+    accentColor: "#dc2626",
   },
   {
     id: "skill-composition",
@@ -123,6 +133,7 @@ const TUTORIALS: Tutorial[] = [
     difficulty: 3,
     duration: "40 min",
     heroImage: "/img/tutorials/skill-composition-hero.webp",
+    accentColor: "#059669",
   },
   {
     id: "self-healing-cron",
@@ -134,6 +145,7 @@ const TUTORIALS: Tutorial[] = [
     difficulty: 3,
     duration: "75 min",
     heroImage: "/img/tutorials/self-healing-cron-hero.webp",
+    accentColor: "#0891b2",
   },
 ];
 
@@ -327,9 +339,9 @@ function TutorialDetailView({
   const [imgError, setImgError] = useState(false);
 
   const isBeginner = tutorial.audience === "beginner";
-  const accentColor = isBeginner ? "var(--color-info)" : "var(--color-warning)";
-  const gradientFrom = isBeginner ? "#1e40af" : "#92400e";
-  const gradientTo = isBeginner ? "#3b82f6" : "#f59e0b";
+  const accentColor = tutorial.accentColor;
+  const gradientFrom = accentColor;
+  const gradientTo = `${accentColor}99`;
   const steps: TutorialStep[] = TUTORIAL_CONTENT[tutorial.id] || [];
 
   const diffLabel = (d: number) => "★".repeat(d) + "☆".repeat(3 - d);
@@ -396,12 +408,21 @@ function TutorialDetailView({
         {steps.length > 0 ? (
           steps.map((step, idx) => (
             <div key={idx}>
-              <h3
-                className="font-[family-name:var(--font-system)] text-[14px] font-bold mb-2"
-                style={{ color: accentColor }}
-              >
-                {step.heading}
-              </h3>
+              <div className="flex items-center gap-2 mb-2">
+                {/* Accent-colored step number circle */}
+                <span
+                  className="w-6 h-6 rounded-full flex items-center justify-center text-white text-[11px] font-bold font-[family-name:var(--font-system)] shrink-0"
+                  style={{ background: accentColor }}
+                >
+                  {idx + 1}
+                </span>
+                <h3
+                  className="font-[family-name:var(--font-system)] text-[14px] font-bold"
+                  style={{ color: accentColor }}
+                >
+                  {step.heading}
+                </h3>
+              </div>
               <div className={cn(
                 "p-3",
                 "bg-[var(--color-surface-raised)]",
@@ -517,6 +538,114 @@ function SkillThumbnail({ skillId, heroImage }: { skillId: string; heroImage?: s
   );
 }
 
+/* ── Tutorial list card ─────────────────────────────────────────────────── */
+
+function TutorialListCard({
+  tutorial: t,
+  skills,
+  onSelect,
+  audienceLabel,
+  diffLabel,
+}: {
+  tutorial: Tutorial;
+  skills: Skill[];
+  onSelect: () => void;
+  audienceLabel: (a: string) => string;
+  diffLabel: (d: number) => string;
+}) {
+  const [imgErr, setImgErr] = useState(false);
+
+  return (
+    <button
+      onClick={onSelect}
+      className={cn(
+        "w-full text-left cursor-pointer",
+        "bg-[var(--color-surface)]",
+        "border-2",
+        "border-t-[var(--color-border-raised-light)]",
+        "border-l-[var(--color-border-raised-light)]",
+        "border-b-[var(--color-border-raised-dark)]",
+        "border-r-[var(--color-border-raised-dark)]",
+        "hover:bg-[var(--color-surface-inset)]",
+        "transition-colors",
+        "overflow-hidden",
+        "flex"
+      )}
+    >
+      {/* Hero thumbnail */}
+      {t.heroImage && !imgErr ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={t.heroImage}
+          alt=""
+          className="w-20 shrink-0 object-cover"
+          onError={() => setImgErr(true)}
+        />
+      ) : (
+        <div
+          className="w-20 shrink-0 flex items-center justify-center"
+          style={{ background: `linear-gradient(135deg, ${t.accentColor}, ${t.accentColor}88)` }}
+        >
+          <span className="text-white/90 text-2xl font-bold font-[family-name:var(--font-system)]">
+            {t.title.charAt(0)}
+          </span>
+        </div>
+      )}
+
+      {/* Content area with colored left border */}
+      <div
+        className="flex-1 min-w-0 p-3"
+        style={{ borderLeft: `3px solid ${t.accentColor}` }}
+      >
+        {/* Header row */}
+        <div className="flex items-start gap-2 mb-1">
+          <span className="font-[family-name:var(--font-system)] text-xs font-bold text-[var(--color-text-primary)] flex-1 leading-tight">
+            {t.title}
+          </span>
+          <span
+            className="text-[9px] font-bold font-[family-name:var(--font-system)] shrink-0 px-1.5 py-0.5 rounded-sm"
+            style={{ color: t.accentColor }}
+          >
+            {audienceLabel(t.audience)}
+          </span>
+        </div>
+
+        {/* Description */}
+        <p className="text-[11px] text-[var(--color-text-secondary)] font-[family-name:var(--font-system)] leading-relaxed mb-2 line-clamp-2">
+          {t.description}
+        </p>
+
+        {/* Footer row: skills + meta */}
+        <div className="flex items-center gap-1 flex-wrap">
+          {t.skillIds.map((sid) => {
+            const s = skills.find((sk) => sk.id === sid);
+            return (
+              <span
+                key={sid}
+                className={cn(
+                  "text-[9px] px-1.5 py-0.5",
+                  "font-[family-name:var(--font-system)]",
+                  "bg-[var(--color-surface-inset)]",
+                  "border border-[var(--color-border-inset-light)]",
+                )}
+                style={{ color: t.accentColor }}
+              >
+                {s?.title ?? sid}
+              </span>
+            );
+          })}
+          <span className="ml-auto text-[9px] text-[var(--color-text-muted)] font-[family-name:var(--font-system)] shrink-0">
+            {t.duration}
+          </span>
+          <span className="text-[9px] font-mono text-[var(--color-text-muted)]">
+            {diffLabel(t.difficulty)}
+          </span>
+        </div>
+      </div>
+    </button>
+  );
+}
+
 /* ── Component ────────────────────────────────────────────────────────────── */
 
 export function TutorialsWindow() {
@@ -536,10 +665,6 @@ export function TutorialsWindow() {
   const diffLabel  = (d: number) => "★".repeat(d) + "☆".repeat(3 - d);
   const audienceLabel = (a: string) =>
     a === "beginner" ? "Beginner" : "Power User";
-  const audienceColor = (a: string) =>
-    a === "beginner"
-      ? "text-[var(--color-info)]"
-      : "text-[var(--color-warning)]";
 
   return (
     <div className="h-full flex flex-col bg-[var(--color-surface-inset)]">
@@ -580,67 +705,14 @@ export function TutorialsWindow() {
       {/* Tutorial list */}
       <div className="flex-1 overflow-y-auto p-3 space-y-2">
         {visible.map((t) => (
-          <button
+          <TutorialListCard
             key={t.id}
-            onClick={() => setSelected(t)}
-            className={cn(
-              "w-full text-left cursor-pointer",
-              "p-3",
-              "bg-[var(--color-surface)]",
-              "border-2",
-              "border-t-[var(--color-border-raised-light)]",
-              "border-l-[var(--color-border-raised-light)]",
-              "border-b-[var(--color-border-raised-dark)]",
-              "border-r-[var(--color-border-raised-dark)]",
-              "hover:bg-[var(--color-surface-inset)]",
-              "transition-colors"
-            )}
-          >
-            {/* Header row */}
-            <div className="flex items-start gap-2 mb-1">
-              <span className="font-[family-name:var(--font-system)] text-xs font-bold text-[var(--color-text-primary)] flex-1">
-                {t.title}
-              </span>
-              <span className={cn(
-                "text-[9px] font-[family-name:var(--font-system)] shrink-0",
-                audienceColor(t.audience)
-              )}>
-                {audienceLabel(t.audience)}
-              </span>
-              <span className="text-[9px] text-[var(--color-text-muted)] font-[family-name:var(--font-system)] shrink-0">
-                {t.duration}
-              </span>
-            </div>
-
-            {/* Description */}
-            <p className="text-[10px] text-[var(--color-text-secondary)] font-[family-name:var(--font-system)] leading-relaxed mb-2">
-              {t.description}
-            </p>
-
-            {/* Skills used */}
-            <div className="flex flex-wrap gap-1">
-              {t.skillIds.map((sid) => {
-                const s = skills.find((sk) => sk.id === sid);
-                return (
-                  <span
-                    key={sid}
-                    className={cn(
-                      "text-[9px] px-1.5 py-0.5",
-                      "font-[family-name:var(--font-system)]",
-                      "text-[var(--color-text-accent)]",
-                      "bg-[var(--color-surface-inset)]",
-                      "border border-[var(--color-border-inset-light)]",
-                    )}
-                  >
-                    {s?.title ?? sid}
-                  </span>
-                );
-              })}
-              <span className="ml-auto text-[9px] font-mono text-[var(--color-text-muted)]">
-                {diffLabel(t.difficulty)}
-              </span>
-            </div>
-          </button>
+            tutorial={t}
+            skills={skills}
+            onSelect={() => setSelected(t)}
+            audienceLabel={audienceLabel}
+            diffLabel={diffLabel}
+          />
         ))}
       </div>
     </div>

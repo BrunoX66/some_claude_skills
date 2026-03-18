@@ -30,6 +30,11 @@
   /* Code blocks */
   --color-code-bg: #0d001a;
   --color-code-text: var(--color-lime-400);
+  --color-code-border: var(--color-magenta-400);
+
+  /* Content + titlebar */
+  --color-content-bg: #0d001a;
+  --color-titlebar-end: #6600cc;
 
   /* Effects */
   --effect-glow: 0 0 12px rgba(255, 0, 255, 0.3);

@@ -14,7 +14,22 @@ import {
   Win31MenuSeparator,
 } from "@/components/win31";
 import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher";
-import { openChangelogWindow, openSearchWindow } from "@/lib/windowHelpers";
+import {
+  openChangelogWindow,
+  openSearchWindow,
+  openMcpWindow,
+  openAgentsWindow,
+  openBundlesWindow,
+  openAboutWindow,
+  openFavoritesWindow,
+  openBaitWindow,
+  openTutorialsWindow,
+  openArtifactsWindow,
+  openBrowserWindow,
+  openSettingsWindow,
+  openWelcomeWindow,
+  openFeaturedWindow,
+} from "@/lib/windowHelpers";
 import { cn } from "@/lib/utils";
 
 interface TaskbarProps {
@@ -127,12 +142,52 @@ export function Taskbar({
 
           <Win31MenuSeparator />
 
-          {/* Actions */}
+          {/* Programs */}
+          <Win31MenuItem onSelect={() => openTutorialsWindow()}>
+            Tutorials
+          </Win31MenuItem>
+          <Win31MenuItem onSelect={() => openArtifactsWindow()}>
+            Artifacts
+          </Win31MenuItem>
+          <Win31MenuItem onSelect={() => openBrowserWindow()}>
+            Internet Explorer
+          </Win31MenuItem>
+
+          <Win31MenuSeparator />
+
+          {/* Content windows */}
+          <Win31MenuItem onSelect={() => openBundlesWindow()}>
+            Bundles
+          </Win31MenuItem>
+          <Win31MenuItem onSelect={() => openMcpWindow()}>
+            MCPs
+          </Win31MenuItem>
+          <Win31MenuItem onSelect={() => openAgentsWindow()}>
+            Agents
+          </Win31MenuItem>
           <Win31MenuItem onSelect={() => openChangelogWindow()}>
             {"What's New"}
           </Win31MenuItem>
-          <Win31MenuItem onSelect={() => onAboutClick?.()}>
+          <Win31MenuItem onSelect={() => openFavoritesWindow()}>
+            Starred Skills
+          </Win31MenuItem>
+
+          <Win31MenuSeparator />
+
+          <Win31MenuItem onSelect={() => openFeaturedWindow()}>
+            Featured Skills
+          </Win31MenuItem>
+          <Win31MenuItem onSelect={() => openWelcomeWindow()}>
+            Welcome / Intro
+          </Win31MenuItem>
+          <Win31MenuItem onSelect={() => openSettingsWindow()}>
+            Settings...
+          </Win31MenuItem>
+          <Win31MenuItem onSelect={() => openAboutWindow()}>
             About...
+          </Win31MenuItem>
+          <Win31MenuItem onSelect={() => openBaitWindow()}>
+            You&apos;ve Won a Prize!
           </Win31MenuItem>
         </Win31MenuContent>
       </Win31Menu>
@@ -148,7 +203,7 @@ export function Taskbar({
 
       {/* Window buttons area */}
       <div className="flex-1 flex items-center gap-1 overflow-x-auto min-w-0">
-        {windows.map((win) => {
+        {windows.filter((w) => !w.autoMinimized).map((win) => {
           const isActive = win.id === activeWindowId && !win.isMinimized;
           return (
             <button

@@ -6,7 +6,7 @@ import {
   useCallback,
   useEffect,
   type ReactNode,
-  type MouseEvent as ReactMouseEvent,
+  type PointerEvent as ReactPointerEvent,
 } from "react";
 import { cn } from "@/lib/utils";
 
@@ -108,11 +108,12 @@ export function Win31MDIWindow({
 
   /* ─── Drag handling ──────────────────────────────────────────────────── */
 
-  const handleTitleMouseDown = useCallback(
-    (e: ReactMouseEvent) => {
+  const handleTitlePointerDown = useCallback(
+    (e: ReactPointerEvent) => {
       if (isMaximized) return;
       if ((e.target as HTMLElement).closest("button")) return;
       e.preventDefault();
+      (e.target as HTMLElement).setPointerCapture(e.pointerId);
       onFocus?.();
       isDraggingRef.current = true;
       dragStartRef.current = {
@@ -126,7 +127,7 @@ export function Win31MDIWindow({
   );
 
   useEffect(() => {
-    const handleMouseMove = (e: globalThis.MouseEvent) => {
+    const handlePointerMove = (e: PointerEvent) => {
       if (!isDraggingRef.current) return;
       const dx = e.clientX - dragStartRef.current.mouseX;
       const dy = e.clientY - dragStartRef.current.mouseY;
@@ -144,15 +145,15 @@ export function Win31MDIWindow({
       onMove?.(newX, newY);
     };
 
-    const handleMouseUp = () => {
+    const handlePointerUp = () => {
       isDraggingRef.current = false;
     };
 
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
+    document.addEventListener("pointermove", handlePointerMove);
+    document.addEventListener("pointerup", handlePointerUp);
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
+      document.removeEventListener("pointermove", handlePointerMove);
+      document.removeEventListener("pointerup", handlePointerUp);
     };
   }, [parentBounds, size.w, size.h, onMove]);
 
@@ -219,7 +220,7 @@ export function Win31MDIWindow({
         height: isMaximized && parentBounds ? parentBounds.height : size.h,
         zIndex,
       }}
-      onMouseDown={() => onFocus?.()}
+      onPointerDown={() => onFocus?.()}
     >
       {/* Title bar */}
       <div
@@ -227,7 +228,8 @@ export function Win31MDIWindow({
           "h-[14px] flex items-center gap-px px-0.5 shrink-0 select-none",
           titleBarBg
         )}
-        onMouseDown={handleTitleMouseDown}
+        style={{ touchAction: "none" }}
+        onPointerDown={handleTitlePointerDown}
         onDoubleClick={handleMaxToggle}
       >
         {/* Title text */}

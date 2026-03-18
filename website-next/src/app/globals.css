@@ -5,4 +5,5 @@
 @import '../styles/themes/crt.css';
 @import '../styles/themes/inverted.css';
 @import '../styles/themes/cyberpunk.css';
+@import '../styles/dossier.css';
 @import "tailwindcss";

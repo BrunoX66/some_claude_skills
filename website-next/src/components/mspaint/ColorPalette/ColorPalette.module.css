@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background: #C0C0C0;
+  border-top: 1px solid #FFFFFF;
+}
+
+.fgBgSelector {
+  position: relative;
+  width: 32px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.fgColor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+  z-index: 2;
+}
+
+.bgColor {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+  z-index: 1;
+}
+
+.colorGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  border: 2px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+  padding: 2px;
+  background: #C0C0C0;
+}
+
+.colorRow {
+  display: flex;
+  gap: 1px;
+}
+
+.colorSwatch {
+  width: 16px;
+  height: 14px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  padding: 0;
+}
+
+.colorSwatch:hover {
+  border-color: #000000;
+}
+
+.colorSwatch.selectedFg {
+  outline: 2px solid #000000;
+  outline-offset: -2px;
+}
+
+.colorSwatch.selectedBg {
+  outline: 2px dashed #000000;
+  outline-offset: -2px;
+}

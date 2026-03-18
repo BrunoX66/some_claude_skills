@@ -1,0 +1,9 @@
+# Cloudflare Pages redirects — route missing pages to classic site
+/artifacts https://classic.someclaudeskills.com/artifacts 302
+/artifact https://classic.someclaudeskills.com/artifact 302
+/ecosystem https://classic.someclaudeskills.com/ecosystem 302
+/contact https://classic.someclaudeskills.com/contact 302
+/submit-skill https://classic.someclaudeskills.com/submit-skill 302
+/metrics https://classic.someclaudeskills.com/metrics 302
+/dag/* https://classic.someclaudeskills.com/dag/:splat 302
+/docs/* https://classic.someclaudeskills.com/docs/:splat 302

@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { openSkillWindow } from "@/lib/windowHelpers";
+import { openSkillDetails } from "@/lib/windowHelpers";
 import { cn } from "@/lib/utils";
 import type { Skill } from "@/types/skill";
 
@@ -24,7 +24,7 @@ export function SkillIcon({ skill }: SkillIconProps) {
   const [imgError, setImgError] = useState(false);
 
   const handleOpen = useCallback(() => {
-    openSkillWindow(skill.id, skill.title);
+    openSkillDetails(skill.id, skill.title);
   }, [skill.id, skill.title]);
 
   return (

@@ -29,4 +29,9 @@
   /* Code blocks */
   --color-code-bg: var(--color-black);
   --color-code-text: var(--color-gray-200);
+  --color-code-border: var(--color-teal-400);
+
+  /* Content + titlebar */
+  --color-content-bg: var(--color-gray-900);
+  --color-titlebar-end: #6699cc;
 }

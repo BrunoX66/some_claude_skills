@@ -1,0 +1,105 @@
+.referencePanel {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #dfdfdf #808080 #808080 #dfdfdf;
+  font-family: 'MS Sans Serif', Arial, sans-serif;
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+.header {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: white;
+  padding: 4px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.header h3 {
+  margin: 0;
+  font-size: 12px;
+}
+
+.collapseButton {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #dfdfdf #808080 #808080 #dfdfdf;
+  color: #000;
+  font-family: 'MS Sans Serif', Arial, sans-serif;
+  font-size: 10px;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.collapseButton:active {
+  border-color: #808080 #dfdfdf #dfdfdf #808080;
+}
+
+.content {
+  padding: 8px;
+}
+
+.searchQuery {
+  font-size: 10px;
+  color: #666;
+  margin-bottom: 6px;
+  padding: 4px 6px;
+  background: #e0e0e0;
+  border: 1px solid;
+  border-color: #808080 #dfdfdf #dfdfdf #808080;
+}
+
+.searchQuery strong {
+  color: #000080;
+}
+
+.thumbnailGrid {
+  display: flex;
+  gap: 6px;
+}
+
+.thumbnailWrapper {
+  flex: 1;
+  border: 2px solid;
+  border-color: #808080 #dfdfdf #dfdfdf #808080;
+  background: white;
+  overflow: hidden;
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 120px;
+  object-fit: cover;
+}
+
+.attribution {
+  font-size: 9px;
+  color: #888;
+  padding: 2px 4px;
+  background: #f0f0f0;
+  border-top: 1px solid #ccc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.attribution a {
+  color: #000080;
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}

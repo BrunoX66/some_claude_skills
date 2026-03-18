@@ -3,43 +3,39 @@
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
-export type Win31PatternType = "solid" | "halftone" | "crosshatch" | "dots";
+export type Win31PatternType = "solid" | "halftone" | "crosshatch" | "dots" | "image";
 
 export interface Win31BackgroundProps {
   children?: ReactNode;
-  /** Desktop pattern style. Defaults to "solid". */
+  /** Desktop pattern style. Defaults to "solid". Use "image" with imageUrl. */
   pattern?: Win31PatternType;
   /** Override the background color. Defaults to var(--color-desktop). */
   color?: string;
+  /** URL for background image (used when pattern="image"). */
+  imageUrl?: string;
   className?: string;
 }
 
 /**
- * Win31Background - The teal desktop background.
+ * Win31Background - The desktop background.
  *
- * Provides the classic Windows 3.1 desktop surface. Supports optional
- * patterns via CSS background-image overlays. Color defaults to the
- * `--color-desktop` semantic token so it responds to theme changes.
+ * Supports solid color, CSS patterns, or a wallpaper image.
+ * Color defaults to `--color-desktop` so it responds to theme changes.
  *
  * @example
  * ```tsx
- * <Win31Background>
- *   <Win31Panel className="p-4">Window on desktop</Win31Panel>
- * </Win31Background>
- *
- * <Win31Background pattern="halftone" />
+ * <Win31Background pattern="image" imageUrl="/img/desktop-wallpaper.webp" />
  * ```
  */
 export function Win31Background({
   children,
-  pattern = "solid",
+  pattern = "image",
   color,
+  imageUrl = "/img/desktop-wallpaper.webp",
   className,
 }: Win31BackgroundProps) {
   const bgColor = color ?? "var(--color-desktop)";
-
-  // Build pattern-specific inline style
-  const patternStyle = getPatternStyle(pattern, bgColor);
+  const patternStyle = getPatternStyle(pattern, bgColor, imageUrl);
 
   return (
     <div
@@ -53,13 +49,23 @@ export function Win31Background({
 
 function getPatternStyle(
   pattern: Win31PatternType,
-  bgColor: string
+  bgColor: string,
+  imageUrl?: string
 ): React.CSSProperties {
   const base: React.CSSProperties = {
     backgroundColor: bgColor,
   };
 
   switch (pattern) {
+    case "image":
+      return {
+        ...base,
+        backgroundImage: imageUrl ? `url(${imageUrl})` : undefined,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      };
+
     case "halftone":
       return {
         ...base,

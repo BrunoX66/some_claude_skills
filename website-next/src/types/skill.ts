@@ -3,6 +3,22 @@ export interface SkillPairing {
   reason: string;
 }
 
+export interface SkillFolderFile {
+  name: string;
+  type: "file" | "folder";
+  path: string;
+  children?: SkillFolderFile[];
+  size?: number;
+}
+
+export interface SkillFolderMeta {
+  fileCount: number;
+  folderCount: number;
+  /** true if the skill directory contains more than just SKILL.md */
+  hasContent: boolean;
+  files: SkillFolderFile[];
+}
+
 export interface Skill {
   /** Directory name, e.g. "computer-vision-pipeline" */
   id: string;
@@ -22,4 +38,8 @@ export interface Skill {
   pairsWith?: SkillPairing[];
   /** Markdown body with frontmatter stripped */
   content: string;
+  /** Pre-rendered HTML from the unified pipeline (build-time) */
+  contentHtml: string;
+  /** Folder structure metadata */
+  folderMeta: SkillFolderMeta;
 }

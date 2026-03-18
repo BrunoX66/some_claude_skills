@@ -25,18 +25,25 @@
   --color-border-inset-dark: var(--color-white);
   --color-border-outer: var(--color-black);
 
-  /* Text */
+  /* Text — high contrast: no gray-on-gray */
   --color-text-primary: var(--color-black);
-  --color-text-secondary: var(--color-gray-500);
-  --color-text-muted: var(--color-gray-400);
+  --color-text-secondary: var(--color-gray-700);
+  --color-text-muted: var(--color-gray-600);
   --color-text-link: var(--color-navy-500);
   --color-text-accent: var(--color-teal-500);
   --color-text-on-titlebar: var(--color-white);
   --color-text-code: var(--color-navy-500);
 
-  /* Code blocks */
-  --color-code-bg: var(--color-gray-900);
-  --color-code-text: #e0e0e0;
+  /* Code blocks — classic terminal: lime on black */
+  --color-code-bg: #000000;
+  --color-code-text: #33ff33;
+  --color-code-border: #00ff00;
+
+  /* Content area — warm beige paper, not stark white */
+  --color-content-bg: #F5F5DC;
+
+  /* Titlebar gradient end stop (active titlebar uses a gradient) */
+  --color-titlebar-end: #4040c0;
 
   /* Status */
   --color-success: var(--color-lime-400);

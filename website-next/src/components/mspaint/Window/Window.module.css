@@ -1,0 +1,82 @@
+.window {
+  display: flex;
+  flex-direction: column;
+  background: #C0C0C0;
+  border: 3px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+  box-shadow:
+    inset 1px 1px 0 #FFFFFF,
+    inset -1px -1px 0 #808080,
+    2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.titlebar {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: #FFFFFF;
+  padding: 2px 3px;
+  font-weight: bold;
+  gap: 4px;
+  user-select: none;
+}
+
+.titlebar.inactive {
+  background: #808080;
+  color: #C0C0C0;
+}
+
+.titlebarIcon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.systemIcon {
+  font-size: 12px;
+}
+
+.titlebarText {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+.titlebarButtons {
+  display: flex;
+  gap: 2px;
+}
+
+.titlebarBtn {
+  width: 17px;
+  height: 14px;
+  background: #C0C0C0;
+  border: 1px solid;
+  border-color: #FFFFFF #000000 #000000 #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 8px;
+  font-weight: bold;
+  color: #000000;
+  padding: 0;
+  font-family: inherit;
+}
+
+.titlebarBtn:active {
+  border-color: #000000 #FFFFFF #FFFFFF #000000;
+  background: #A0A0A0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}

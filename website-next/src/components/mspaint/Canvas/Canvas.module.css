@@ -1,0 +1,19 @@
+.canvasWrapper {
+  flex: 1;
+  display: flex;
+  overflow: auto;
+  background: #808080;
+  padding: 4px;
+}
+
+.canvasContainer {
+  position: relative;
+  border: 2px solid;
+  border-color: #808080 #FFFFFF #FFFFFF #808080;
+}
+
+.canvas {
+  display: block;
+  cursor: crosshair;
+  image-rendering: pixelated;
+}

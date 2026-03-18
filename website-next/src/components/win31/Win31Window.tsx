@@ -6,7 +6,7 @@ import {
   useCallback,
   useEffect,
   type ReactNode,
-  type MouseEvent as ReactMouseEvent,
+  type PointerEvent as ReactPointerEvent,
 } from "react";
 import { cn } from "@/lib/utils";
 
@@ -73,10 +73,10 @@ export interface Win31WindowProps {
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 
-const RESIZE_HANDLE = 6;
+const RESIZE_HANDLE = 8;
 
 function getEdge(
-  e: ReactMouseEvent,
+  e: ReactPointerEvent | { clientX: number; clientY: number },
   rect: DOMRect,
   resizable: boolean
 ): ResizeEdge {
@@ -210,12 +210,13 @@ export function Win31Window({
 
   /* ─── Dragging ───────────────────────────────────────────────────────── */
 
-  const handleTitleBarMouseDown = useCallback(
-    (e: ReactMouseEvent) => {
+  const handleTitleBarPointerDown = useCallback(
+    (e: ReactPointerEvent) => {
       if (!draggable || isMaximized) return;
       // Ignore if clicking buttons
       if ((e.target as HTMLElement).closest("button")) return;
       e.preventDefault();
+      (e.target as HTMLElement).setPointerCapture(e.pointerId);
       isDraggingRef.current = true;
       dragStartRef.current = {
         mouseX: e.clientX,
@@ -228,16 +229,8 @@ export function Win31Window({
   );
 
   useEffect(() => {
-    const handleMouseMove = (e: globalThis.MouseEvent) => {
-      if (isDraggingRef.current) {
-        const dx = e.clientX - dragStartRef.current.mouseX;
-        const dy = e.clientY - dragStartRef.current.mouseY;
-        const newX = dragStartRef.current.posX + dx;
-        const newY = Math.max(0, dragStartRef.current.posY + dy);
-        setPos({ x: newX, y: newY });
-        onMove?.(newX, newY);
-      }
-
+    const handlePointerMove = (e: PointerEvent) => {
+      // Resize takes priority over drag (prevents conflict at title bar top edge)
       if (isResizingRef.current) {
         const edge = resizeEdgeRef.current;
         if (!edge) return;
@@ -265,27 +258,34 @@ export function Win31Window({
         setSize({ w: newW, h: newH });
         onMove?.(newX, newY);
         onResizeCb?.(newW, newH);
+      } else if (isDraggingRef.current) {
+        const dx = e.clientX - dragStartRef.current.mouseX;
+        const dy = e.clientY - dragStartRef.current.mouseY;
+        const newX = dragStartRef.current.posX + dx;
+        const newY = Math.max(0, dragStartRef.current.posY + dy);
+        setPos({ x: newX, y: newY });
+        onMove?.(newX, newY);
       }
     };
 
-    const handleMouseUp = () => {
+    const handlePointerUp = () => {
       isDraggingRef.current = false;
       isResizingRef.current = false;
       resizeEdgeRef.current = null;
     };
 
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
+    document.addEventListener("pointermove", handlePointerMove);
+    document.addEventListener("pointerup", handlePointerUp);
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseup", handleMouseUp);
+      document.removeEventListener("pointermove", handlePointerMove);
+      document.removeEventListener("pointerup", handlePointerUp);
     };
   }, [minWidth, minHeight, onMove, onResizeCb]);
 
   /* ─── Resizing ───────────────────────────────────────────────────────── */
 
-  const handleWindowMouseDown = useCallback(
-    (e: ReactMouseEvent) => {
+  const handleWindowPointerDown = useCallback(
+    (e: ReactPointerEvent) => {
       onFocus?.();
 
       if (!resizable || isMaximized) return;
@@ -295,6 +295,8 @@ export function Win31Window({
       if (!edge) return;
 
       e.preventDefault();
+      (e.target as HTMLElement).setPointerCapture(e.pointerId);
+      isDraggingRef.current = false; // Cancel drag if resize takes priority
       isResizingRef.current = true;
       resizeEdgeRef.current = edge;
       resizeStartRef.current = {
@@ -309,8 +311,8 @@ export function Win31Window({
     [resizable, isMaximized, pos.x, pos.y, size.w, size.h, onFocus]
   );
 
-  const handleWindowMouseMove = useCallback(
-    (e: ReactMouseEvent) => {
+  const handleWindowPointerMove = useCallback(
+    (e: ReactPointerEvent) => {
       if (!resizable || isMaximized || isDraggingRef.current || isResizingRef.current) return;
       const rect = windowRef.current?.getBoundingClientRect();
       if (!rect) return;
@@ -318,6 +320,19 @@ export function Win31Window({
     },
     [resizable, isMaximized]
   );
+
+  /* ─── Escape key: close active window ───────────────────────────────── */
+
+  useEffect(() => {
+    if (!isActive) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose?.();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isActive, onClose]);
 
   /* ─── System Menu ────────────────────────────────────────────────────── */
 
@@ -328,13 +343,13 @@ export function Win31Window({
   // Close system menu on outside click
   useEffect(() => {
     if (!systemMenuOpen) return;
-    const handler = (e: globalThis.MouseEvent) => {
+    const handler = (e: globalThis.PointerEvent | globalThis.MouseEvent) => {
       if (!windowRef.current?.contains(e.target as Node)) {
         setSystemMenuOpen(false);
       }
     };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
+    document.addEventListener("pointerdown", handler);
+    return () => document.removeEventListener("pointerdown", handler);
   }, [systemMenuOpen]);
 
   const handleSystemMenuAction = useCallback(
@@ -382,15 +397,19 @@ export function Win31Window({
 
   if (isMinimized) return null;
 
-  const titleBarBg = isActive
-    ? "bg-[var(--color-titlebar-active)]"
-    : "bg-[var(--color-titlebar-inactive)]";
+  // Active titlebar uses a gradient (matches original someclaudeskills.com)
+  const titleBarBg = isActive ? "" : "bg-[var(--color-titlebar-inactive)]";
+  const titleBarStyle = isActive
+    ? { background: "linear-gradient(90deg, var(--color-titlebar-active), var(--color-titlebar-end, #4040c0))" }
+    : undefined;
 
   const titleBarTextColor = "text-[var(--color-titlebar-text)]";
 
   // Title bar button: small raised button in the title bar
   const titleBtnClasses = cn(
-    "w-4 h-[13px] flex items-center justify-center",
+    "flex items-center justify-center",
+    "w-[var(--win31-titlebar-btn)] h-[var(--win31-titlebar-btn)]",
+    "text-[length:var(--win31-titlebar-btn-font)] leading-none",
     "bg-[var(--color-surface)]",
     "border",
     "border-t-[var(--color-border-raised-light)]",
@@ -398,7 +417,7 @@ export function Win31Window({
     "border-b-[var(--color-border-raised-dark)]",
     "border-r-[var(--color-border-raised-dark)]",
     "cursor-pointer select-none",
-    "text-[8px] leading-none text-[var(--color-text-primary)]",
+    "text-[var(--color-text-primary)]",
     "active:border-t-[var(--color-border-raised-dark)]",
     "active:border-l-[var(--color-border-raised-dark)]",
     "active:border-b-[var(--color-border-raised-light)]",
@@ -408,6 +427,9 @@ export function Win31Window({
   return (
     <div
       ref={windowRef}
+      role="dialog"
+      aria-label={title}
+      aria-modal="false"
       className={cn(
         "absolute flex flex-col",
         // Outer raised bevel
@@ -421,16 +443,13 @@ export function Win31Window({
         "shadow-[inset_1px_1px_0_var(--color-border-raised-light),inset_-1px_-1px_0_var(--color-border-inset-light),2px_2px_4px_rgba(0,0,0,0.3)]",
         className
       )}
-      style={{
-        left: x,
-        top: y,
-        width: w,
-        height: h,
-        zIndex,
-        cursor: hoverEdge ? cursorForEdge(hoverEdge) : undefined,
-      }}
-      onMouseDown={handleWindowMouseDown}
-      onMouseMove={handleWindowMouseMove}
+      style={
+        isMaximized
+          ? { inset: 0, zIndex }
+          : { left: x, top: y, width: w, height: h, zIndex, cursor: hoverEdge ? cursorForEdge(hoverEdge) : undefined }
+      }
+      onPointerDown={handleWindowPointerDown}
+      onPointerMove={handleWindowPointerMove}
     >
       {/* ─── Title bar ───────────────────────────────────────────────── */}
       <div
@@ -438,7 +457,8 @@ export function Win31Window({
           "h-[var(--win31-titlebar-height)] flex items-center gap-0.5 px-0.5 shrink-0 select-none",
           titleBarBg
         )}
-        onMouseDown={handleTitleBarMouseDown}
+        style={{ ...titleBarStyle, touchAction: "none" }}
+        onPointerDown={handleTitleBarPointerDown}
         onDoubleClick={handleTitleDoubleClick}
       >
         {/* System menu icon */}
@@ -446,7 +466,9 @@ export function Win31Window({
           <div className="relative">
             <button
               className={cn(
-                "w-4 h-[13px] flex items-center justify-center",
+                "flex items-center justify-center",
+                "w-[var(--win31-titlebar-btn)] h-[var(--win31-titlebar-btn)]",
+                "text-[length:var(--win31-titlebar-btn-font)] leading-none",
                 "bg-[var(--color-surface)]",
                 "border",
                 "border-t-[var(--color-border-raised-light)]",
@@ -460,14 +482,16 @@ export function Win31Window({
               }}
               aria-label="System menu"
             >
-              <span className="text-[6px] leading-none text-[var(--color-text-primary)]">
-                {"\u25A0"}
+              <span className="text-[length:var(--win31-titlebar-btn-font)] leading-none text-[var(--color-text-primary)] font-bold">
+                {"\u2500"}
               </span>
             </button>
 
             {/* System menu dropdown */}
             {systemMenuOpen && (
               <div
+                role="menu"
+                aria-label={`${title} system menu`}
                 className={cn(
                   "absolute left-0 top-full mt-px z-50",
                   "min-w-[140px]",
@@ -515,6 +539,7 @@ export function Win31Window({
                   ) : (
                     <button
                       key={idx}
+                      role="menuitem"
                       className={cn(
                         "w-full text-left px-4 py-0.5 flex justify-between items-center",
                         "font-[family-name:var(--font-system)] text-xs",
@@ -565,7 +590,7 @@ export function Win31Window({
               }}
               aria-label="Minimize"
             >
-              <span className="relative -top-px">{"\u25BC"}</span>
+              {"\u25BC"}
             </button>
           )}
           {(onMaximize || onRestore) && (

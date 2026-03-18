@@ -29,6 +29,11 @@
   /* Code blocks */
   --color-code-bg: #000000;
   --color-code-text: var(--color-green-phosphor);
+  --color-code-border: var(--color-green-phosphor);
+
+  /* Content + titlebar */
+  --color-content-bg: #050505;
+  --color-titlebar-end: #004400;
 
   /* Effects */
   --effect-scanlines: repeating-linear-gradient(

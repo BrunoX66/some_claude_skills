@@ -45,8 +45,8 @@ export const PROGRAM_GROUPS: ProgramGroup[] = [
   },
   {
     id:       "media",
-    label:    "MEDIA",
-    sublabel: "Paint · Winamp",
+    label:    "FUN STUFF",
+    sublabel: "Paint · Winamp · More",
     category: "Design & Creative",      // gold
     onOpen:   openMediaWindow,
   },

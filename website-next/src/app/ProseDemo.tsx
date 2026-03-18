@@ -5,15 +5,15 @@ import { Win31Window, Win31Prose } from "@/components/win31";
 interface ProseDemoProps {
   /** Window title text */
   title: string;
-  /** Raw markdown to render */
-  content: string;
+  /** Pre-rendered HTML to display */
+  contentHtml: string;
 }
 
 /**
  * Renders a skill document inside a Win31Window using Win31Prose.
- * Accepts content as a prop so the server component can pass real skill data.
+ * Accepts pre-rendered HTML as a prop so the server component can pass real skill data.
  */
-export function ProseDemo({ title, content }: ProseDemoProps) {
+export function ProseDemo({ title, contentHtml }: ProseDemoProps) {
   return (
     <Win31Window
       title={title}
@@ -22,7 +22,7 @@ export function ProseDemo({ title, content }: ProseDemoProps) {
       isActive
     >
       <div className="p-4 overflow-y-auto max-h-[480px]">
-        <Win31Prose content={content} />
+        <Win31Prose contentHtml={contentHtml} />
       </div>
     </Win31Window>
   );

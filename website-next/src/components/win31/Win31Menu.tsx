@@ -39,7 +39,7 @@ export function Win31MenuContent({
       <DropdownMenu.Content
         sideOffset={2}
         className={cn(
-          "z-50 min-w-[160px] py-1",
+          "z-[99999] min-w-[160px] py-1",
           // Raised panel chrome
           "bg-[var(--color-surface)]",
           "border-2",

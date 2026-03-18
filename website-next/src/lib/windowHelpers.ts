@@ -89,9 +89,9 @@ export function openMSPaintWindow() {
 export function openMediaWindow() {
   useWindowManager.getState().openWindow({
     id: "media",
-    title: "MEDIA — Program Group",
+    title: "FUN STUFF — Program Group",
     x: 100, y: 80,
-    width: 340, height: 220,
+    width: 440, height: 260,
     isMinimized: false, isMaximized: false,
     content: { type: "media" },
   });
@@ -276,7 +276,9 @@ export function openSettingsWindow() {
 }
 
 export function openWelcomeWindow() {
-  const geo = clampGeometry(130, 50, 480, 370);
+  // Position as right column — doesn't overlap Skills Browser
+  const rightX = typeof window !== "undefined" ? Math.max(480, window.innerWidth - 520) : 700;
+  const geo = clampGeometry(rightX, 20, 480, 560);
   useWindowManager.getState().openWindow({
     id: "welcome",
     title: "Welcome to SomeClaudeSkills!",
