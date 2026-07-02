@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "author": "Erich Owens",
   "homepage": "https://someclaudeskills.com",
-  "repository": "https://github.com/curiositech/some_claude_skills",
+  "repository": "https://github.com/BrunoX66/some_claude_skills",
   "license": "MIT",
   "skills": [
     "./.claude/skills/"
