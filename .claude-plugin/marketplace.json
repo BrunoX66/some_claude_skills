@@ -1,0 +1,943 @@
+{
+  "name": "some-claude-skills",
+  "owner": {
+    "name": "Erich Owens",
+    "url": "https://someclaudeskills.com"
+  },
+  "metadata": {
+    "description": "Curated gallery of production-ready Claude Code skills. Install the full set or pick individual skills.",
+    "version": "2.0.0"
+  },
+  "plugins": [
+    {
+      "name": "some-claude-skills",
+      "source": "./",
+      "description": "All 185 skills in one install — engineering, design, data, security, and more."
+    },
+    {
+      "name": "2000s-visualization-expert",
+      "source": "./.claude/skills/2000s-visualization-expert",
+      "description": "Expert in 2000s-era music visualization (Milkdrop, AVS, Geiss) and modern WebGL implementations."
+    },
+    {
+      "name": "2026-legal-research-agent",
+      "source": "./.claude/skills/2026-legal-research-agent",
+      "description": "Expert legal research agent for finding and scraping expungement data state by state."
+    },
+    {
+      "name": "adhd-daily-planner",
+      "source": "./.claude/skills/adhd-daily-planner",
+      "description": "Time-blind friendly planning, executive function support, and daily structure for ADHD brains."
+    },
+    {
+      "name": "adhd-design-expert",
+      "source": "./.claude/skills/adhd-design-expert",
+      "description": "Designs digital experiences for ADHD brains using neuroscience research and UX principles."
+    },
+    {
+      "name": "admin-dashboard",
+      "source": "./.claude/skills/admin-dashboard",
+      "description": "Extend and modify the admin dashboard, developer portal, and operations console."
+    },
+    {
+      "name": "agent-creator",
+      "source": "./.claude/skills/agent-creator",
+      "description": "Meta-agent for creating new custom agents, skills, and MCP integrations."
+    },
+    {
+      "name": "ai-engineer",
+      "source": "./.claude/skills/ai-engineer",
+      "description": "Build production-ready LLM applications, advanced RAG systems, and intelligent agents."
+    },
+    {
+      "name": "ai-video-production-master",
+      "source": "./.claude/skills/ai-video-production-master",
+      "description": "Expert in script-to-video production pipelines for Apple Silicon Macs."
+    },
+    {
+      "name": "anthropic-technical-deep-dive",
+      "source": "./.claude/skills/anthropic-technical-deep-dive",
+      "description": "Prepare for Anthropic-specific technical interviews covering Constitutional AI, RLHF, interpretability, scaling laws, MCP, agentic systems, and AI safety."
+    },
+    {
+      "name": "api-architect",
+      "source": "./.claude/skills/api-architect",
+      "description": "Expert API designer for REST, GraphQL, gRPC architectures."
+    },
+    {
+      "name": "automatic-stateful-prompt-improver",
+      "source": "./.claude/skills/automatic-stateful-prompt-improver",
+      "description": "Automatically intercepts and optimizes prompts using the prompt-learning MCP server."
+    },
+    {
+      "name": "background-job-orchestrator",
+      "source": "./.claude/skills/background-job-orchestrator",
+      "description": "Expert in background job processing with Bull/BullMQ (Redis), Celery, and cloud queues."
+    },
+    {
+      "name": "bot-developer",
+      "source": "./.claude/skills/bot-developer",
+      "description": "Expert bot developer specializing in Discord, Telegram, Slack automation with deep knowledge of rate limiting, state machines, event sourcing, moderation systems, and conversational AI integration."
+    },
+    {
+      "name": "caching-strategies",
+      "source": "./.claude/skills/caching-strategies",
+      "description": "Design multi-tier caching architectures for web applications — cache-aside vs write-through vs write-behind, TTL design, cache invalidation, Redis patterns, CDN configuration, browser caching, and stampede…"
+    },
+    {
+      "name": "career-biographer",
+      "source": "./.claude/skills/career-biographer",
+      "description": "AI-powered career biographer that conducts empathetic interviews, extracts structured career narratives, and transforms professional stories into portfolios, CVs, and personal brand assets."
+    },
+    {
+      "name": "chatbot-analytics",
+      "source": "./.claude/skills/chatbot-analytics",
+      "description": "Implement AI chatbot analytics and conversation monitoring."
+    },
+    {
+      "name": "checklist-discipline",
+      "source": "./.claude/skills/checklist-discipline",
+      "description": "Design and implement systematic checklists that reduce errors by 30-50% in complex, high-stakes domains (medicine, aviation, construction, finance)."
+    },
+    {
+      "name": "claude-ecosystem-promoter",
+      "source": "./.claude/skills/claude-ecosystem-promoter",
+      "description": "Marketing and promotion specialist for Claude ecosystem technology - MCP servers, skills, plugins, and agents."
+    },
+    {
+      "name": "clinical-diagnostic-reasoning",
+      "source": "./.claude/skills/clinical-diagnostic-reasoning",
+      "description": "Identify and counteract cognitive biases in medical decision-making through systematic error analysis and contextual algorithm application."
+    },
+    {
+      "name": "clip-aware-embeddings",
+      "source": "./.claude/skills/clip-aware-embeddings",
+      "description": "Semantic image-text matching with CLIP and alternatives."
+    },
+    {
+      "name": "cloudflare-worker-dev",
+      "source": "./.claude/skills/cloudflare-worker-dev",
+      "description": "Cloudflare Workers, KV, Durable Objects, and edge computing development."
+    },
+    {
+      "name": "code-architecture",
+      "source": "./.claude/skills/code-architecture",
+      "description": "Application architecture patterns and code organization — clean architecture, hexagonal architecture, feature-based structure, dependency inversion, module boundaries, SOLID principles at module scale. Activate on…"
+    },
+    {
+      "name": "code-necromancer",
+      "source": "./.claude/skills/code-necromancer",
+      "description": "Systematic framework for resurrecting and modernizing legacy codebases through archaeology, resurrection, and rejuvenation phases."
+    },
+    {
+      "name": "code-review-checklist",
+      "source": "./.claude/skills/code-review-checklist",
+      "description": "Generate context-aware code review checklists from PR diffs — tailored to language, codebase patterns, and team standards."
+    },
+    {
+      "name": "collage-layout-expert",
+      "source": "./.claude/skills/collage-layout-expert",
+      "description": "Expert in ALL computational collage composition: photo mosaics, grid layouts, scrapbook/journal styles, magazine editorial, vision boards, mood boards, social media collages, memory walls, abstract/generative…"
+    },
+    {
+      "name": "color-contrast-auditor",
+      "source": "./.claude/skills/color-contrast-auditor",
+      "description": "Detects and fixes color contrast violations using WCAG 2.1 guidelines and perceptual analysis."
+    },
+    {
+      "name": "color-theory-palette-harmony-expert",
+      "source": "./.claude/skills/color-theory-palette-harmony-expert",
+      "description": "Expert in color theory, palette harmony, and perceptual color science for computational photo composition."
+    },
+    {
+      "name": "competitive-cartographer",
+      "source": "./.claude/skills/competitive-cartographer",
+      "description": "Strategic analyst that maps competitive landscapes, identifies white space opportunities, and provides positioning recommendations."
+    },
+    {
+      "name": "component-template-generator",
+      "source": "./.claude/skills/component-template-generator",
+      "description": "Generates starter component code using design tokens."
+    },
+    {
+      "name": "computer-vision-pipeline",
+      "source": "./.claude/skills/computer-vision-pipeline",
+      "description": "Build production computer vision pipelines for object detection, tracking, and video analysis."
+    },
+    {
+      "name": "cost-accrual-tracker",
+      "source": "./.claude/skills/cost-accrual-tracker",
+      "description": "Track real-time API cost accrual during LLM execution."
+    },
+    {
+      "name": "cost-optimizer",
+      "source": "./.claude/skills/cost-optimizer",
+      "description": "Tracks cumulative LLM costs across DAG execution and makes real-time decisions to stay within budget."
+    },
+    {
+      "name": "cost-verification-auditor",
+      "source": "./.claude/skills/cost-verification-auditor",
+      "description": "Audit LLM token cost estimates against actual API usage."
+    },
+    {
+      "name": "crisis-detection-intervention-ai",
+      "source": "./.claude/skills/crisis-detection-intervention-ai",
+      "description": "Detect crisis signals in user content using NLP, mental health sentiment analysis, and safe intervention protocols."
+    },
+    {
+      "name": "crisis-response-protocol",
+      "source": "./.claude/skills/crisis-response-protocol",
+      "description": "Handle mental health crisis situations in AI coaching safely."
+    },
+    {
+      "name": "cv-creator",
+      "source": "./.claude/skills/cv-creator",
+      "description": "Professional CV and resume builder transforming career narratives into ATS-optimized, multi-format resumes."
+    },
+    {
+      "name": "dark-mode-design-expert",
+      "source": "./.claude/skills/dark-mode-design-expert",
+      "description": "Master dark mode UI design with atmospheric theming, WCAG accessibility, and cross-platform best practices."
+    },
+    {
+      "name": "data-pipeline-engineer",
+      "source": "./.claude/skills/data-pipeline-engineer",
+      "description": "Expert data engineer for ETL/ELT pipelines, streaming, data warehousing."
+    },
+    {
+      "name": "data-viz-2025",
+      "source": "./.claude/skills/data-viz-2025",
+      "description": "State-of-the-art data visualization for React/Next.js/TypeScript with Tailwind CSS."
+    },
+    {
+      "name": "database-design-patterns",
+      "source": "./.claude/skills/database-design-patterns",
+      "description": "Schema design, normalization decisions, indexing strategies, and migration safety for relational databases."
+    },
+    {
+      "name": "dependency-management",
+      "source": "./.claude/skills/dependency-management",
+      "description": "Managing third-party dependencies — version pinning, security auditing, license compliance, update workflows, lockfile management, supply chain security."
+    },
+    {
+      "name": "design-accessibility-auditor",
+      "source": "./.claude/skills/design-accessibility-auditor",
+      "description": "Audit designs, color palettes, and UI components for WCAG 2.1 accessibility compliance, providing specific fixes for contrast, touch targets, focus indicators, and screen reader support."
+    },
+    {
+      "name": "design-archivist",
+      "source": "./.claude/skills/design-archivist",
+      "description": "Long-running design anthropologist that builds comprehensive visual databases from 500-1000 real-world examples, extracting color palettes, typography patterns, layout systems, and interaction design across any…"
+    },
+    {
+      "name": "design-critic",
+      "source": "./.claude/skills/design-critic",
+      "description": "Aesthetic assessment and remix partner with trained visual taste."
+    },
+    {
+      "name": "design-justice",
+      "source": "./.claude/skills/design-justice",
+      "description": "Digital equity and trauma-informed design for marginalized populations."
+    },
+    {
+      "name": "design-system-creator",
+      "source": "./.claude/skills/design-system-creator",
+      "description": "Builds comprehensive design systems and design bibles with production-ready CSS."
+    },
+    {
+      "name": "design-system-documenter",
+      "source": "./.claude/skills/design-system-documenter",
+      "description": "Creates comprehensive documentation for design systems - token tables, usage guidelines, component examples, and accessibility notes."
+    },
+    {
+      "name": "design-system-generator",
+      "source": "./.claude/skills/design-system-generator",
+      "description": "Design system generator that matches natural language descriptions to design trends."
+    },
+    {
+      "name": "design-trend-analyzer",
+      "source": "./.claude/skills/design-trend-analyzer",
+      "description": "Analyze design trends and recommend appropriate styles, color palettes, and typography systems for your project based on current design movements."
+    },
+    {
+      "name": "devops-automator",
+      "source": "./.claude/skills/devops-automator",
+      "description": "Expert DevOps engineer for CI/CD, IaC, Kubernetes, and deployment automation."
+    },
+    {
+      "name": "diagramming-expert",
+      "source": "./.claude/skills/diagramming-expert",
+      "description": "Master of text-based visual communication using ASCII art, Unicode box-drawing, and structured diagram notation."
+    },
+    {
+      "name": "digital-estate-planner",
+      "source": "./.claude/skills/digital-estate-planner",
+      "description": "Organizing digital life for legacy, emergency access, and death preparedness."
+    },
+    {
+      "name": "docker-containerization",
+      "source": "./.claude/skills/docker-containerization",
+      "description": "Write production-grade Dockerfiles, docker-compose configurations, multi-stage builds, and container optimization."
+    },
+    {
+      "name": "document-generation-pdf",
+      "source": "./.claude/skills/document-generation-pdf",
+      "description": "Generate, fill, and assemble PDF documents at scale."
+    },
+    {
+      "name": "drizzle-migrations",
+      "source": "./.claude/skills/drizzle-migrations",
+      "description": "Drizzle ORM schema management and SQLite migrations — adding tables, modifying columns, creating indexes, generating and running migrations, Drizzle query patterns."
+    },
+    {
+      "name": "drone-cv-expert",
+      "source": "./.claude/skills/drone-cv-expert",
+      "description": "Expert in drone systems, computer vision, and autonomous navigation."
+    },
+    {
+      "name": "drone-inspection-specialist",
+      "source": "./.claude/skills/drone-inspection-specialist",
+      "description": "Advanced CV for infrastructure inspection including forest fire detection, wildfire precondition assessment, roof inspection, hail damage analysis, thermal imaging, and 3D Gaussian Splatting reconstruction. Expert in…"
+    },
+    {
+      "name": "email-composer",
+      "source": "./.claude/skills/email-composer",
+      "description": "Draft professional emails for various contexts including business, technical, and customer communication."
+    },
+    {
+      "name": "error-handling-patterns",
+      "source": "./.claude/skills/error-handling-patterns",
+      "description": "Design error handling strategies for TypeScript and Python applications — exception hierarchies, Result/Either types, retry patterns, error boundaries, and structured error logging."
+    },
+    {
+      "name": "event-detection-temporal-intelligence-expert",
+      "source": "./.claude/skills/event-detection-temporal-intelligence-expert",
+      "description": "Expert in temporal event detection, spatio-temporal clustering (ST-DBSCAN), and photo context understanding."
+    },
+    {
+      "name": "fancy-yard-landscaper",
+      "source": "./.claude/skills/fancy-yard-landscaper",
+      "description": "Expert landscape designer transforming yards through photo mapping, 3D visualization, seasonal planning, and deep plant knowledge."
+    },
+    {
+      "name": "feature-manifest",
+      "source": "./.claude/skills/feature-manifest",
+      "description": "Manage feature manifests for code traceability — create features, validate manifest health, map features to code, update changelogs."
+    },
+    {
+      "name": "form-validation-architect",
+      "source": "./.claude/skills/form-validation-architect",
+      "description": "End-to-end form handling with react-hook-form, Zod schemas, validation patterns, error messaging, field arrays, and multi-step wizards."
+    },
+    {
+      "name": "frontend-architect",
+      "source": "./.claude/skills/frontend-architect",
+      "description": "Frontend stack expert for Cloudflare deployment, shadcn/ui components, and internal tools architecture."
+    },
+    {
+      "name": "fullstack-debugger",
+      "source": "./.claude/skills/fullstack-debugger",
+      "description": "Expert debugger for Next.js + Cloudflare Workers + Supabase stacks."
+    },
+    {
+      "name": "geospatial-data-pipeline",
+      "source": "./.claude/skills/geospatial-data-pipeline",
+      "description": "Process, analyze, and visualize geospatial data at scale."
+    },
+    {
+      "name": "git-workflow-expert",
+      "source": "./.claude/skills/git-workflow-expert",
+      "description": "Git branching strategies, conflict resolution, rebase workflows, monorepo patterns, and advanced operations like cherry-pick, bisect, and reflog recovery."
+    },
+    {
+      "name": "github-actions-pipeline-builder",
+      "source": "./.claude/skills/github-actions-pipeline-builder",
+      "description": "Build production CI/CD pipelines with GitHub Actions."
+    },
+    {
+      "name": "grief-companion",
+      "source": "./.claude/skills/grief-companion",
+      "description": "Compassionate bereavement support, memorial creation, grief education, and healing journey guidance."
+    },
+    {
+      "name": "hand-drawn-infographic-creator",
+      "source": "./.claude/skills/hand-drawn-infographic-creator",
+      "description": "Generate hand-drawn style diagrams and infographics for recovery education articles."
+    },
+    {
+      "name": "hipaa-compliance",
+      "source": "./.claude/skills/hipaa-compliance",
+      "description": "Ensure HIPAA compliance when handling PHI (Protected Health Information)."
+    },
+    {
+      "name": "hiring-manager-deep-dive",
+      "source": "./.claude/skills/hiring-manager-deep-dive",
+      "description": "Prepares for hiring manager rounds at Staff+ (L6+) level — scope of impact, influence without authority, ambiguity navigation, mentorship, strategic thinking."
+    },
+    {
+      "name": "hr-network-analyst",
+      "source": "./.claude/skills/hr-network-analyst",
+      "description": "Professional network graph analyst identifying Gladwellian superconnectors, mavens, and influence brokers using betweenness centrality, structural holes theory, and multi-source network reconstruction. Activate on…"
+    },
+    {
+      "name": "hrv-alexithymia-expert",
+      "source": "./.claude/skills/hrv-alexithymia-expert",
+      "description": "Heart rate variability biometrics and emotional awareness training."
+    },
+    {
+      "name": "human-centered-design-fundamentals",
+      "source": "./.claude/skills/human-centered-design-fundamentals",
+      "description": "Apply cognitive psychology principles to design discoverable, understandable products through affordances, signifiers, feedback, and conceptual models."
+    },
+    {
+      "name": "human-gate-designer",
+      "source": "./.claude/skills/human-gate-designer",
+      "description": "Designs human-in-the-loop review points for DAG workflows."
+    },
+    {
+      "name": "indie-monetization-strategist",
+      "source": "./.claude/skills/indie-monetization-strategist",
+      "description": "Monetization strategies for indie developers, solopreneurs, and small teams."
+    },
+    {
+      "name": "interior-design-expert",
+      "source": "./.claude/skills/interior-design-expert",
+      "description": "Expert interior designer with deep knowledge of space planning, color theory (Munsell, NCS), lighting design (IES standards), furniture proportions, and AI-assisted visualization."
+    },
+    {
+      "name": "interview-loop-strategist",
+      "source": "./.claude/skills/interview-loop-strategist",
+      "description": "Orchestrates end-to-end interview preparation for senior ML/AI engineers targeting Anthropic and peer companies."
+    },
+    {
+      "name": "interview-simulator",
+      "source": "./.claude/skills/interview-simulator",
+      "description": "Designs and orchestrates a realistic interview simulation platform with voice AI, whiteboard evaluation, gaze-tracking proctoring, and mobile spaced repetition."
+    },
+    {
+      "name": "job-application-optimizer",
+      "source": "./.claude/skills/job-application-optimizer",
+      "description": "Strategic job application planning and Resume SEO optimization."
+    },
+    {
+      "name": "jungian-psychologist",
+      "source": "./.claude/skills/jungian-psychologist",
+      "description": "Expert in Jungian analytical psychology, depth psychology, shadow work, archetypal analysis, dream interpretation, active imagination, addiction/recovery through Jungian lens, and the individuation process - grounded…"
+    },
+    {
+      "name": "knot-theory-educator",
+      "source": "./.claude/skills/knot-theory-educator",
+      "description": "Expert in visualizing and explaining braid theory, knot mathematics, and topological concepts for educational purposes."
+    },
+    {
+      "name": "large-scale-map-visualization",
+      "source": "./.claude/skills/large-scale-map-visualization",
+      "description": "Master of high-performance web map implementations handling 5,000-100,000+ geographic data points."
+    },
+    {
+      "name": "launch-readiness-auditor",
+      "source": "./.claude/skills/launch-readiness-auditor",
+      "description": "Expert at evaluating software projects for production readiness."
+    },
+    {
+      "name": "liaison",
+      "source": "./.claude/skills/liaison",
+      "description": "Translate multi-agent ecosystem activity into human-readable status briefings, decision requests, and progress summaries."
+    },
+    {
+      "name": "llm-router",
+      "source": "./.claude/skills/llm-router",
+      "description": "Selects the optimal LLM model and provider for each task based on complexity, cost budget, and capability requirements."
+    },
+    {
+      "name": "llm-streaming-response-handler",
+      "source": "./.claude/skills/llm-streaming-response-handler",
+      "description": "Build production LLM streaming UIs with Server-Sent Events, real-time token display, cancellation, error recovery."
+    },
+    {
+      "name": "logging-observability",
+      "source": "./.claude/skills/logging-observability",
+      "description": "Structured logging, distributed tracing, and metrics for production applications."
+    },
+    {
+      "name": "maximalist-wall-decorator",
+      "source": "./.claude/skills/maximalist-wall-decorator",
+      "description": "Expert in maximalist interior wall decoration including bold color choices, freehand paintings, statement wallpapers, eclectic lamp arrangements, gallery walls, and curated chaos."
+    },
+    {
+      "name": "mcp-creator",
+      "source": "./.claude/skills/mcp-creator",
+      "description": "Expert MCP (Model Context Protocol) server developer creating safe, performant, production-ready servers with proper security, error handling, and developer experience."
+    },
+    {
+      "name": "mdx-sanitizer",
+      "source": "./.claude/skills/mdx-sanitizer",
+      "description": "Sanitize MDX content for Docusaurus builds."
+    },
+    {
+      "name": "mermaid-graph-renderer",
+      "source": "./.claude/skills/mermaid-graph-renderer",
+      "description": "Renders Mermaid diagrams to SVG, PNG, and PDF in both web and offline contexts."
+    },
+    {
+      "name": "mermaid-graph-writer",
+      "source": "./.claude/skills/mermaid-graph-writer",
+      "description": "Writes precise, well-structured Mermaid diagrams for any visualization need."
+    },
+    {
+      "name": "metal-shader-expert",
+      "source": "./.claude/skills/metal-shader-expert",
+      "description": "20 years Weta/Pixar experience in real-time graphics, Metal shaders, and visual effects."
+    },
+    {
+      "name": "microservices-patterns",
+      "source": "./.claude/skills/microservices-patterns",
+      "description": "Microservice architecture patterns — service decomposition, inter-service communication, API gateway, saga pattern, event-driven architecture, service mesh, circuit breaker, CQRS, event sourcing."
+    },
+    {
+      "name": "ml-system-design-interview",
+      "source": "./.claude/skills/ml-system-design-interview",
+      "description": "Coaches end-to-end ML system design interviews covering inference pipelines, recommendation systems, RAG, feature stores, and monitoring."
+    },
+    {
+      "name": "mobile-ux-optimizer",
+      "source": "./.claude/skills/mobile-ux-optimizer",
+      "description": "Mobile-first UX optimization for touch interfaces, responsive layouts, and performance."
+    },
+    {
+      "name": "modern-auth-2026",
+      "source": "./.claude/skills/modern-auth-2026",
+      "description": "Modern authentication implementation for 2026 - passkeys (WebAuthn), OAuth (Google, Apple), magic links, and cross-device sync."
+    },
+    {
+      "name": "modern-drug-rehab-computer",
+      "source": "./.claude/skills/modern-drug-rehab-computer",
+      "description": "Comprehensive knowledge system for addiction recovery environments, supporting both residential and outpatient (IOP/PHP) patients."
+    },
+    {
+      "name": "monorepo-management",
+      "source": "./.claude/skills/monorepo-management",
+      "description": "Monorepo tooling, task orchestration, and workspace architecture for JavaScript/TypeScript repositories."
+    },
+    {
+      "name": "munger-worldly-wisdom",
+      "source": "./.claude/skills/munger-worldly-wisdom",
+      "description": "Multidisciplinary decision-making using mental models from psychology, economics, mathematics, and science to identify high-conviction opportunities and avoid cognitive biases."
+    },
+    {
+      "name": "native-app-designer",
+      "source": "./.claude/skills/native-app-designer",
+      "description": "Creates breathtaking iOS/Mac and web apps with organic, non-AI aesthetic."
+    },
+    {
+      "name": "neobrutalist-web-designer",
+      "source": "./.claude/skills/neobrutalist-web-designer",
+      "description": "Modern web applications with authentic neobrutalist aesthetic."
+    },
+    {
+      "name": "nextjs-app-router-expert",
+      "source": "./.claude/skills/nextjs-app-router-expert",
+      "description": "Expert in Next.js 14/15 App Router architecture, React Server Components (RSC), Server Actions, and modern full-stack React development."
+    },
+    {
+      "name": "oauth-oidc-implementer",
+      "source": "./.claude/skills/oauth-oidc-implementer",
+      "description": "Expert in implementing OAuth 2.0 and OpenID Connect (OIDC) authentication flows."
+    },
+    {
+      "name": "openapi-spec-writer",
+      "source": "./.claude/skills/openapi-spec-writer",
+      "description": "Expert in writing OpenAPI 3.0/3.1 specifications for REST APIs."
+    },
+    {
+      "name": "orchestrator",
+      "source": "./.claude/skills/orchestrator",
+      "description": "Master coordinator that delegates to specialist skills, synthesizes outputs, AND creates new skills on-the-fly when needed."
+    },
+    {
+      "name": "output-contract-enforcer",
+      "source": "./.claude/skills/output-contract-enforcer",
+      "description": "Validates that a DAG node's output matches its declared JSON schema before passing to downstream nodes."
+    },
+    {
+      "name": "panic-room-finder",
+      "source": "./.claude/skills/panic-room-finder",
+      "description": "Expert in residential hollow space detection, hidden room discovery, and safe room planning."
+    },
+    {
+      "name": "partner-text-coach",
+      "source": "./.claude/skills/partner-text-coach",
+      "description": "Real-time communication coach for navigating partner/relationship texts."
+    },
+    {
+      "name": "performance-profiling",
+      "source": "./.claude/skills/performance-profiling",
+      "description": "Application performance profiling and bottleneck identification — Node.js profiling, Chrome DevTools, flame graphs, memory leak detection, CPU profiling, React rendering performance."
+    },
+    {
+      "name": "personal-finance-coach",
+      "source": "./.claude/skills/personal-finance-coach",
+      "description": "Expert personal finance coach with deep knowledge of tax optimization, investment theory (MPT, factor investing), retirement mathematics (Trinity Study, SWR research), and wealth-building strategies grounded in…"
+    },
+    {
+      "name": "pet-memorial-creator",
+      "source": "./.claude/skills/pet-memorial-creator",
+      "description": "Compassionate support for pet loss, memorial creation, and honoring the bond between humans and their animal companions."
+    },
+    {
+      "name": "photo-composition-critic",
+      "source": "./.claude/skills/photo-composition-critic",
+      "description": "Expert photography composition critic grounded in graduate-level visual aesthetics education, computational aesthetics research (AVA, NIMA, LAION-Aesthetics, VisualQuality-R1), and professional image analysis with…"
+    },
+    {
+      "name": "photo-content-recognition-curation-expert",
+      "source": "./.claude/skills/photo-content-recognition-curation-expert",
+      "description": "Expert in photo content recognition, intelligent curation, and quality filtering."
+    },
+    {
+      "name": "physics-rendering-expert",
+      "source": "./.claude/skills/physics-rendering-expert",
+      "description": "Real-time rope/cable physics using Position-Based Dynamics (PBD), Verlet integration, and constraint solvers."
+    },
+    {
+      "name": "pixel-art-infographic-creator",
+      "source": "./.claude/skills/pixel-art-infographic-creator",
+      "description": "Generate pixel art diagrams and infographics in retro 16-bit SNES aesthetic — recovery education visuals, flowcharts, data visualizations, process diagrams with dithering and limited palettes."
+    },
+    {
+      "name": "pixel-art-scaler",
+      "source": "./.claude/skills/pixel-art-scaler",
+      "description": "Deterministic pixel art upscaling using EPX/Scale2x, hq2x/hq4x, and xBR algorithms that add valid sub-pixels through pattern recognition."
+    },
+    {
+      "name": "playwright-e2e-tester",
+      "source": "./.claude/skills/playwright-e2e-tester",
+      "description": "Expert in end-to-end testing with Playwright, the modern cross-browser testing framework."
+    },
+    {
+      "name": "playwright-screenshot-inspector",
+      "source": "./.claude/skills/playwright-screenshot-inspector",
+      "description": "LLM-powered visual testing expert for automated screenshot capture, analysis, and UI verification using Playwright with multimodal AI inspection."
+    },
+    {
+      "name": "port-daddy",
+      "source": "./.claude/skills/port-daddy",
+      "description": ">- Multi-agent coordination daemon for coding agents."
+    },
+    {
+      "name": "postgresql-optimization",
+      "source": "./.claude/skills/postgresql-optimization",
+      "description": "Expert in PostgreSQL performance tuning, query optimization, and database administration."
+    },
+    {
+      "name": "product-appeal-analyzer",
+      "source": "./.claude/skills/product-appeal-analyzer",
+      "description": "Evaluate product desirability, market positioning, and emotional resonance—the complement to friction analysis."
+    },
+    {
+      "name": "project-management-guru-adhd",
+      "source": "./.claude/skills/project-management-guru-adhd",
+      "description": "Expert project manager for ADHD engineers managing multiple concurrent projects."
+    },
+    {
+      "name": "prompt-engineer",
+      "source": "./.claude/skills/prompt-engineer",
+      "description": "Expert prompt optimization for LLMs and AI systems."
+    },
+    {
+      "name": "pwa-expert",
+      "source": "./.claude/skills/pwa-expert",
+      "description": "Progressive Web App development with Service Workers, offline support, and app-like behavior."
+    },
+    {
+      "name": "react-performance-optimizer",
+      "source": "./.claude/skills/react-performance-optimizer",
+      "description": "Optimize React apps for 60fps performance."
+    },
+    {
+      "name": "reactflow-expert",
+      "source": "./.claude/skills/reactflow-expert",
+      "description": "Builds DAG visualizations using ReactFlow v12 with custom nodes, ELKjs auto-layout, Zustand state management, and live state updates via WebSocket."
+    },
+    {
+      "name": "reactive-dashboard-performance",
+      "source": "./.claude/skills/reactive-dashboard-performance",
+      "description": "Expert in building blazing-fast reactive dashboards with comprehensive testing."
+    },
+    {
+      "name": "real-time-collaboration-engine",
+      "source": "./.claude/skills/real-time-collaboration-engine",
+      "description": "Build real-time collaborative editing with WebSockets, OT/CRDT conflict resolution, and presence awareness."
+    },
+    {
+      "name": "recursive-synthesis",
+      "source": "./.claude/skills/recursive-synthesis",
+      "description": "Orchestrate multi-agent collaborative document synthesis through 6 phases - Divergence, Synthesis, Commentary, Consolidation, Reality Check, Final Merge."
+    },
+    {
+      "name": "refactoring-surgeon",
+      "source": "./.claude/skills/refactoring-surgeon",
+      "description": "Expert code refactoring specialist for improving code quality without changing behavior."
+    },
+    {
+      "name": "research-analyst",
+      "source": "./.claude/skills/research-analyst",
+      "description": "Conducts thorough landscape research, competitive analysis, best practices evaluation, and evidence-based recommendations."
+    },
+    {
+      "name": "research-craft",
+      "source": "./.claude/skills/research-craft",
+      "description": "Systematic research methodology for formulating problems, building evidence-based arguments, and communicating findings in academic contexts."
+    },
+    {
+      "name": "rest-api-design",
+      "source": "./.claude/skills/rest-api-design",
+      "description": "Design REST API endpoints with Zod validation and OpenAPI documentation."
+    },
+    {
+      "name": "security-auditor",
+      "source": "./.claude/skills/security-auditor",
+      "description": "Security vulnerability scanner and OWASP compliance auditor for codebases."
+    },
+    {
+      "name": "senior-coding-interview",
+      "source": "./.claude/skills/senior-coding-interview",
+      "description": "Prepare for L6+ coding interviews — in-memory databases, concurrency, state management, iterative follow-ups."
+    },
+    {
+      "name": "seo-visibility-expert",
+      "source": "./.claude/skills/seo-visibility-expert",
+      "description": "Comprehensive SEO, discoverability, and AI crawler optimization for web projects."
+    },
+    {
+      "name": "site-reliability-engineer",
+      "source": "./.claude/skills/site-reliability-engineer",
+      "description": "Docusaurus build health validation and deployment safety for Claude Skills showcase."
+    },
+    {
+      "name": "skill-architect",
+      "source": "./.claude/skills/skill-architect",
+      "description": "Design, create, audit, and improve Claude Agent Skills with expert-level progressive disclosure."
+    },
+    {
+      "name": "skill-coach",
+      "source": "./.claude/skills/skill-coach",
+      "description": "Guides creation of high-quality Agent Skills with domain expertise, anti-pattern detection, and progressive disclosure best practices."
+    },
+    {
+      "name": "skill-creator",
+      "source": "./.claude/skills/skill-creator",
+      "description": "Guide for creating effective skills."
+    },
+    {
+      "name": "skill-documentarian",
+      "source": "./.claude/skills/skill-documentarian",
+      "description": "Documentation expert for Claude Skills showcase website."
+    },
+    {
+      "name": "skill-grader",
+      "source": "./.claude/skills/skill-grader",
+      "description": "Evaluates Claude Agent Skills on 10 quality axes with letter grades (A+ through F) and specific improvement recommendations."
+    },
+    {
+      "name": "skill-logger",
+      "source": "./.claude/skills/skill-logger",
+      "description": "Logs and scores skill usage quality, tracking output effectiveness, user satisfaction signals, and improvement opportunities."
+    },
+    {
+      "name": "skillful-subagent-creator",
+      "source": "./.claude/skills/skillful-subagent-creator",
+      "description": "Creates Claude subagents equipped with curated skills for solving problems within DAG workflows."
+    },
+    {
+      "name": "sober-addict-protector",
+      "source": "./.claude/skills/sober-addict-protector",
+      "description": "Daily protection and relapse prevention companion for people in recovery."
+    },
+    {
+      "name": "sound-engineer",
+      "source": "./.claude/skills/sound-engineer",
+      "description": "Expert in spatial audio, procedural sound design, game audio middleware, and app UX sound design."
+    },
+    {
+      "name": "speech-pathology-ai",
+      "source": "./.claude/skills/speech-pathology-ai",
+      "description": "Expert speech-language pathologist specializing in AI-powered speech therapy, phoneme analysis, articulation visualization, voice disorders, fluency intervention, and assistive communication technology. Activate on…"
+    },
+    {
+      "name": "supabase-admin",
+      "source": "./.claude/skills/supabase-admin",
+      "description": "Supabase administration, RLS policies, migrations, and schema design."
+    },
+    {
+      "name": "swift-executor",
+      "source": "./.claude/skills/swift-executor",
+      "description": "Rapid task execution without hesitation or deterrence."
+    },
+    {
+      "name": "systems-thinking",
+      "source": "./.claude/skills/systems-thinking",
+      "description": "Analyze complex systems through stocks, flows, and feedback loops to find high-leverage interventions."
+    },
+    {
+      "name": "task-decomposer",
+      "source": "./.claude/skills/task-decomposer",
+      "description": "Breaks natural-language problem descriptions into sub-tasks suitable for DAG nodes."
+    },
+    {
+      "name": "team-builder",
+      "source": "./.claude/skills/team-builder",
+      "description": "Designs high-performing team structures using organizational psychology AND creates new skills on-the-fly when team needs unmet expertise."
+    },
+    {
+      "name": "tech-entrepreneur-coach-adhd",
+      "source": "./.claude/skills/tech-entrepreneur-coach-adhd",
+      "description": "Big tech ML engineer to indie founder transition coach."
+    },
+    {
+      "name": "tech-presentation-interview",
+      "source": "./.claude/skills/tech-presentation-interview",
+      "description": "Prepares for \"reverse system design\" rounds where you present YOUR past technical work."
+    },
+    {
+      "name": "technical-writer",
+      "source": "./.claude/skills/technical-writer",
+      "description": "Expert technical documentation specialist for developer docs, API references, and runbooks."
+    },
+    {
+      "name": "terraform-iac-expert",
+      "source": "./.claude/skills/terraform-iac-expert",
+      "description": "Terraform and OpenTofu infrastructure as code — module design, state management, multi-environment setups, remote backends, secrets management, CI/CD integration."
+    },
+    {
+      "name": "test-automation-expert",
+      "source": "./.claude/skills/test-automation-expert",
+      "description": "Comprehensive test automation specialist covering unit, integration, and E2E testing strategies."
+    },
+    {
+      "name": "typescript-advanced-patterns",
+      "source": "./.claude/skills/typescript-advanced-patterns",
+      "description": "Advanced TypeScript type system patterns for production codebases."
+    },
+    {
+      "name": "typography-expert",
+      "source": "./.claude/skills/typography-expert",
+      "description": "Working type director's reference for selecting, pairing, and shipping typefaces with real taste."
+    },
+    {
+      "name": "ultimate-seo-geo-skill",
+      "source": "./.claude/skills/ultimate-seo-geo-skill",
+      "description": "Use this skill when running SEO audits, optimizing for AI search engines (AI Overviews, ChatGPT, Perplexity), generating schema markup, diagnosing traffic drops, fixing Core Web Vitals, managing site migrations, or…"
+    },
+    {
+      "name": "ux-friction-analyzer",
+      "source": "./.claude/skills/ux-friction-analyzer",
+      "description": "Comprehensive UX analysis using cognitive psychology, ADHD-friendly design, Gestalt principles, and flow state engineering."
+    },
+    {
+      "name": "values-behavioral-interview",
+      "source": "./.claude/skills/values-behavioral-interview",
+      "description": "Coaches behavioral and values-fit interview preparation with negative framing, deep follow-ups, introspection, and mission alignment."
+    },
+    {
+      "name": "vaporwave-glassomorphic-ui-designer",
+      "source": "./.claude/skills/vaporwave-glassomorphic-ui-designer",
+      "description": "Vaporwave + glassomorphic UI designer for photo/memory apps."
+    },
+    {
+      "name": "vercel-deployment",
+      "source": "./.claude/skills/vercel-deployment",
+      "description": "Deploy Next.js and React applications to Vercel — project setup, environment variables, edge functions, build troubleshooting, preview deployments, monorepo configuration."
+    },
+    {
+      "name": "very-long-text-summarization",
+      "source": "./.claude/skills/very-long-text-summarization",
+      "description": "Summarizes very long texts (books, handbooks, biographies, codebases) using hierarchical multi-pass extraction with cheap model armies."
+    },
+    {
+      "name": "vibe-matcher",
+      "source": "./.claude/skills/vibe-matcher",
+      "description": "Synesthete designer that translates emotional vibes and brand keywords into concrete visual DNA (colors, typography, layouts, interactions)."
+    },
+    {
+      "name": "video-processing-editing",
+      "source": "./.claude/skills/video-processing-editing",
+      "description": "FFmpeg automation for cutting, trimming, concatenating videos."
+    },
+    {
+      "name": "vitest-testing-patterns",
+      "source": "./.claude/skills/vitest-testing-patterns",
+      "description": "Write tests using Vitest and React Testing Library."
+    },
+    {
+      "name": "voice-audio-engineer",
+      "source": "./.claude/skills/voice-audio-engineer",
+      "description": "Expert in voice synthesis, TTS, voice cloning, podcast production, speech processing, and voice UI design via ElevenLabs integration."
+    },
+    {
+      "name": "vr-avatar-engineer",
+      "source": "./.claude/skills/vr-avatar-engineer",
+      "description": "Expert in photorealistic and stylized VR avatar systems for Apple Vision Pro, Meta Quest, and cross-platform metaverse."
+    },
+    {
+      "name": "web-cloud-designer",
+      "source": "./.claude/skills/web-cloud-designer",
+      "description": "Creates realistic cloud effects for web using SVG filters (feTurbulence, feDisplacementMap), CSS animations, and layering techniques."
+    },
+    {
+      "name": "web-design-expert",
+      "source": "./.claude/skills/web-design-expert",
+      "description": "Creates unique web designs with brand identity, color palettes, typography, and modern UI/UX patterns."
+    },
+    {
+      "name": "web-wave-designer",
+      "source": "./.claude/skills/web-wave-designer",
+      "description": "Creates realistic ocean and water wave effects for web using SVG filters (feTurbulence, feDisplacementMap), CSS animations, and layering techniques."
+    },
+    {
+      "name": "web-weather-creator",
+      "source": "./.claude/skills/web-weather-creator",
+      "description": "Master of stylized atmospheric effects using SVG filters and CSS animations."
+    },
+    {
+      "name": "webapp-testing",
+      "source": "./.claude/skills/webapp-testing",
+      "description": "Toolkit for interacting with and testing local web applications using Playwright."
+    },
+    {
+      "name": "websocket-streaming",
+      "source": "./.claude/skills/websocket-streaming",
+      "description": "Implements real-time bidirectional communication between DAG execution engines and visualization dashboards via WebSocket."
+    },
+    {
+      "name": "wedding-immortalist",
+      "source": "./.claude/skills/wedding-immortalist",
+      "description": "Transform thousands of wedding photos and hours of footage into an immersive 3D Gaussian Splatting experience with theatre mode replay, face-clustered guest roster, and AI-curated best photos per person. Expert in…"
+    },
+    {
+      "name": "win31-audio-design",
+      "source": "./.claude/skills/win31-audio-design",
+      "description": "Expert in Windows 3.1 era sound vocabulary for modern web/mobile apps."
+    },
+    {
+      "name": "win31-pixel-art-designer",
+      "source": "./.claude/skills/win31-pixel-art-designer",
+      "description": "Expert in Windows 3.1 era pixel art and graphics."
+    },
+    {
+      "name": "windows-3-1-web-designer",
+      "source": "./.claude/skills/windows-3-1-web-designer",
+      "description": "Modern web applications with authentic Windows 3.1 aesthetic."
+    },
+    {
+      "name": "windows-95-web-designer",
+      "source": "./.claude/skills/windows-95-web-designer",
+      "description": "Modern web applications with authentic Windows 95 aesthetic."
+    },
+    {
+      "name": "wisdom-accountability-coach",
+      "source": "./.claude/skills/wisdom-accountability-coach",
+      "description": "Longitudinal memory tracking, philosophy teaching, and personal accountability with compassion."
+    }
+  ]
+}
