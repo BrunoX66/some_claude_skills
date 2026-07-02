@@ -12,7 +12,7 @@ Built by [Erich Owens](https://www.erichowens.com) — Ex-Meta ML Engineer (12 y
 
 ```bash
 # Add the marketplace
-/plugin marketplace add erichowens/some_claude_skills
+/plugin marketplace add BrunoX66/some_claude_skills
 
 # Install any skill
 /plugin install adhd-design-expert@some-claude-skills
@@ -24,7 +24,7 @@ Built by [Erich Owens](https://www.erichowens.com) — Ex-Meta ML Engineer (12 y
 ### Option 2: Manual Installation
 
 ```bash
-git clone https://github.com/erichowens/some_claude_skills.git
+git clone https://github.com/BrunoX66/some_claude_skills.git
 cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/
 ```
 
