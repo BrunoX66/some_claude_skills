@@ -1,6 +1,6 @@
 # Claude Skills Collection
 
-**180+ production-ready skills** and **2 MCP servers** for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
+**185 production-ready skills** and **3 companion MCP servers** for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
 Built by [Erich Owens](https://www.erichowens.com) — Ex-Meta ML Engineer (12 years), 12 patents, MS Applied Math.
 
@@ -25,7 +25,7 @@ Built by [Erich Owens](https://www.erichowens.com) — Ex-Meta ML Engineer (12 y
 
 ```bash
 git clone https://github.com/BrunoX66/some_claude_skills.git
-cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/
+cp -r some_claude_skills/skills/* ~/.claude/skills/
 ```
 
 ### Option 3: Download Individual Skills
@@ -36,48 +36,34 @@ cp -r some_claude_skills/.claude/skills/* ~/.claude/skills/
 
 ## MCP Servers
 
-Add to `~/.claude/settings.json` or your project's `.mcp.json`:
+Three companion MCP servers ship in [`mcp-servers/`](mcp-servers/) as TypeScript source.
+Build one before use:
 
-### prompt-learning-mcp
+```bash
+cd mcp-servers/<server> && npm install && npm run build
+```
 
-Your prompts get smarter every time you use Claude. Automatic optimization using APE, OPRO, and DSPy patterns.
+Then register it in your project's `.mcp.json` (or `~/.claude/settings.json`), pointing at
+the built entry point:
 
 ```json
 {
   "mcpServers": {
-    "prompt-learning": {
-      "command": "npx",
-      "args": ["-y", "github:erichowens/prompt-learning-mcp"],
-      "env": {
-        "OPENAI_API_KEY": "your-openai-api-key"
-      }
+    "skills-search": {
+      "command": "node",
+      "args": ["/absolute/path/to/mcp-servers/skills-search/dist/index.js"]
     }
   }
 }
 ```
 
-**Tools:** `optimize_prompt` · `record_feedback` · `retrieve_prompts` · `suggest_improvements` · `get_analytics`
+| Server | Description |
+|--------|-------------|
+| [`skills-search`](mcp-servers/skills-search) | Semantic search over the skills using RAG and pre-computed embeddings |
+| [`skill-matcher`](mcp-servers/skill-matcher) | Find the right skill for any prompt via semantic embeddings |
+| [`plant-database`](mcp-servers/plant-database) | Plant info, USDA hardiness zones, and landscaping data (pairs with `fancy-yard-landscaper`) |
 
-**Requirements:** Docker (Qdrant + Redis), Node.js 18+, OpenAI API key
-
-### cv-creator-mcp
-
-Resume SEO powered by AI. ATS scoring, keyword optimization, job matching.
-
-```json
-{
-  "mcpServers": {
-    "cv-creator": {
-      "command": "npx",
-      "args": ["-y", "github:erichowens/cv-creator-mcp"]
-    }
-  }
-}
-```
-
-**Tools:** `analyze_job` · `score_match` · `score_ats` · `suggest_tailoring` · `generate_variants` · `generate_cover_letter`
-
-**Requirements:** Node.js 18+
+See each server's README for its specific tools, environment variables, and requirements.
 
 ---
 
@@ -200,12 +186,12 @@ The result? AI agents that bring genuine expertise to every interaction — not 
 
 ## Contributing
 
-1. Follow the structure in `.claude/skills/`
+1. Follow the structure in `skills/`
 2. Include clear mission, competencies, and outputs
 3. Provide examples and best practices
 4. Submit a PR
 
-See the **[Skills Guide](https://someclaudeskills.com/docs/guides/claude-skills-guide)** for detailed instructions.
+See [CONTRIBUTING.md](CONTRIBUTING.md) and the **[Skills Guide](https://someclaudeskills.com/docs/guides/claude-skills-guide)** for detailed instructions.
 
 ---
 

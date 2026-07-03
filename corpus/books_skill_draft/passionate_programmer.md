@@ -1,1 +1,0 @@
-/Users/erichowens/coding/some_claude_skills/corpus/books/passionate_programmer.md

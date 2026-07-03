@@ -7,6 +7,6 @@
   "repository": "https://github.com/BrunoX66/some_claude_skills",
   "license": "MIT",
   "skills": [
-    "./.claude/skills/"
+    "./skills/"
   ]
 }

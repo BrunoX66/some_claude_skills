@@ -1,9 +1,0 @@
-@import url('https://fonts.googleapis.com/css2?family=VT323&family=Courier+Prime:wght@400;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Press+Start+2P&display=swap');
-@import '../styles/tokens/primitives.css';
-@import '../styles/tokens/semantic.css';
-@import '../styles/tokens/components.css';
-@import '../styles/themes/crt.css';
-@import '../styles/themes/inverted.css';
-@import '../styles/themes/cyberpunk.css';
-@import '../styles/dossier.css';
-@import "tailwindcss";
